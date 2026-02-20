@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lmherrera0 — Data &amp; AI Bridge-Builder</title>
+    <meta name="description" content="Personal site and open resources by Liz Magaly Herrera. Data &amp; AI practitioner, researcher, and bridge-builder based in London.">
+    <meta name="author" content="Liz Magaly Herrera">
+    <meta name="keywords" content="data governance, AI practitioner, decision frameworks, AI literacy, bridge-builder, researcher, London">
+    <meta property="og:title" content="lmherrera0 — Data &amp; AI Bridge-Builder">
+    <meta property="og:description" content="Personal site and open resources by Liz Magaly Herrera. Practitioner, researcher, builder.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lmherrera0.github.io/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@400;500;600&family=Noto+Sans:wght@300;400;500;600&family=Noto+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ivory: #F5F1ED;
+            --wine: #6B4C47;
+            --pearl: #E8DFD5;
+            --mahogany: #5C3D35;
+            --almond: #D4C4B9;
+            --rose-clay: #C5847B;
+            --terracotta: #B8785F;
+            --sage: #7A9B8E;
+            --canvas: var(--ivory);
+            --text-primary: var(--wine);
+            --text-heading: var(--mahogany);
+            --surface: var(--pearl);
+            --border: var(--pearl);
+            --btn-bg: var(--wine);
+            --btn-text: var(--ivory);
+            --shadow-sm: 0 1px 3px rgba(92,61,53,0.06);
+            --shadow-md: 0 4px 16px rgba(92,61,53,0.08);
+            --shadow-lg: 0 8px 32px rgba(92,61,53,0.10);
+            --radius: 12px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans', Georgia, Arial, sans-serif; background-color: var(--canvas); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .hero { text-align: center; padding: 100px 24px 60px; max-width: 760px; margin: 0 auto; }
+        .hero-handle { font-family: 'Noto Sans Mono', Courier New, monospace; font-size: 0.85rem; font-weight: 500; letter-spacing: 1px; color: var(--wine); display: block; margin-bottom: 24px; }
+        .hero h1 { font-family: 'Noto Serif Display', Georgia, serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 500; color: var(--text-heading); margin-bottom: 12px; letter-spacing: -0.3px; line-height: 1.2; }
+        .hero-subtitle { font-family: 'Noto Sans', Arial, sans-serif; font-size: 1rem; font-weight: 300; color: var(--wine); letter-spacing: 0.5px; margin-bottom: 28px; }
+        .hero-bio { font-family: 'Noto Sans', Arial, sans-serif; font-size: 1.05rem; color: var(--text-primary); max-width: 580px; margin: 0 auto 20px; font-weight: 300; line-height: 1.75; }
+        .tagline { font-family: 'Noto Sans Mono', Courier New, monospace; font-size: 0.82rem; color: var(--almond); letter-spacing: 1px; display: block; }
+        .divider { width: 48px; height: 1px; background: var(--almond); margin: 0 auto 60px; }
+        .section-header { text-align: center; max-width: 760px; margin: 0 auto; padding: 0 24px 40px; }
+        .section-header h2 { font-family: 'Noto Serif Display', Georgia, serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 500; color: var(--text-heading); margin-bottom: 10px; }
+        .section-header p { font-family: 'Noto Sans', Arial, sans-serif; font-size: 0.95rem; color: var(--text-primary); font-weight: 300; }
+        .cards-container { max-width: 960px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .card { background: var(--pearl); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: box-shadow 0.3s ease, transform 0.3s ease; display: flex; flex-direction: column; border: 1px solid var(--almond); text-decoration: none; color: inherit; }
+        .card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+        .card-icon-area { padding: 36px 28px 20px; display: flex; align-items: center; gap: 16px; }
+        .card-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: var(--ivory); }
+        .card-icon svg { width: 24px; height: 24px; color: var(--wine); }
+        .card-label { font-family: 'Noto Sans Mono', Courier New, monospace; font-size: 12px; font-weight: 500; letter-spacing: 1.5px; color: var(--wine); text-transform: uppercase; }
+        .card-body { padding: 0 28px; flex: 1; }
+        .card-body h3 { font-family: 'Noto Serif Display', Georgia, serif; font-size: 1.35rem; font-weight: 500; color: var(--text-heading); margin-bottom: 10px; line-height: 1.3; }
+        .card-body p { font-family: 'Noto Sans', Arial, sans-serif; font-size: 0.9rem; color: var(--text-primary); line-height: 1.65; font-weight: 300; }
+        .card-tags { padding: 16px 28px 0; display: flex; flex-wrap: wrap; gap: 6px; }
+        .tag { font-family: 'Noto Sans', Arial, sans-serif; font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 100px; background: var(--ivory); color: var(--wine); letter-spacing: 0.3px; border: 1px solid var(--almond); }
+        .card-action { padding: 24px 28px 28px; margin-top: auto; }
+        .action-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 13px 20px; background: var(--btn-bg); color: var(--btn-text); border: none; border-radius: 10px; font-family: 'Noto Sans', Arial, sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px; cursor: pointer; transition: background 0.25s ease, transform 0.15s ease; text-decoration: none; }
+        .action-btn:hover { background: var(--rose-clay); color: var(--ivory); transform: scale(1.02); }
+        .action-btn:active { transform: scale(0.98); }
+        .action-btn svg { width: 16px; height: 16px; }
+        .card--soon { opacity: 0.65; }
+        .card--soon:hover { transform: none; box-shadow: var(--shadow-sm); }
+        .action-btn--soon { background: var(--almond); color: var(--mahogany); cursor: default; }
+        .action-btn--soon:hover { background: var(--almond); color: var(--mahogany); transform: none; }
+        .footer { text-align: center; padding: 32px 24px 48px; border-top: 1px solid var(--almond); max-width: 760px; margin: 0 auto; }
+        .footer p { font-family: 'Noto Sans', Arial, sans-serif; font-size: 0.82rem; color: var(--wine); font-weight: 300; }
+        .footer a { color: var(--wine); text-decoration: underline; font-weight: 400; transition: color 0.2s; }
+        .footer a:hover { color: var(--rose-clay); }
+        .footer .handle { font-family: 'Noto Sans Mono', Courier New, monospace; font-size: 0.78rem; }
+        @media (max-width: 640px) { .hero { padding: 64px 20px 44px; } .cards-container { padding: 0 16px 56px; gap: 16px; } .card-icon-area { padding: 28px 22px 16px; } .card-body { padding: 0 22px; } .card-tags { padding: 14px 22px 0; } .card-action { padding: 20px 22px 24px; } }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <span class="hero-handle">lmherrera0</span>
+        <h1>Liz Magaly Herrera</h1>
+        <p class="hero-subtitle">Builder ∞ Researcher ∞ London</p>
+        <p class="hero-bio">Data &amp; AI practitioner building frameworks, open resources, and research that bridge the gap between technology and the people who use it.</p>
+        <span class="tagline" aria-label="Clarity, Decisions, Impact">Clarity ∞ Decisions ∞ Impact</span>
+    </header>
+    <div class="divider" role="separator" aria-hidden="true"></div>
+    <section class="section-header">
+        <h2>Explore</h2>
+        <p>Open resources and projects — free to browse, download, and reference.</p>
+    </section>
+    <main class="cards-container">
+        <article class="card">
+            <div class="card-icon-area">
+                <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true" role="img"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg></div>
+                <span class="card-label">Resources</span>
+            </div>
+            <div class="card-body">
+                <h3>AI Cheatsheets</h3>
+                <p>Practical, one-page guides on prompt engineering, AI image generation, and agentic AI. Free to download and reference.</p>
+            </div>
+            <div class="card-tags"><span class="tag">Prompts</span><span class="tag">Images</span><span class="tag">Agents</span><span class="tag">PDF</span></div>
+            <div class="card-action">
+                <a href="cheatsheets/" class="action-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>Browse Cheatsheets</a>
+            </div>
+        </article>
+        <article class="card card--soon">
+            <div class="card-icon-area">
+                <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true" role="img"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg></div>
+                <span class="card-label">Framework</span>
+            </div>
+            <div class="card-body">
+                <h3>GGP Framework</h3>
+                <p>An anti-hallucination protocol for professional communications — source verification, reputation protection, and grounded decision-making.</p>
+            </div>
+            <div class="card-tags"><span class="tag">Governance</span><span class="tag">Verification</span><span class="tag">AI Safety</span></div>
+            <div class="card-action"><span class="action-btn action-btn--soon">Coming Soon</span></div>
+        </article>
+        <article class="card card--soon">
+            <div class="card-icon-area">
+                <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true" role="img"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/></svg></div>
+                <span class="card-label">Profile</span>
+            </div>
+            <div class="card-body">
+                <h3>For Recruiters</h3>
+                <p>A focused overview of experience, skills, and evidence of impact — designed for recruiters and hiring managers evaluating fit.</p>
+            </div>
+            <div class="card-tags"><span class="tag">Experience</span><span class="tag">Skills</span><span class="tag">Evidence</span></div>
+            <div class="card-action"><span class="action-btn action-btn--soon">Coming Soon</span></div>
+        </article>
+    </main>
+    <footer class="footer">
+        <p><a href="https://github.com/lmherrera0" target="_blank" rel="noopener" class="handle">lmherrera0</a></p>
+        <p style="margin-top: 6px; font-size: 0.75rem; color: var(--wine); opacity: 0.7;">Clarity ∞ Decisions ∞ Impact</p>
+    </footer>
+</body>
+</html>
