@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GroundedGate Protocol (GGP) v2 - Anti-hallucination system for professional communications. Nothing passes unverified.">
+    <meta property="og:title" content="GroundedGate Protocol v2">
+    <meta property="og:description" content="Anti-hallucination system for professional communications. Verifies sources with 4-tier system, labels inferences, runs Devil's Advocate analysis.">
+    <meta property="og:type" content="website">
+    
+    <title>GroundedGate Protocol (GGP) v2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@600;700&family=Noto+Sans:wght@400;500;600&family=Noto+Sans+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <h1 class="logo">GGP</h1>
+                    <p class="subtitle-small">GroundedGate Protocol v2</p>
+                </div>
+                <nav class="nav" id="mainNav">
+                    <a href="#principle" class="nav-link">Principle</a>
+                    <a href="#rules" class="nav-link">Rules</a>
+                    <a href="#markers" class="nav-link">Markers</a>
+                    <a href="#tiers" class="nav-link">Source Tiers</a>
+                    <a href="#compliance" class="nav-link">Compliance</a>
+                    <a href="#resources" class="nav-link">Resources</a>
+                </nav>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Core Principle Section (Clarity with Warmth + Humble Authority) -->
+        <section id="principle" class="section intro-section">
+            <div class="container">
+                <div class="intro-core">
+                    <h2>Core Principle</h2>
+                    <div class="highlight-box highlight-primary">
+                        <p class="core-principle">"Nothing passes unverified."</p>
+                    </div>
+                    <p class="core-description">
+                        A systematic approach to reduce AI hallucinations. Large Language Models can produce confident-sounding content that is factually incorrect. In professional contexts—client communications, executive reports, regulatory submissions—this creates significant risk. GGP ensures every claim is verified with a source or explicitly declared as a gap or inference.
+                    </p>
+                </div>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>The Problem</h3>
+                        <p>LLMs like ChatGPT, Claude, Gemini, and Copilot can produce content that sounds authoritative but is completely fabricated. The confident tone and professional formatting hide the hallucinations until they reach your client, your leadership, or your regulator.</p>
+                    </div>
+                    <div class="card">
+                        <h3>The Solution</h3>
+                        <p>GGP makes the verification process visible and mandatory. You get a draft where every uncertainty is marked, every gap is declared, and every assumption is labeled. This gives you control—and confidence—before you hit send.</p>
+                    </div>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature">
+                        <span class="feature-icon">✓</span>
+                        <h4>Visual Markers</h4>
+                        <p>Every claim gets a marker: verified, gap, inference, unverified, or risk</p>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">✓</span>
+                        <h4>Source Tiers</h4>
+                        <p>Four-tier system distinguishes between gold-standard and questionable sources</p>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">✓</span>
+                        <h4>Precise Citations</h4>
+                        <p>Exact page numbers, section references, and URLs—not vague attribution</p>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">✓</span>
+                        <h4>Devil's Advocate</h4>
+                        <p>Reputation, legal, and credibility risk screening before delivery</p>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">✓</span>
+                        <h4>User Control</h4>
+                        <p>You decide the depth of analysis—quick output, or detailed verification</p>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">✓</span>
+                        <h4>Clean Output</h4>
+                        <p>Final version stripped of markers, ready for professional delivery</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Non-Negotiable Rules -->
+        <section id="rules" class="section rules-section">
+            <div class="container">
+                <h2>Non-Negotiable Rules</h2>
+                <p class="section-intro">Eight absolute requirements that define GGP compliance.</p>
+
+                <div class="rules-list">
+                    <div class="rule">
+                        <span class="rule-number">1</span>
+                        <p><strong>Never invent</strong> data, statistics, quotes, or dates</p>
+                    </div>
+                    <div class="rule">
+                        <span class="rule-number">2</span>
+                        <p><strong>Never complete</strong> — if information is missing, declare it</p>
+                    </div>
+                    <div class="rule">
+                        <span class="rule-number">3</span>
+                        <p><strong>Never assert without basis</strong> — separate facts from inferences</p>
+                    </div>
+                    <div class="rule">
+                        <span class="rule-number">4</span>
+                        <p><strong>Declare uncertainty</strong> — if there are doubts, say so</p>
+                    </div>
+                    <div class="rule">
+                        <span class="rule-number">5</span>
+                        <p><strong>Cite sources with quality tiers</strong> — all claims traceable</p>
+                    </div>
+                    <div class="rule">
+                        <span class="rule-number">6</span>
+                        <p><strong>Never mark Tier 4</strong> sources as CONFIRMED</p>
+                    </div>
+                    <div class="rule">
+                        <span class="rule-number">7</span>
+                        <p><strong>Never produce clean output</strong> without user confirmation</p>
+                    </div>
+                    <div class="rule">
+                        <span class="rule-number">8</span>
+                        <p><strong>Never exceed 2 clarification rounds</strong> without user choosing depth</p>
+                    </div>
+                </div>
+
+                <div class="rule-context">
+                    <p>These rules are non-negotiable because professional credibility depends on transparency. When you mark something as verified, your reputation stands behind it.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. GGP Markers Section -->
+        <section id="markers" class="section markers-section">
+            <div class="container">
+                <h2>GGP Markers</h2>
+                <p class="section-intro">Five visual markers indicate the status of every factual claim in your output.</p>
+
+                <div class="markers-grid">
+                    <div class="marker-card marker-confirmed">
+                        <div class="marker-header">
+                            <h3>[CONFIRMED]</h3>
+                        </div>
+                        <p class="marker-definition">Verified with Tier 1-3 source</p>
+                        <div class="marker-details">
+                            <p><strong>Meaning:</strong> Fact verified with authoritative or reputable source</p>
+                            <p><strong>Required:</strong> Full citation (source name, tier, location, date, URL)</p>
+                            <p><strong>Action:</strong> Safe to publish. Include the citation.</p>
+                        </div>
+                    </div>
+
+                    <div class="marker-card marker-gap">
+                        <div class="marker-header">
+                            <h3>[GAP]</h3>
+                        </div>
+                        <p class="marker-definition">Missing critical information</p>
+                        <div class="marker-details">
+                            <p><strong>Meaning:</strong> Information cannot be sourced or is unavailable</p>
+                            <p><strong>Trigger:</strong> No available source found after research</p>
+                            <p><strong>Action:</strong> Must be filled before delivery. User to supply.</p>
+                        </div>
+                    </div>
+
+                    <div class="marker-card marker-inference">
+                        <div class="marker-header">
+                            <h3>[INFERENCE]</h3>
+                        </div>
+                        <p class="marker-definition">Assumption declared</p>
+                        <div class="marker-details">
+                            <p><strong>Meaning:</strong> Reasoned conclusion with zero direct source</p>
+                            <p><strong>Risk:</strong> User must explicitly accept or reject</p>
+                            <p><strong>Action:</strong> Never hide. Show your reasoning. User decides.</p>
+                        </div>
+                    </div>
+
+                    <div class="marker-card marker-unverified">
+                        <div class="marker-header">
+                            <h3>[UNVERIFIED]</h3>
+                        </div>
+                        <p class="marker-definition">Could not verify or Tier 4 only</p>
+                        <div class="marker-details">
+                            <p><strong>Meaning:</strong> Supporting data comes from low-confidence sources</p>
+                            <p><strong>Trigger:</strong> Tier 4 sources OR Tier 1-3 with red flags</p>
+                            <p><strong>Action:</strong> Requires corroboration from Tier 1-2 before use</p>
+                        </div>
+                    </div>
+
+                    <div class="marker-card marker-risk">
+                        <div class="marker-header">
+                            <h3>[RISK]</h3>
+                        </div>
+                        <p class="marker-definition">Reputational, legal, credibility flag</p>
+                        <div class="marker-details">
+                            <p><strong>Meaning:</strong> Potential harm if statement is challenged</p>
+                            <p><strong>Context:</strong> Legal exposure, reputation damage, credibility harm</p>
+                            <p><strong>Action:</strong> Describe risk explicitly. User decides acceptance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rule-box">
+                    <h4>Hard Rule</h4>
+                    <p><strong>Tier 4 sources CANNOT produce [CONFIRMED]</strong> under any circumstances. This is non-negotiable for professional credibility.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Source Tiers Section -->
+        <section id="tiers" class="section tiers-section">
+            <div class="container">
+                <h2>Source Quality Tiers</h2>
+                <p class="section-intro">A four-tier hierarchy establishes which sources merit confidence and which need corroboration.</p>
+
+                <div class="tiers-container">
+                    <div class="tier-card tier-1">
+                        <div class="tier-badge">TIER 1</div>
+                        <h3>Primary/Authoritative</h3>
+                        <p class="tier-category">Gold Standard</p>
+                        
+                        <div class="tier-content">
+                            <h4>Examples</h4>
+                            <ul>
+                                <li>SEC filings (10-K, 10-Q)</li>
+                                <li>Government databases</li>
+                                <li>Peer-reviewed journals</li>
+                                <li>Regulatory bodies</li>
+                                <li>Official entity press releases</li>
+                                <li>Court documents</li>
+                                <li>Audited financial statements</li>
+                            </ul>
+                            
+                            <div class="tier-metrics">
+                                <p><strong>Trust Level:</strong> <span class="badge-high">High Confidence</span></p>
+                                <p><strong>Use as:</strong> Primary evidence; cite directly</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tier-card tier-2">
+                        <div class="tier-badge">TIER 2</div>
+                        <h3>Reputable Secondary</h3>
+                        <p class="tier-category">Solid Sources</p>
+                        
+                        <div class="tier-content">
+                            <h4>Examples</h4>
+                            <ul>
+                                <li>Financial Times, Wall Street Journal</li>
+                                <li>Reuters, BBC</li>
+                                <li>Gartner, McKinsey, Forrester</li>
+                                <li>Official industry reports</li>
+                                <li>Recognized trade publications</li>
+                            </ul>
+                            
+                            <div class="tier-metrics">
+                                <p><strong>Trust Level:</strong> <span class="badge-good">Good Confidence</span></p>
+                                <p><strong>Use as:</strong> Verify if critical; cross-reference major claims</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tier-card tier-3">
+                        <div class="tier-badge">TIER 3</div>
+                        <h3>General Secondary</h3>
+                        <p class="tier-category">Moderate Sources</p>
+                        
+                        <div class="tier-content">
+                            <h4>Examples</h4>
+                            <ul>
+                                <li>General news outlets</li>
+                                <li>Industry blogs from known experts</li>
+                                <li>Company marketing websites</li>
+                                <li>Wikipedia (context only)</li>
+                                <li>Established academic institutions</li>
+                            </ul>
+                            
+                            <div class="tier-metrics">
+                                <p><strong>Trust Level:</strong> <span class="badge-moderate">Moderate Confidence</span></p>
+                                <p><strong>Use as:</strong> Cross-reference recommended; disclose secondary nature</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tier-card tier-4">
+                        <div class="tier-badge">TIER 4</div>
+                        <h3>Unverified/Low Quality</h3>
+                        <p class="tier-category">⚠️ Caution Required</p>
+                        
+                        <div class="tier-content">
+                            <h4>Examples</h4>
+                            <ul>
+                                <li>Forums, social media</li>
+                                <li>Anonymous blogs</li>
+                                <li>Content farms</li>
+                                <li>Obvious commercial bias</li>
+                                <li>Outdated content (>2 years)</li>
+                                <li>Unattributed claims</li>
+                            </ul>
+                            
+                            <div class="tier-metrics">
+                                <p><strong>Trust Level:</strong> <span class="badge-low">Low Confidence</span></p>
+                                <p><strong>Use as:</strong> NEVER as CONFIRMED; requires Tier 1-2 corroboration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Compliance Cycle Section -->
+        <section id="compliance" class="section compliance-section">
+            <div class="container">
+                <h2>Compliance Cycle</h2>
+                <p class="section-intro">Three-phase model for producing verified professional communications.</p>
+
+                <div class="framework-phases">
+                    <div class="phase">
+                        <div class="phase-number">1</div>
+                        <h3>Load Rules</h3>
+                        <div class="phase-content">
+                            <p><strong>Read core rules</strong> (QUICK_REFERENCE.md)</p>
+                            <p>Contains: markers, tiers, citations, prohibited language, red flags, Devil's Advocate, consulting etiquette, data standards.</p>
+                        </div>
+                    </div>
+
+                    <div class="phase">
+                        <div class="phase-number">2</div>
+                        <h3>Load Channel Reference</h3>
+                        <div class="phase-content">
+                            <p><strong>Identify target channel</strong> (LinkedIn, email, presentation, etc.)</p>
+                            <p>Extract: template, structure, limits, tone, metrics, formatting rules.</p>
+                            <p style="margin-top: 1rem; font-size: 0.95rem;"><strong>Available:</strong> 22 channels including email, LinkedIn, Twitter, Instagram, press releases, presentations, internal docs, HBR, MIT SMR, academic journals, coding docs, analytical docs, and more.</p>
+                        </div>
+                    </div>
+
+                    <div class="phase">
+                        <div class="phase-number">3</div>
+                        <h3>Create + Validate + Deliver</h3>
+                        <div class="phase-content">
+                            <p><strong>3a. Classify:</strong> Channel, audience, risk level, complexity</p>
+                            <p><strong>3b. Information Audit:</strong> Tag all factual claims with GGP markers</p>
+                            <p><strong>3c. Iteration Control:</strong> User chooses [A] Answer questions | [B] Produce with info | [C] Deep analysis</p>
+                            <p><strong>3d. Reasoning Gate:</strong> What's confirmed? What's weaker? What must be inferred? What risks exist?</p>
+                            <p><strong>3e. Create Content:</strong> Apply markers inline</p>
+                            <p><strong>3f. Devil's Advocate:</strong> 5 mandatory checks</p>
+                            <p><strong>3g. Validation Gate:</strong> 8-point checkpoint</p>
+                            <p><strong>3h. Clean Output:</strong> Remove markers, deliver polished version</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="validation-gate">
+                    <h3>8-Point Validation Gate</h3>
+                    <p class="validation-intro">Mandatory checkpoint before delivery. All 8 must pass.</p>
+                    <div class="validation-checklist">
+                        <div class="check-item">
+                            <span class="check-number">1</span>
+                            <p>All CONFIRMED facts have sources with tiers</p>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-number">2</span>
+                            <p>No Tier 4 sources marked as CONFIRMED</p>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-number">3</span>
+                            <p>All inferences explicitly labelled [INFERENCE]</p>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-number">4</span>
+                            <p>All gaps declared [GAP]</p>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-number">5</span>
+                            <p>No unmarked assumptions hiding</p>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-number">6</span>
+                            <p>Devil's Advocate analysis completed</p>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-number">7</span>
+                            <p>Channel-specific checklist passed</p>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-number">8</span>
+                            <p>Consulting etiquette respected</p>
+                        </div>
+                    </div>
+                    <p class="validation-note"><strong>GGP SCORE: [X]/8</strong> — If less than 8: revise and re-run. Do NOT deliver.</p>
+                </div>
+
+                <div class="devils-advocate">
+                    <h3>Devil's Advocate Analysis</h3>
+                    <p class="da-intro">Five mandatory checks to screen for reputation, legal, and credibility risks.</p>
+                    <div class="da-grid">
+                        <div class="da-check">
+                            <h4>Misinterpretation</h4>
+                            <p>Could this be read differently than intended?</p>
+                        </div>
+                        <div class="da-check">
+                            <h4>Credibility</h4>
+                            <p>Anything unfounded or weakly sourced?</p>
+                        </div>
+                        <div class="da-check">
+                            <h4>Legal</h4>
+                            <p>Any claim that creates liability?</p>
+                        </div>
+                        <div class="da-check">
+                            <h4>Reputation</h4>
+                            <p>Could this damage professional image?</p>
+                        </div>
+                        <div class="da-check">
+                            <h4>Data Accuracy</h4>
+                            <p>Any statistics that could be challenged?</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1.5rem;"><strong>Three Tests Applied:</strong> Hostile Reader Test | Screenshot Test | CEO Test</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. 22 Channel Templates -->
+        <section id="channels" class="section channels-section">
+            <div class="container">
+                <h2>22 Channel Templates</h2>
+                <p class="section-intro">Tailored GGP guidance for professional communication formats across platforms and deliverables.</p>
+
+                <div class="channels-grid">
+                    <div class="channel">
+                        <h4>📧 Email</h4>
+                        <p>Professional correspondence, client updates, memos</p>
+                    </div>
+                    <div class="channel">
+                        <h4>💼 LinkedIn</h4>
+                        <p>Posts, articles, professional updates</p>
+                    </div>
+                    <div class="channel">
+                        <h4>𝕏 Twitter/X</h4>
+                        <p>Tweets, threads, real-time updates</p>
+                    </div>
+                    <div class="channel">
+                        <h4>📱 Instagram</h4>
+                        <p>Posts, captions, visual content</p>
+                    </div>
+                    <div class="channel">
+                        <h4>💬 Messaging</h4>
+                        <p>Slack, Teams, WhatsApp, instant messaging</p>
+                    </div>
+                    <div class="channel">
+                        <h4>🎤 Presentations</h4>
+                        <p>Keynotes, slides, speaker notes</p>
+                    </div>
+                    <div class="channel">
+                        <h4>📰 Press Release</h4>
+                        <p>Media announcements, news distribution</p>
+                    </div>
+                    <div class="channel">
+                        <h4>📄 Internal Docs</h4>
+                        <p>Reports, memos, documentation</p>
+                    </div>
+                    <div class="channel">
+                        <h4>📚 HBR / MIT SMR</h4>
+                        <p>Harvard Business Review, MIT Sloan articles</p>
+                    </div>
+                    <div class="channel">
+                        <h4>🎓 Academic Journal</h4>
+                        <p>Peer-reviewed research, academic papers</p>
+                    </div>
+                    <div class="channel">
+                        <h4>📖 Book Proposal</h4>
+                        <p>Book concepts, outlines, pitches</p>
+                    </div>
+                    <div class="channel">
+                        <h4>✏️ Op-Ed</h4>
+                        <p>Opinion pieces, thought leadership</p>
+                    </div>
+                    <div class="channel">
+                        <h4>💻 Coding Docs</h4>
+                        <p>READMEs, API docs, technical specifications</p>
+                    </div>
+                    <div class="channel">
+                        <h4>🔄 Data Lineage</h4>
+                        <p>Data flows, mappings, data dictionaries</p>
+                    </div>
+                    <div class="channel">
+                        <h4>📊 Analytical Docs</h4>
+                        <p>Statistical reports, methodology, analysis</p>
+                    </div>
+                    <div class="channel">
+                        <h4>⚙️ Application Docs</h4>
+                        <p>Architecture, deployment, runbooks</p>
+                    </div>
+                    <div class="channel">
+                        <h4>🛍️ Data Products</h4>
+                        <p>Data product specs, contracts, SLAs</p>
+                    </div>
+                    <div class="channel">
+                        <h4>🤖 AI Agents</h4>
+                        <p>Model cards, agent documentation</p>
+                    </div>
+                    <div class="channel">
+                        <h4>🛠️ Skills Docs</h4>
+                        <p>Skill documentation, plugins, MCP servers</p>
+                    </div>
+                    <div class="channel">
+                        <h4>🔗 Version Control</h4>
+                        <p>Changelogs, release notes, commit messages</p>
+                    </div>
+                    <div class="channel">
+                        <h4>⚖️ Legal Disclaimers</h4>
+                        <p>Terms, IP, licenses, legal language</p>
+                    </div>
+                    <div class="channel">
+                        <h4>🎯 Analysis Templates</h4>
+                        <p>SWOT, benchmarks, gap analysis, use cases</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Execution Rules -->
+        <section id="execution" class="section execution-section">
+            <div class="container">
+                <h2>Execution Rules</h2>
+                <p class="section-intro">Practical operational guidelines for efficient GGP implementation.</p>
+
+                <div class="execution-grid">
+                    <div class="exec-rule">
+                        <h3>Parallel Reads</h3>
+                        <p>Batch all file reads into parallel calls. Never read sequentially when parallel is available.</p>
+                    </div>
+                    <div class="exec-rule">
+                        <h3>Anti-Fatigue</h3>
+                        <p>Max 3 questions in Round 1, max 2 in Round 2. "Just do it" or frustration signals = produce immediately.</p>
+                    </div>
+                    <div class="exec-rule">
+                        <h3>Checkpoint Shorthand</h3>
+                        <p>Use compact format <code>GGP [X]/8</code> for status. No verbose tables unless user requests detail.</p>
+                    </div>
+                    <div class="exec-rule">
+                        <h3>Minimal Mode</h3>
+                        <p>For SIMPLE tasks (single fact-check, short email), skip reasoning gate. Go straight to create + validate.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Resources Section -->
+        <section id="resources" class="section resources-section">
+            <div class="container">
+                <h2>Reference Documents</h2>
+                <p class="section-intro">Core documentation for deeper understanding of GGP implementation and compliance.</p>
+
+                <div class="resources-grid">
+                    <div class="resource-group">
+                        <h3>Core References</h3>
+                        <ul>
+                            <li><strong>QUICK_REFERENCE.md</strong> — Compact rules card</li>
+                            <li><strong>Verification Framework</strong> — Source credibility & claim validation</li>
+                            <li><strong>Reputation Protection</strong> — Devil's Advocate, risk scoring, escalation</li>
+                            <li><strong>Consulting Etiquette</strong> — Professional standards & language reframing</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-group">
+                        <h3>Specialized References</h3>
+                        <ul>
+                            <li><strong>Data Analytics Expertise</strong> — Data verification & hallucination patterns</li>
+                            <li><strong>Success Metrics</strong> — 5 KPIs for measuring GGP effectiveness</li>
+                            <li><strong>Introduction</strong> — Executive summary for new users</li>
+                            <li><strong>Channel Navigation</strong> — Index of all 22 channels & 7 analysis templates</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-group">
+                        <h3>Analysis Templates</h3>
+                        <ul>
+                            <li><strong>SWOT Analysis</strong> — Strengths, weaknesses, opportunities, threats</li>
+                            <li><strong>Gap Analysis</strong> — Current state vs. desired state gaps</li>
+                            <li><strong>Benchmarking</strong> — Performance comparison methodology</li>
+                            <li><strong>Cost-Benefit</strong> — Financial evaluation & ROI calculation</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-group">
+                        <h3>About GGP</h3>
+                        <ul>
+                            <li><strong>Version:</strong> 2.0.0</li>
+                            <li><strong>Status:</strong> Active protocol</li>
+                            <li><strong>Principle:</strong> Nothing passes unverified</li>
+                            <li><strong>Scope:</strong> All professional communications</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Start Using GGP Today</h3>
+                    <p>Apply the core principle—"Nothing passes unverified"—to your next professional communication. Start with the markers to identify what's verified and what needs attention.</p>
+                    <a href="#markers" class="btn btn-primary">Explore Markers</a>
+                    <a href="#compliance" class="btn btn-secondary">Learn Compliance Cycle</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>GroundedGate Protocol</h4>
+                        <p>Anti-hallucination system for professional communications. Verifies sources. Labels inferences. Runs Devil's Advocate analysis.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Version 2.0.0</h4>
+                        <p>Core Principle:<br><strong>"Nothing passes unverified."</strong></p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Scope</h4>
+                        <p>Email, LinkedIn, Twitter, Instagram, presentations, reports, 22+ channels covering all professional contexts.</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; GroundedGate Protocol v2 | Systematic approach to reduce AI hallucinations in professional communications</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="js/interactive.js"></script>
+</body>
+</html>
