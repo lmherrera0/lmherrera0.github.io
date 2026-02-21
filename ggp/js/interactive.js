@@ -1,226 +1,167 @@
 /* ===================================================================
-   INTERACTIVE FEATURES FOR GGP WEBSITE
-   Theme Toggle, Smooth Navigation, Analytics
-   ================================================================== */
+   GGP v4.2 — Interactive Features
+   Theme Toggle, Platform Tabs, Copy-to-Clipboard, Navigation
+   =================================================================== */
 
-// ===== THEME TOGGLE (BVVG Light/Dark Mode) =====
-const themeToggle = document.getElementById('themeToggle');
-const htmlElement = document.documentElement;
-const body = document.body;
+// ===== THEME TOGGLE (data-theme attribute) =====
+const tog = document.getElementById('themeToggle');
+const bod = document.body;
 
-// Check for saved theme preference in localStorage
 function initTheme() {
-    const savedTheme = localStorage.getItem('ggp-theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme) {
-        applyTheme(savedTheme);
-    } else if (prefersDark) {
-        applyTheme('dark');
-    } else {
-        applyTheme('light');
-    }
+  const saved = localStorage.getItem('ggp-theme');
+  if (saved) {
+    bod.setAttribute('data-theme', saved);
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    bod.setAttribute('data-theme', 'dark');
+  }
+  updateThemeIcon();
+}
+
+function updateThemeIcon() {
+  tog.textContent = bod.getAttribute('data-theme') === 'dark' ? '\u2600' : '\u263D';
 }
 
 function applyTheme(theme) {
-    if (theme === 'dark') {
-        body.classList.add('dark-mode');
-        themeToggle.textContent = '☀️';
-        localStorage.setItem('ggp-theme', 'dark');
-    } else {
-        body.classList.remove('dark-mode');
-        themeToggle.textContent = '🌙';
-        localStorage.setItem('ggp-theme', 'light');
-    }
+  bod.setAttribute('data-theme', theme);
+  localStorage.setItem('ggp-theme', theme);
+  updateThemeIcon();
 }
 
-// Toggle theme on button click
-themeToggle.addEventListener('click', () => {
-    const isDark = body.classList.contains('dark-mode');
-    applyTheme(isDark ? 'light' : 'dark');
+tog.addEventListener('click', () => {
+  const current = bod.getAttribute('data-theme');
+  applyTheme(current === 'dark' ? 'light' : 'dark');
 });
 
 // Respect system theme changes
-window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => {
-    if (!localStorage.getItem('ggp-theme')) {
-        applyTheme(e.matches ? 'dark' : 'light');
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+  if (!localStorage.getItem('ggp-theme')) {
+    applyTheme(e.matches ? 'dark' : 'light');
+  }
+});
+
+initTheme();
+
+// ===== NAVIGATION — Active link highlighting via IntersectionObserver =====
+const secs = document.querySelectorAll('.sec');
+const navLinks = document.querySelectorAll('.nav a');
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      navLinks.forEach((n) => n.classList.remove('on'));
+      const active = document.querySelector('.nav a[href="#' + entry.target.id + '"]');
+      if (active) active.classList.add('on');
     }
+  });
+}, { rootMargin: '-15% 0px -80% 0px' });
+
+secs.forEach((s) => navObserver.observe(s));
+
+// ===== PLATFORM TABS =====
+document.querySelectorAll('.ptab').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.ptab').forEach((t) => t.classList.remove('on'));
+    document.querySelectorAll('.ppanel').forEach((p) => p.classList.remove('on'));
+    tab.classList.add('on');
+    const panel = document.getElementById(tab.dataset.tab);
+    if (panel) panel.classList.add('on');
+  });
 });
 
-// Initialize theme on page load
-document.addEventListener('DOMContentLoaded', initTheme);
+// ===== COPY TO CLIPBOARD =====
+function copyCode(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var btn = el.querySelector('.copy-btn');
 
-// ===== SMOOTH SCROLL BEHAVIOR =====
-// (Already handled by CSS scroll-behavior: smooth, but JS provides fallback)
+  // Clone and remove button to get clean text
+  var clone = el.cloneNode(true);
+  var b = clone.querySelector('.copy-btn');
+  if (b) b.remove();
 
-// ===== ACTIVE NAV LINK HIGHLIGHTING =====
-function updateActiveNavLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    let currentSection = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (window.scrollY >= sectionTop - 200) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSection}`) {
-            link.classList.add('active');
-        }
-    });
+  // Decode HTML entities
+  var txt = clone.textContent
+    .replace(/</g, '<')
+    .replace(/>/g, '>')
+    .replace(/&/g, '&')
+    .replace(/≤/g, '\u2264')
+    .replace(/≥/g, '\u2265')
+    .replace(/≠/g, '\u2260')
+    .replace(/→/g, '\u2192');
+
+  navigator.clipboard.writeText(txt).then(function () {
+    showCopied(btn);
+  }).catch(function () {
+    // Fallback for older browsers
+    var ta = document.createElement('textarea');
+    ta.value = txt;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showCopied(btn);
+  });
 }
 
-window.addEventListener('scroll', updateActiveNavLink);
+function showCopied(btn) {
+  if (!btn) return;
+  btn.textContent = 'Copied!';
+  btn.classList.add('copied');
+  setTimeout(function () {
+    btn.textContent = 'Copy';
+    btn.classList.remove('copied');
+  }, 2000);
+}
 
-// ===== INTERSECTION OBSERVER FOR ANIMATION (Optional Enhancement) =====
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Observe cards and elements for animation on scroll
-document.querySelectorAll('.card, .marker-card, .tier-card, .phase, .channel').forEach(el => {
-    observer.observe(el);
+// Attach copy handlers to all copy buttons
+document.querySelectorAll('.copy-btn').forEach(function (btn) {
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    var target = btn.getAttribute('data-target');
+    if (target) copyCode(target);
+  });
 });
 
-// ===== COPY TO CLIPBOARD FUNCTIONALITY (For code snippets if added) =====
-function setupCodeCopyButtons() {
-    const codeBlocks = document.querySelectorAll('code');
-    
-    codeBlocks.forEach(block => {
-        // Only if inside a pre (actual code block, not inline)
-        if (block.parentElement.tagName === 'PRE') {
-            const copyBtn = document.createElement('button');
-            copyBtn.className = 'copy-btn';
-            copyBtn.textContent = 'Copy';
-            copyBtn.style.cssText = `
-                position: absolute;
-                top: 8px;
-                right: 8px;
-                padding: 6px 12px;
-                background-color: #A46447;
-                color: #F3ECE3;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                font-size: 0.85rem;
-                font-weight: 600;
-            `;
-            
-            block.parentElement.style.position = 'relative';
-            block.parentElement.appendChild(copyBtn);
-            
-            copyBtn.addEventListener('click', () => {
-                const text = block.innerText;
-                navigator.clipboard.writeText(text).then(() => {
-                    const originalText = copyBtn.textContent;
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => {
-                        copyBtn.textContent = originalText;
-                    }, 2000);
-                });
-            });
-        }
+// ===== SMOOTH SCROLL POLYFILL =====
+if (!CSS.supports || !CSS.supports('scroll-behavior', 'smooth')) {
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
+  });
 }
 
-document.addEventListener('DOMContentLoaded', setupCodeCopyButtons);
-
-// ===== SMOOTH SCROLL POLYFILL FOR OLDER BROWSERS =====
-if (!CSS.supports('scroll-behavior', 'smooth')) {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+// ===== ANALYTICS (optional — connects to GA if present) =====
+function trackEvent(eventName, eventData) {
+  if (window.gtag) {
+    gtag('event', eventName, eventData || {});
+  }
 }
-
-// ===== KEYBOARD ACCESSIBILITY ENHANCEMENTS =====
-// Allow tab navigation through all interactive elements
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        // Could be used for closing modals in future versions
-        console.log('Escape key pressed');
-    }
-});
-
-// ===== ANALYTICS EVENT (Optional - can be connected to GA) =====
-function trackEvent(eventName, eventData = {}) {
-    // This function can be connected to Google Analytics or other analytics provider
-    if (window.gtag) {
-        gtag('event', eventName, eventData);
-    } else {
-        console.log(`Event: ${eventName}`, eventData);
-    }
-}
-
-// Track section views
-document.querySelectorAll('section[id]').forEach(section => {
-    observer.observe(section);
-});
 
 // Track button clicks
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        trackEvent('button_click', {
-            button_text: btn.textContent,
-            button_href: btn.href || btn.getAttribute('href')
-        });
-    });
+document.querySelectorAll('.copy-btn').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    trackEvent('copy_code', { platform: btn.getAttribute('data-target') });
+  });
 });
 
-// Track theme toggle
-themeToggle.addEventListener('click', () => {
-    const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-    trackEvent('theme_toggle', { theme: currentTheme });
+tog.addEventListener('click', function () {
+  trackEvent('theme_toggle', { theme: bod.getAttribute('data-theme') });
 });
 
-// ===== PAGE LOAD COMPLETE INDICATOR =====
-window.addEventListener('load', () => {
-    console.log('GGP Website loaded successfully');
-    document.body.classList.add('loaded');
+// ===== PAGE LOAD =====
+window.addEventListener('load', function () {
+  bod.classList.add('loaded');
 });
 
-// ===== UTILITY: Get current active section =====
-function getCurrentSection() {
-    const sections = document.querySelectorAll('section[id]');
-    let currentSection = 'principle';
-    
-    sections.forEach(section => {
-        if (section.offsetTop <= window.scrollY + 300) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-    
-    return currentSection;
-}
-
-// Export for external use if needed
+// ===== PUBLIC API =====
 window.GGPWebsite = {
-    getCurrentSection,
-    trackEvent,
-    applyTheme
+  applyTheme: applyTheme,
+  trackEvent: trackEvent
 };
