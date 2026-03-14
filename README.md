@@ -9,7 +9,7 @@ Personal site and open resources by [lmherrera0](https://github.com/lmherrera0).
 | Section | Description | Status |
 |---|---|---|
 | [AI Cheatsheets](https://lmherrera0.github.io/cheatsheets/) | Downloadable one-page guides on prompt engineering, AI image generation, and agentic AI | Live |
-| GGP | Anti-hallucination protocol for professional communications | Coming soon |
+| [GGP Framework](https://lmherrera0.github.io/ggp/) | Anti-hallucination protocol for professional communications | Live |
 | Recruiter | Experience, skills, and evidence of impact | Coming soon |
 
 ---
