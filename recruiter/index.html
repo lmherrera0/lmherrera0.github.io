@@ -217,6 +217,71 @@
             content: '—'; color: var(--almond); font-size: 0.75rem;
             flex-shrink: 0; margin-top: 2px;
         }
+        /* ---- SAMPLE OUTPUT ---- */
+        .sample-output { border-top: 1px solid var(--almond); background: var(--ivory); }
+        .sample-output-header {
+            padding: 28px 40px 20px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+        }
+        .sample-badge {
+            font-family: 'Noto Sans Mono', monospace; font-size: 10px; font-weight: 500;
+            letter-spacing: 1.5px; text-transform: uppercase; color: var(--mahogany);
+            border: 1.5px solid var(--almond); border-radius: 100px; padding: 4px 12px;
+        }
+        .sample-note { font-size: 0.82rem; font-weight: 300; color: var(--almond); font-style: italic; }
+        .sample-table-wrap { overflow-x: auto; padding: 0 40px 24px; }
+        .sample-table { width: 100%; border-collapse: collapse; min-width: 580px; }
+        .sample-table th {
+            font-family: 'Noto Sans Mono', monospace; font-size: 10px; font-weight: 500;
+            letter-spacing: 1px; text-transform: uppercase; color: var(--mahogany);
+            background: var(--pearl); padding: 10px 14px; text-align: left;
+            border-bottom: 2px solid var(--almond); white-space: nowrap;
+        }
+        .sample-table td {
+            font-size: 0.82rem; font-weight: 300; color: var(--wine);
+            padding: 11px 14px; border-bottom: 1px solid var(--pearl); vertical-align: middle; line-height: 1.5;
+        }
+        .sample-table tbody tr:last-child td { border-bottom: none; }
+        .sample-table tbody tr:hover td { background: var(--pearl); transition: background 0.15s; }
+        .cand-name { font-weight: 500; color: var(--mahogany); white-space: nowrap; }
+        .tier-badge {
+            font-family: 'Noto Sans Mono', monospace; font-size: 11px; font-weight: 500;
+            border-radius: 6px; padding: 3px 10px; display: inline-block; letter-spacing: 0.5px;
+        }
+        .tier-a { background: var(--sage); color: var(--ivory); }
+        .tier-b { background: var(--almond); color: var(--mahogany); }
+        .gap-cell { color: var(--terracotta); }
+        /* Bar chart */
+        .sample-chart { padding: 8px 40px 28px; }
+        .chart-rows { display: flex; flex-direction: column; gap: 14px; }
+        .chart-row { display: grid; grid-template-columns: 96px 1fr; align-items: center; gap: 16px; }
+        .chart-label { font-family: 'Noto Sans Mono', monospace; font-size: 11px; color: var(--mahogany); font-weight: 500; text-align: right; }
+        .chart-bars { display: flex; flex-direction: column; gap: 4px; }
+        .bar-track { height: 10px; background: var(--pearl); border-radius: 100px; overflow: hidden; position: relative; }
+        .bar-fill { height: 100%; border-radius: 100px; transition: width 0.6s ease; }
+        .bar-mh { background: var(--mahogany); }
+        .bar-total { background: var(--sage); }
+        .bar-nth { background: var(--almond); }
+        .bar-label { font-family: 'Noto Sans Mono', monospace; font-size: 9px; color: var(--almond); letter-spacing: 0.5px; }
+        .chart-legend { display: flex; gap: 20px; padding: 0 40px 20px; flex-wrap: wrap; }
+        .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--wine); font-weight: 300; }
+        .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+        /* Ranking */
+        .sample-ranking { padding: 0 40px 36px; border-top: 1px solid var(--pearl); padding-top: 20px; }
+        .ranking-title { font-family: 'Noto Serif Display', serif; font-size: 0.95rem; font-weight: 500; color: var(--mahogany); margin-bottom: 14px; }
+        .ranking-list { list-style: none; padding: 0; margin: 0; counter-reset: rank; }
+        .ranking-list li {
+            counter-increment: rank; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+            padding: 9px 0 9px 28px; border-bottom: 1px solid var(--pearl); position: relative;
+        }
+        .ranking-list li:last-child { border-bottom: none; }
+        .ranking-list li::before {
+            content: counter(rank); font-family: 'Noto Serif Display', serif; font-size: 0.9rem;
+            color: var(--almond); position: absolute; left: 0; top: 9px;
+        }
+        .rank-candidate { font-weight: 500; color: var(--mahogany); font-size: 0.84rem; white-space: nowrap; }
+        .rank-score { font-family: 'Noto Sans Mono', monospace; font-size: 11px; color: var(--wine); }
+        .rank-note { font-size: 0.8rem; font-weight: 300; color: var(--wine); font-style: italic; flex: 1; min-width: 160px; }
+
         .describe-footer {
             padding: 20px 40px; background: var(--pearl);
             border-top: 1px solid var(--almond);
@@ -496,6 +561,76 @@
                     </ul>
                 </div>
             </div>
+            <!-- SAMPLE OUTPUT -->
+            <div class="sample-output">
+                <div class="sample-output-header">
+                    <span class="sample-badge">Sample Output</span>
+                    <span class="sample-note">What the agent produces after uploading a JD and 4 candidate CVs</span>
+                </div>
+                <div class="sample-table-wrap">
+                    <table class="sample-table" aria-label="Sample candidate comparison table">
+                        <thead>
+                            <tr>
+                                <th>Candidate</th><th>Tier</th><th>Total %</th><th>Must-Have %</th><th>Nice-to-Have %</th><th>Key Strengths</th><th>Gaps</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cand-name">Candidate 1</td>
+                                <td><span class="tier-badge tier-a">A</span></td>
+                                <td><strong>86%</strong></td><td>90%</td><td>78%</td>
+                                <td>Deep Databricks + Delta; best ADF &amp; Medallion mastery</td>
+                                <td class="gap-cell">Unity Catalog</td>
+                            </tr>
+                            <tr>
+                                <td class="cand-name">Candidate 3</td>
+                                <td><span class="tier-badge tier-a">A</span></td>
+                                <td><strong>82%</strong></td><td>85%</td><td>72%</td>
+                                <td>Unity Catalog; Spark optimisation; strong Databricks</td>
+                                <td class="gap-cell">Weak explicit ADF evidence</td>
+                            </tr>
+                            <tr>
+                                <td class="cand-name">Candidate 2</td>
+                                <td><span class="tier-badge tier-b">B</span></td>
+                                <td><strong>68%</strong></td><td>71%</td><td>60%</td>
+                                <td>Solid ADF; good validation; reliable mid-level</td>
+                                <td class="gap-cell">Limited Databricks depth; no Unity Catalog</td>
+                            </tr>
+                            <tr>
+                                <td class="cand-name">Candidate 4</td>
+                                <td><span class="tier-badge tier-b">B</span></td>
+                                <td><strong>64%</strong></td><td>66%</td><td>62%</td>
+                                <td>Strong engineering / ML pipelines</td>
+                                <td class="gap-cell">Weak Medallion + BI modelling</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Visual bar chart -->
+                <div class="chart-legend">
+                    <span class="legend-item"><span class="legend-dot" style="background:var(--mahogany)"></span>Must-Have %</span>
+                    <span class="legend-item"><span class="legend-dot" style="background:var(--sage)"></span>Total %</span>
+                    <span class="legend-item"><span class="legend-dot" style="background:var(--almond)"></span>Nice-to-Have %</span>
+                </div>
+                <div class="sample-chart">
+                    <div class="chart-rows">
+                        <div class="chart-row"><span class="chart-label">Candidate 1</span><div class="chart-bars"><div class="bar-track"><div class="bar-fill bar-mh" style="width:90%"></div></div><div class="bar-track"><div class="bar-fill bar-total" style="width:86%"></div></div><div class="bar-track"><div class="bar-fill bar-nth" style="width:78%"></div></div></div></div>
+                        <div class="chart-row"><span class="chart-label">Candidate 3</span><div class="chart-bars"><div class="bar-track"><div class="bar-fill bar-mh" style="width:85%"></div></div><div class="bar-track"><div class="bar-fill bar-total" style="width:82%"></div></div><div class="bar-track"><div class="bar-fill bar-nth" style="width:72%"></div></div></div></div>
+                        <div class="chart-row"><span class="chart-label">Candidate 2</span><div class="chart-bars"><div class="bar-track"><div class="bar-fill bar-mh" style="width:71%"></div></div><div class="bar-track"><div class="bar-fill bar-total" style="width:68%"></div></div><div class="bar-track"><div class="bar-fill bar-nth" style="width:60%"></div></div></div></div>
+                        <div class="chart-row"><span class="chart-label">Candidate 4</span><div class="chart-bars"><div class="bar-track"><div class="bar-fill bar-mh" style="width:66%"></div></div><div class="bar-track"><div class="bar-fill bar-total" style="width:64%"></div></div><div class="bar-track"><div class="bar-fill bar-nth" style="width:62%"></div></div></div></div>
+                    </div>
+                </div>
+                <div class="sample-ranking">
+                    <div class="ranking-title">Final Ranking</div>
+                    <ol class="ranking-list">
+                        <li><span class="rank-candidate">Candidate 1</span><span class="tier-badge tier-a">A</span><span class="rank-score">86%</span><span class="rank-note">Highest alignment — strongest Azure Databricks + ADF + Medallion profile.</span></li>
+                        <li><span class="rank-candidate">Candidate 3</span><span class="tier-badge tier-a">A</span><span class="rank-score">82%</span><span class="rank-note">Excellent Databricks/Spark specialist, Unity Catalog expertise.</span></li>
+                        <li><span class="rank-candidate">Candidate 2</span><span class="tier-badge tier-b">B</span><span class="rank-score">68%</span><span class="rank-note">Solid mid-level engineer, strong ADF, moderate Databricks.</span></li>
+                        <li><span class="rank-candidate">Candidate 4</span><span class="tier-badge tier-b">B</span><span class="rank-score">64%</span><span class="rank-note">Good generalist/ML engineer; weaker BI pipeline alignment.</span></li>
+                    </ol>
+                </div>
+            </div>
+
             <div class="describe-footer">
                 <span class="describe-footer-note">Ready to set it up? Switch to Configure →</span>
                 <button class="describe-cta" onclick="switchTab('configure')">
