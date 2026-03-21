@@ -171,8 +171,8 @@
 
         /* ---- DESCRIBE PANEL ---- */
         .describe-panel {
-            background: var(--ivory); border-radius: 0 0 12px 12px;
-            border: 1px solid var(--cs-border); border-top: none;
+            background: var(--ivory); border-radius: 12px;
+            border: 1px solid var(--almond);
             box-shadow: var(--shadow-lg); overflow: hidden;
         }
         .describe-intro {
@@ -662,30 +662,34 @@
         .gem-no-knowledge-text strong { color: var(--gem-text); font-weight: 500; }
         .gem-no-knowledge-text a { color: var(--gem-accent); text-decoration: underline; }
 
-        /* ---- PLATFORM SELECTOR ---- */
-        .platform-selector {
-            display: flex; justify-content: center; padding: 0 24px 40px;
+        /* ---- PAGE-LEVEL TABS ---- */
+        .page-tabs {
+            display: flex; align-items: center; justify-content: center;
+            background: var(--pearl); border: 1px solid var(--almond); border-radius: 12px;
+            padding: 6px; margin: 0 auto 40px; max-width: 860px;
+            flex-wrap: wrap; gap: 4px;
         }
-        .platform-btn {
-            display: flex; align-items: center; gap: 8px;
-            font-family: 'Noto Sans', sans-serif; font-size: 0.84rem; font-weight: 500;
-            padding: 10px 22px; border: 1.5px solid var(--almond);
-            cursor: pointer; letter-spacing: 0.3px; transition: all 0.18s;
-            background: var(--ivory); color: var(--wine);
+        .page-tabs-divider { width: 1px; height: 28px; background: var(--almond); flex-shrink: 0; margin: 0 6px; }
+        .page-tabs-group { display: flex; align-items: center; gap: 2px; }
+        .page-tabs-group--platforms { background: rgba(255,255,255,0.55); border-radius: 8px; padding: 2px; }
+        .page-tab {
+            display: flex; align-items: center; gap: 7px;
+            font-family: 'Noto Sans', sans-serif; font-size: 0.82rem; font-weight: 500;
+            padding: 8px 14px; border-radius: 8px; border: none; cursor: pointer;
+            color: var(--wine); background: transparent;
+            transition: background 0.15s, color 0.15s; white-space: nowrap;
         }
-        .platform-btn:first-child { border-radius: 8px 0 0 8px; border-right: none; }
-        .platform-btn:not(:first-child):not(:last-child) { border-radius: 0; border-right: none; }
-        .platform-btn:last-child { border-radius: 0 8px 8px 0; }
-        .platform-btn--active { background: var(--wine); color: var(--ivory); border-color: var(--wine); }
-        .platform-btn:not(.platform-btn--active):hover { background: var(--pearl); }
-        .platform-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
-        .platform-sub {
+        .page-tab:hover { background: var(--ivory); }
+        .page-tab--active { background: var(--wine); color: var(--ivory); }
+        .page-tab svg { width: 14px; height: 14px; flex-shrink: 0; }
+        .page-tab-sub {
             font-family: 'Noto Sans Mono', monospace; font-size: 9px; font-weight: 500;
-            letter-spacing: 1px; text-transform: uppercase; padding: 2px 6px;
-            border-radius: 4px; margin-left: 2px;
+            letter-spacing: 1px; text-transform: uppercase; padding: 2px 6px; border-radius: 4px;
         }
-        .platform-btn--active .platform-sub { background: rgba(255,255,255,0.15); color: var(--ivory); }
-        .platform-btn:not(.platform-btn--active) .platform-sub { background: var(--pearl); color: var(--almond); }
+        .page-tab--active .page-tab-sub { background: rgba(255,255,255,0.15); color: var(--ivory); }
+        .page-tab:not(.page-tab--active) .page-tab-sub { background: var(--ivory); color: var(--almond); }
+        .page-content { display: none; }
+        .page-content--active { display: block; }
 
         /* ═══════════════════════════════════════
            GPT MOCK CHROME — ChatGPT Custom GPT Builder
@@ -927,44 +931,70 @@
         </div>
     </section>
 
-    <!-- PLATFORM SELECTOR -->
-    <div class="platform-selector" role="group" aria-label="Select platform">
-        <button class="platform-btn platform-btn--active" id="btn-m365" onclick="switchPlatform('m365')" aria-pressed="true">
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <rect width="7.5" height="7.5" fill="#f25022"/><rect x="8.5" width="7.5" height="7.5" fill="#7fba00"/>
-                <rect y="8.5" width="7.5" height="7.5" fill="#00a4ef"/><rect x="8.5" y="8.5" width="7.5" height="7.5" fill="#ffb900"/>
-            </svg>
-            M365 Copilot
-            <span class="platform-sub">Agent Builder</span>
-        </button>
-        <button class="platform-btn" id="btn-gpt" onclick="switchPlatform('gpt')" aria-pressed="false">
-            <svg viewBox="0 0 41 41" fill="currentColor" aria-hidden="true" style="width:16px;height:16px">
-                <path d="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078 0 0 0-10.855-4.835 9.964 9.964 0 0 0-6.371-3.445 10.079 10.079 0 0 0-10.418 4.815 9.963 9.963 0 0 0-6.664 4.834 10.079 10.079 0 0 0 1.24 11.817 9.965 9.965 0 0 0 .856 8.185 10.079 10.079 0 0 0 10.855 4.835 9.965 9.965 0 0 0 6.37 3.444 10.079 10.079 0 0 0 10.42-4.814 9.965 9.965 0 0 0 6.663-4.835 10.079 10.079 0 0 0-1.24-11.817zm-17.297 24.004c-1.918 0-3.708-.495-5.256-1.348.067-.037.186-.104.249-.149l8.725-5.038a1.419 1.419 0 0 0 .717-1.24v-12.29l3.688 2.128a.132.132 0 0 1 .072.096v10.19c-.004 3.91-3.175 7.083-7.195 7.083v-.432zm-15.466-6.498a7.032 7.032 0 0 1-.841-4.73c.056.033.154.094.223.132l8.725 5.039a1.418 1.418 0 0 0 1.431 0l10.654-6.15v4.256a.132.132 0 0 1-.053.109l-8.816 5.09c-3.387 1.955-7.723.801-9.323-2.746zm-2.014-17.26a7.028 7.028 0 0 1 3.672-3.095l-.005.257v10.076a1.416 1.416 0 0 0 .715 1.237l10.655 6.149-3.688 2.128a.132.132 0 0 1-.124.012l-8.816-5.094c-3.382-1.958-4.537-6.295-2.409-9.67zm30.137 6.083l-10.654-6.15 3.687-2.128a.132.132 0 0 1 .124-.013l8.816 5.094c3.387 1.958 4.537 6.296 2.409 9.671a7.028 7.028 0 0 1-3.672 3.095l.005-.257V23.344a1.416 1.416 0 0 0-.715-1.145zm3.666-4.73c-.057-.033-.156-.094-.224-.132l-8.725-5.038a1.419 1.419 0 0 0-1.431 0l-10.654 6.15V14.25a.132.132 0 0 1 .053-.109l8.816-5.09c3.387-1.954 7.723-.8 9.323 2.748a7.033 7.033 0 0 1 .842 4.728zm-23.162 7.633l-3.688-2.129a.132.132 0 0 1-.072-.096V13.707c.003-3.913 3.18-7.086 7.2-7.083a7.043 7.043 0 0 1 5.255 2.348c-.068.036-.185.103-.249.148l-8.725 5.039a1.416 1.416 0 0 0-.717 1.24l-.004 12.287zm2.004-4.318l4.742-2.74 4.742 2.738v5.476l-4.742 2.74-4.742-2.738V22.006z"/>
-            </svg>
-            ChatGPT
-            <span class="platform-sub">Custom GPT</span>
-        </button>
-        <button class="platform-btn" id="btn-gems" onclick="switchPlatform('gems')" aria-pressed="false">
-            <!-- Gemini sparkle icon -->
-            <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                <defs>
-                    <linearGradient id="gem-grad" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="#4285f4"/>
-                        <stop offset="100%" stop-color="#a855f7"/>
-                    </linearGradient>
-                </defs>
-                <path d="M14 2C14 2 14.6 9 18.5 12C22.4 15 26 14 26 14C26 14 22.4 13 18.5 16C14.6 19 14 26 14 26C14 26 13.4 19 9.5 16C5.6 13 2 14 2 14C2 14 5.6 15 9.5 12C13.4 9 14 2 14 2Z" fill="url(#gem-grad)"/>
-            </svg>
-            Gemini
-            <span class="platform-sub">Gems</span>
-        </button>
-    </div>
+    <!-- PAGE-LEVEL TABS -->
+    <nav class="page-tabs" aria-label="Page sections">
+        <!-- Group 1: What this can do -->
+        <div class="page-tabs-group">
+            <button class="page-tab" id="tab-describe" onclick="switchPageTab('describe')" aria-pressed="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
+                </svg>
+                What this can do
+            </button>
+        </div>
+
+        <div class="page-tabs-divider" aria-hidden="true"></div>
+
+        <!-- Group 2: Platform simulators -->
+        <div class="page-tabs-group page-tabs-group--platforms">
+            <button class="page-tab page-tab--active" id="tab-m365" onclick="switchPageTab('m365')" aria-pressed="true">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" style="width:14px;height:14px">
+                    <rect width="7.5" height="7.5" fill="#f25022"/><rect x="8.5" width="7.5" height="7.5" fill="#7fba00"/>
+                    <rect y="8.5" width="7.5" height="7.5" fill="#00a4ef"/><rect x="8.5" y="8.5" width="7.5" height="7.5" fill="#ffb900"/>
+                </svg>
+                M365 Copilot
+                <span class="page-tab-sub">Agent Builder</span>
+            </button>
+            <button class="page-tab" id="tab-gpt" onclick="switchPageTab('gpt')" aria-pressed="false">
+                <svg viewBox="0 0 41 41" fill="currentColor" aria-hidden="true" style="width:14px;height:14px">
+                    <path d="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078 0 0 0-10.855-4.835 9.964 9.964 0 0 0-6.371-3.445 10.079 10.079 0 0 0-10.418 4.815 9.963 9.963 0 0 0-6.664 4.834 10.079 10.079 0 0 0 1.24 11.817 9.965 9.965 0 0 0 .856 8.185 10.079 10.079 0 0 0 10.855 4.835 9.965 9.965 0 0 0 6.37 3.444 10.079 10.079 0 0 0 10.42-4.814 9.965 9.965 0 0 0 6.663-4.835 10.079 10.079 0 0 0-1.24-11.817zm-17.297 24.004c-1.918 0-3.708-.495-5.256-1.348.067-.037.186-.104.249-.149l8.725-5.038a1.419 1.419 0 0 0 .717-1.24v-12.29l3.688 2.128a.132.132 0 0 1 .072.096v10.19c-.004 3.91-3.175 7.083-7.195 7.083v-.432zm-15.466-6.498a7.032 7.032 0 0 1-.841-4.73c.056.033.154.094.223.132l8.725 5.039a1.418 1.418 0 0 0 1.431 0l10.654-6.15v4.256a.132.132 0 0 1-.053.109l-8.816 5.09c-3.387 1.955-7.723.801-9.323-2.746zm-2.014-17.26a7.028 7.028 0 0 1 3.672-3.095l-.005.257v10.076a1.416 1.416 0 0 0 .715 1.237l10.655 6.149-3.688 2.128a.132.132 0 0 1-.124.012l-8.816-5.094c-3.382-1.958-4.537-6.295-2.409-9.67zm30.137 6.083l-10.654-6.15 3.687-2.128a.132.132 0 0 1 .124-.013l8.816 5.094c3.387 1.958 4.537 6.296 2.409 9.671a7.028 7.028 0 0 1-3.672 3.095l.005-.257V23.344a1.416 1.416 0 0 0-.715-1.145zm3.666-4.73c-.057-.033-.156-.094-.224-.132l-8.725-5.038a1.419 1.419 0 0 0-1.431 0l-10.654 6.15V14.25a.132.132 0 0 1 .053-.109l8.816-5.09c3.387-1.954 7.723-.8 9.323 2.748a7.033 7.033 0 0 1 .842 4.728zm-23.162 7.633l-3.688-2.129a.132.132 0 0 1-.072-.096V13.707c.003-3.913 3.18-7.086 7.2-7.083a7.043 7.043 0 0 1 5.255 2.348c-.068.036-.185.103-.249.148l-8.725 5.039a1.416 1.416 0 0 0-.717 1.24l-.004 12.287zm2.004-4.318l4.742-2.74 4.742 2.738v5.476l-4.742 2.74-4.742-2.738V22.006z"/>
+                </svg>
+                ChatGPT
+                <span class="page-tab-sub">Custom GPT</span>
+            </button>
+            <button class="page-tab" id="tab-gems" onclick="switchPageTab('gems')" aria-pressed="false">
+                <svg viewBox="0 0 28 28" fill="none" aria-hidden="true" style="width:14px;height:14px">
+                    <defs>
+                        <linearGradient id="gem-grad2" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#4285f4"/>
+                            <stop offset="100%" stop-color="#a855f7"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M14 2C14 2 14.6 9 18.5 12C22.4 15 26 14 26 14C26 14 22.4 13 18.5 16C14.6 19 14 26 14 26C14 26 13.4 19 9.5 16C5.6 13 2 14 2 14C2 14 5.6 15 9.5 12C13.4 9 14 2 14 2Z" fill="url(#gem-grad2)"/>
+                </svg>
+                Gemini
+                <span class="page-tab-sub">Gems</span>
+            </button>
+        </div>
+
+        <div class="page-tabs-divider" aria-hidden="true"></div>
+
+        <!-- Group 3: Feedback -->
+        <div class="page-tabs-group">
+            <button class="page-tab" id="tab-feedback" onclick="switchPageTab('feedback')" aria-pressed="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                Feedback
+            </button>
+        </div>
+    </nav>
 
     <!-- MAIN SIMULATOR -->
-    <div class="config-wrapper" id="m365-wrapper">
+    <div class="config-wrapper page-content page-content--active" id="content-m365">
 
         <!-- Mock M365 Copilot Agent Builder chrome -->
-        <div class="cs-chrome" role="img" aria-label="M365 Copilot Agent Builder interface simulation">
+        <div class="cs-chrome" id="m365-chrome" role="img" aria-label="M365 Copilot Agent Builder interface simulation">
             <div class="cs-topbar">
                 <div class="cs-breadcrumb">
                     <svg class="cs-breadcrumb-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -976,14 +1006,10 @@
                     <span class="cs-breadcrumb-current">Recruiter</span>
                 </div>
             </div>
-            <nav class="cs-tabs" aria-label="Agent Builder tabs">
-                <button class="cs-tab" id="tab-describe" onclick="switchTab('describe')" aria-controls="panel-describe">Describe</button>
-                <button class="cs-tab cs-tab--active" id="tab-configure" onclick="switchTab('configure')" aria-controls="panel-configure">Configure</button>
-            </nav>
         </div>
 
         <!-- DESCRIBE PANEL -->
-        <div class="describe-panel config-panel" id="panel-describe" role="tabpanel">
+        <div class="describe-panel" id="panel-describe">
             <div class="describe-intro">
                 <span class="describe-intro-label">What this agent does</span>
                 <p>Upload a Job Description and one or more CVs — the agent screens, scores, and ranks candidates objectively, then helps you communicate results to clients and candidates with confidence.</p>
@@ -1156,7 +1182,7 @@
 
             <div class="describe-footer">
                 <span class="describe-footer-note">Ready to set it up? Switch to Configure →</span>
-                <button class="describe-cta" onclick="switchTab('configure')">
+                <button class="describe-cta" onclick="switchPageTab('m365')">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
                     Configure Agent
                 </button>
@@ -1164,7 +1190,7 @@
         </div>
 
         <!-- CONFIGURE PANEL -->
-        <div class="config-content config-panel config-panel--active" id="panel-configure" role="tabpanel">
+        <div class="config-content" id="panel-configure">
 
             <!-- SECTION 01: Identity -->
             <section class="config-section" id="sec-identity">
@@ -1410,7 +1436,7 @@ Offer: [A] Continue with follow-up analysis. [B] Produce clean output — no int
     </div>
 
     <!-- GPT SIMULATOR -->
-    <div class="config-wrapper" id="gpt-wrapper" style="display:none">
+    <div class="config-wrapper page-content" id="content-gpt">
 
         <!-- Mock ChatGPT Custom GPT Builder chrome -->
         <div class="gpt-chrome" role="img" aria-label="ChatGPT Custom GPT Builder interface simulation">
@@ -1710,6 +1736,7 @@ Only handle requests related to recruitment screening, staffing assessment, JD a
     </div>
 
     <!-- FEEDBACK -->
+    <div class="page-content" id="content-feedback">
     <section class="feedback-section" id="feedback">
         <h2>Share Your Feedback</h2>
         <p class="feedback-subtitle">Tried the agent? Have ideas for new tools? Let me know what works, what doesn't, and what you'd like to see next.</p>
@@ -1770,9 +1797,10 @@ Only handle requests related to recruitment screening, staffing assessment, JD a
             <p>Your feedback has been received. It helps shape better tools.</p>
         </div>
     </section>
+    </div><!-- /content-feedback -->
 
     <!-- GEMS SIMULATOR -->
-    <div class="config-wrapper" id="gems-wrapper" style="display:none">
+    <div class="config-wrapper page-content" id="content-gems">
 
         <div class="gem-chrome" role="img" aria-label="Google Gemini Gems Builder interface simulation">
             <div class="gem-topbar">
@@ -1948,27 +1976,46 @@ Only handle requests related to recruitment screening, staffing assessment, JD a
     </footer>
 
     <script>
-        // ── Platform switching ──────────────────────────────────────
-        function switchPlatform(name) {
-            const platforms = ['m365', 'gpt', 'gems'];
-            platforms.forEach(p => {
-                const wrapper = document.getElementById(p + '-wrapper');
-                const btn = document.getElementById('btn-' + p);
-                if (wrapper) wrapper.style.display = p === name ? 'block' : 'none';
+        // ── Page-level tab switching ────────────────────────────────
+        function switchPageTab(name) {
+            const tabs = ['describe', 'm365', 'gpt', 'gems', 'feedback'];
+
+            // Update tab button states
+            tabs.forEach(t => {
+                const btn = document.getElementById('tab-' + t);
                 if (btn) {
-                    btn.classList.toggle('platform-btn--active', p === name);
-                    btn.setAttribute('aria-pressed', String(p === name));
+                    btn.classList.toggle('page-tab--active', t === name);
+                    btn.setAttribute('aria-pressed', String(t === name));
                 }
             });
+
+            // Show/hide platform content wrappers
+            ['m365', 'gpt', 'gems', 'feedback'].forEach(t => {
+                const el = document.getElementById('content-' + t);
+                if (el) {
+                    el.classList.toggle('page-content--active', t === name || (name === 'describe' && t === 'm365'));
+                }
+            });
+
+            // Within M365 wrapper: toggle chrome + configure vs describe-only
+            const chrome   = document.getElementById('m365-chrome');
+            const configure = document.getElementById('panel-configure');
+            const describe  = document.getElementById('panel-describe');
+            if (chrome && configure && describe) {
+                if (name === 'describe') {
+                    chrome.style.display    = 'none';
+                    configure.style.display = 'none';
+                    describe.style.display  = 'block';
+                } else if (name === 'm365') {
+                    chrome.style.display    = 'block';
+                    configure.style.display = 'block';
+                    describe.style.display  = 'none';
+                }
+            }
         }
 
-        // ── M365 tab switching ──────────────────────────────────────
-        function switchTab(name) {
-            document.querySelectorAll('.cs-tab').forEach(t => t.classList.remove('cs-tab--active'));
-            document.querySelectorAll('.config-panel').forEach(p => p.classList.remove('config-panel--active'));
-            document.getElementById('tab-' + name).classList.add('cs-tab--active');
-            document.getElementById('panel-' + name).classList.add('config-panel--active');
-        }
+        // Initialise on load — start on M365 tab
+        switchPageTab('m365');
 
         // ── Copy field value to clipboard ───────────────────────────
         function copyField(id, btn) {
