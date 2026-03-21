@@ -10,6 +10,12 @@
     <meta property="og:title" content="AI Cheatsheets — lmherrera0">
     <meta property="og:description" content="Free downloadable guides on Prompt Engineering, AI Image Generation, and Agentic AI.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lmherrera0.github.io/cheatsheets/">
+    <meta property="og:image" content="https://lmherrera0.github.io/assets/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://lmherrera0.github.io/assets/og-image.svg">
+    <link rel="canonical" href="https://lmherrera0.github.io/cheatsheets/">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@400;500;600&family=Noto+Sans:wght@300;400;500;600&family=Noto+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -287,6 +293,11 @@
             font-size: 0.78rem;
         }
 
+        .skip-to-main { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+        .skip-to-main:focus { position: fixed; top: 8px; left: 8px; width: auto; height: auto; padding: 8px 16px; background: var(--wine); color: var(--ivory); text-decoration: none; font-family: 'Noto Sans', Arial, sans-serif; font-size: 0.85rem; border-radius: 4px; z-index: 9999; overflow: visible; }
+        .nav-back { font-family: 'Noto Sans', Arial, sans-serif; font-size: 0.82rem; color: var(--wine); text-decoration: none; font-weight: 400; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s; }
+        .nav-back:hover { color: var(--rose-clay); }
+
         /* ─── Responsive ─── */
         @media (max-width: 640px) {
             .header { padding: 56px 20px 36px; }
@@ -299,8 +310,9 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-to-main">Skip to main content</a>
     <nav style="padding: 20px 24px; max-width: 960px; margin: 0 auto;">
-        <a href="../" style="font-family: 'Noto Sans', Arial, sans-serif; font-size: 0.82rem; color: var(--wine); text-decoration: none; font-weight: 400; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s;" onmouseover="this.style.color='var(--rose-clay)'" onmouseout="this.style.color='var(--wine)'">
+        <a href="../" class="nav-back">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
             lmherrera0
         </a>
@@ -312,7 +324,7 @@
         <span class="tagline" aria-label="Clarity, Decisions, Impact">Clarity ∞ Decisions ∞ Impact</span>
     </header>
 
-    <main class="cards-container">
+    <main id="main" class="cards-container">
         <!-- Card 1: Prompt Engineering -->
         <article class="card">
             <div class="card-icon-area">

@@ -11,6 +11,11 @@
     <meta property="og:description" content="Personal site and open resources by Liz Magaly Herrera. Practitioner, researcher, builder.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lmherrera0.github.io/">
+    <meta property="og:image" content="https://lmherrera0.github.io/assets/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://lmherrera0.github.io/assets/og-image.svg">
+    <link rel="canonical" href="https://lmherrera0.github.io/">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@400;500;600&family=Noto+Sans:wght@300;400;500;600&family=Noto+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -74,10 +79,13 @@
         .footer a { color: var(--wine); text-decoration: underline; font-weight: 400; transition: color 0.2s; }
         .footer a:hover { color: var(--rose-clay); }
         .footer .handle { font-family: 'Noto Sans Mono', Courier New, monospace; font-size: 0.78rem; }
+        .skip-to-main { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+        .skip-to-main:focus { position: fixed; top: 8px; left: 8px; width: auto; height: auto; padding: 8px 16px; background: var(--wine); color: var(--ivory); text-decoration: none; font-family: 'Noto Sans', Arial, sans-serif; font-size: 0.85rem; border-radius: 4px; z-index: 9999; overflow: visible; }
         @media (max-width: 640px) { .hero { padding: 64px 20px 44px; } .cards-container { padding: 0 16px 56px; gap: 16px; } .card-icon-area { padding: 28px 22px 16px; } .card-body { padding: 0 22px; } .card-tags { padding: 14px 22px 0; } .card-action { padding: 20px 22px 24px; } }
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-to-main">Skip to main content</a>
     <header class="hero">
         <span class="hero-handle">lmherrera0</span>
         <h1>Liz Magaly Herrera</h1>
@@ -90,7 +98,7 @@
         <h2>Explore</h2>
         <p>Open resources and projects — free to browse, download, and reference.</p>
     </section>
-    <main class="cards-container">
+    <main id="main" class="cards-container">
         <article class="card">
             <div class="card-icon-area">
                 <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true" role="img"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"/></svg></div>

@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recruiter Assessment Agent — lmherrera0</title>
-    <meta name="description" content="Ready-to-use Microsoft Copilot Studio agent for objective recruitment screening. Copy each field directly into your Copilot agent.">
+    <meta name="description" content="AI agent for objective candidate screening — works on M365 Copilot, ChatGPT, and Gemini Gems. Instructions, prompts, and scoring rubric are pre-configured and ready to copy.">
     <meta name="author" content="Liz Magaly Herrera">
+    <meta property="og:title" content="Recruiter Assessment Agent — lmherrera0">
+    <meta property="og:description" content="AI agent for objective candidate screening — works on M365 Copilot, ChatGPT, and Gemini Gems. Everything is pre-configured and ready to copy.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lmherrera0.github.io/recruiter/">
+    <meta property="og:image" content="https://lmherrera0.github.io/assets/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://lmherrera0.github.io/assets/og-image.svg">
+    <link rel="canonical" href="https://lmherrera0.github.io/recruiter/">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@400;500;600&family=Noto+Sans:wght@300;400;500;600&family=Noto+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -887,9 +896,12 @@
             .shortlist-rows { grid-template-columns: 1fr; }
             .shortlist-col + .shortlist-col { border-left: none; border-top: 1px solid var(--almond); }
         }
+        .skip-to-main { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+        .skip-to-main:focus { position: fixed; top: 8px; left: 8px; width: auto; height: auto; padding: 8px 16px; background: var(--wine); color: var(--ivory); text-decoration: none; font-family: 'Noto Sans', Arial, sans-serif; font-size: 0.85rem; border-radius: 4px; z-index: 9999; overflow: visible; }
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-to-main">Skip to main content</a>
 
     <!-- NAV -->
     <nav class="site-nav">
@@ -969,7 +981,7 @@
     </section>
 
     <!-- PAGE-LEVEL TABS -->
-    <nav class="page-tabs" aria-label="Page sections">
+    <nav id="main" class="page-tabs" aria-label="Page sections">
         <!-- Group 1: What this can do -->
         <div class="page-tabs-group page-tabs-group--standalone">
             <button class="page-tab" id="tab-describe" onclick="switchPageTab('describe')" aria-pressed="false">

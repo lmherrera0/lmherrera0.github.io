@@ -11,6 +11,11 @@
     <meta property="og:description" content="Curated public resources for practitioners building with Claude and agentic AI.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lmherrera0.github.io/resources/">
+    <meta property="og:image" content="https://lmherrera0.github.io/assets/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://lmherrera0.github.io/assets/og-image.svg">
+    <link rel="canonical" href="https://lmherrera0.github.io/resources/">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@400;500;600&family=Noto+Sans:wght@300;400;500;600&family=Noto+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -111,9 +116,12 @@
             .card-tags { padding: 10px 16px 0; }
             .card-action { padding: 12px 16px 16px; }
         }
+        .skip-to-main { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+        .skip-to-main:focus { position: fixed; top: 8px; left: 8px; width: auto; height: auto; padding: 8px 16px; background: var(--wine); color: var(--ivory); text-decoration: none; font-family: 'Noto Sans', Arial, sans-serif; font-size: 0.85rem; border-radius: 4px; z-index: 9999; overflow: visible; }
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-to-main">Skip to main content</a>
 
     <nav class="nav">
         <a href="../">
@@ -132,7 +140,7 @@
     <div class="divider" role="separator" aria-hidden="true"></div>
 
     <!-- Section 1: Get Started -->
-    <section class="section" aria-labelledby="section-get-started">
+    <section id="main" class="section" aria-labelledby="section-get-started">
         <div class="section-header">
             <h2 id="section-get-started">Get Started</h2>
             <p>Official documentation and tooling to install, understand, and use Claude Code.</p>
