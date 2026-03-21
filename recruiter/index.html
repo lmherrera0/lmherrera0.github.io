@@ -87,6 +87,7 @@
             color: var(--text-heading); margin-bottom: 20px;
             padding: 6px 16px; border: 1.5px solid var(--almond); border-radius: 100px;
         }
+        .hero-tag:empty { display: none; }
         .hero h1 {
             font-family: 'Noto Serif Display', Georgia, serif; font-size: clamp(1.75rem, 4vw, 2.5rem);
             font-weight: 500; color: var(--mahogany); margin-bottom: 14px; letter-spacing: -0.3px; line-height: 1.2;
@@ -900,14 +901,16 @@
 
     <!-- HERO -->
     <header class="hero">
-        <span class="hero-tag">M365 Copilot · Agent Builder</span>
+        <span class="hero-tag" id="hero-tag">M365 Copilot · Agent Builder</span>
         <h1>Recruiter Assessment Agent</h1>
-        <p class="hero-desc">An AI agent that screens candidates against job descriptions using objective scoring and confidence markers. Copy each field below directly into your M365 Copilot agent — no setup required.</p>
+        <p class="hero-desc" id="hero-desc">Copy each field below directly into your M365 Copilot Agent Builder — no setup required.</p>
     </header>
 
     <!-- SETUP GUIDE -->
     <section class="setup-guide" aria-label="Setup steps">
-        <div class="guide-inner">
+
+        <!-- M365 steps (default) -->
+        <div class="guide-inner" id="steps-m365">
             <div class="guide-step">
                 <span class="step-num">01</span>
                 <strong>Open M365 Copilot</strong>
@@ -924,6 +927,45 @@
                 <p>Test your agent in the preview panel before publishing</p>
             </div>
         </div>
+
+        <!-- ChatGPT steps -->
+        <div class="guide-inner" id="steps-gpt" style="display:none">
+            <div class="guide-step">
+                <span class="step-num">01</span>
+                <strong>Open ChatGPT</strong>
+                <p>Go to chatgpt.com, click <em>Explore GPTs</em>, then <em>Create</em> in the top right</p>
+            </div>
+            <div class="guide-step">
+                <span class="step-num">02</span>
+                <strong>Paste each field</strong>
+                <p>Copy Name, Description, and Instructions into the <em>Configure</em> tab</p>
+            </div>
+            <div class="guide-step">
+                <span class="step-num">03</span>
+                <strong>Upload &amp; Save</strong>
+                <p>Attach <em>scoring-rubric.txt</em> in the Knowledge section, then Save your GPT</p>
+            </div>
+        </div>
+
+        <!-- Gemini Gems steps -->
+        <div class="guide-inner" id="steps-gems" style="display:none">
+            <div class="guide-step">
+                <span class="step-num">01</span>
+                <strong>Open Google Gemini</strong>
+                <p>Go to gemini.google.com, click <em>Gems</em> in the left sidebar, then <em>New gem</em></p>
+            </div>
+            <div class="guide-step">
+                <span class="step-num">02</span>
+                <strong>Paste instructions</strong>
+                <p>Copy the Instructions field below — role criteria are already embedded, no file upload needed</p>
+            </div>
+            <div class="guide-step">
+                <span class="step-num">03</span>
+                <strong>Name &amp; Save</strong>
+                <p>Give your Gem a name and click <em>Save</em> to publish it</p>
+            </div>
+        </div>
+
     </section>
 
     <!-- PAGE-LEVEL TABS -->
@@ -1968,6 +2010,30 @@ Only handle requests related to recruitment screening, staffing assessment, JD a
     </footer>
 
     <script>
+        // ── Hero + steps content per tab ───────────────────────────
+        const heroData = {
+            describe: {
+                tag:  '',
+                desc: 'An AI agent that screens candidates against job descriptions using objective scoring and confidence markers. See how it works below, then pick your platform to set it up.'
+            },
+            m365: {
+                tag:  'M365 Copilot · Agent Builder',
+                desc: 'Copy each field below directly into your M365 Copilot Agent Builder — no setup required.'
+            },
+            gpt: {
+                tag:  'ChatGPT · Custom GPT Builder',
+                desc: 'Copy each field below directly into your ChatGPT Custom GPT — instructions, name, and rubric file ready to go.'
+            },
+            gems: {
+                tag:  'Google Gemini · Gems',
+                desc: 'Copy the instructions below directly into your Google Gemini Gem — role criteria are embedded, no file upload needed.'
+            },
+            feedback: {
+                tag:  '',
+                desc: 'Tried the agent? Have ideas for new tools? Let us know what works and what you\'d like to see next.'
+            }
+        };
+
         // ── Page-level tab switching ────────────────────────────────
         function switchPageTab(name) {
             const tabs = ['describe', 'm365', 'gpt', 'gems', 'feedback'];
@@ -1990,7 +2056,7 @@ Only handle requests related to recruitment screening, staffing assessment, JD a
             });
 
             // Within M365 wrapper: toggle chrome + configure vs describe-only
-            const chrome   = document.getElementById('m365-chrome');
+            const chrome    = document.getElementById('m365-chrome');
             const configure = document.getElementById('panel-configure');
             const describe  = document.getElementById('panel-describe');
             if (chrome && configure && describe) {
@@ -2004,6 +2070,22 @@ Only handle requests related to recruitment screening, staffing assessment, JD a
                     describe.style.display  = 'none';
                 }
             }
+
+            // Update hero tag + description
+            const data = heroData[name];
+            if (data) {
+                document.getElementById('hero-tag').textContent  = data.tag;
+                document.getElementById('hero-desc').textContent = data.desc;
+            }
+
+            // Show/hide setup guide and correct steps block
+            const guideEl = document.querySelector('.setup-guide');
+            const hideGuide = name === 'describe' || name === 'feedback';
+            if (guideEl) guideEl.style.display = hideGuide ? 'none' : 'block';
+            ['m365', 'gpt', 'gems'].forEach(p => {
+                const el = document.getElementById('steps-' + p);
+                if (el) el.style.display = p === name ? 'grid' : 'none';
+            });
         }
 
         // Initialise on load — start on M365 tab
