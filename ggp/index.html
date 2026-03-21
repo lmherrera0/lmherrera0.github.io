@@ -12,10 +12,10 @@
         /* GGP-specific local styles only */
 
         /* GGP Marker colours */
-        .ggp-marker--confirmed { background: #2e7d32; color: #fff; }
-        .ggp-marker--gap { background: #c62828; color: #fff; }
+        .ggp-marker--confirmed { background: #2e7d32; color: var(--ivory); }
+        .ggp-marker--gap { background: #c62828; color: var(--ivory); }
         .ggp-marker--inference { background: #f9a825; color: #3e2723; }
-        .ggp-marker--unverified { background: #e65100; color: #fff; }
+        .ggp-marker--unverified { background: #e65100; color: var(--ivory); }
         .ggp-marker--risk { background: var(--mahogany); color: var(--ivory); }
 
         /* Marker cards grid */
@@ -207,20 +207,20 @@
 </nav>
 
 <!-- Page-Level Tabs -->
-<nav class="page-tabs" aria-label="Page sections">
+<nav class="page-tabs" role="tablist" aria-label="Page sections">
     <div class="page-tabs-group page-tabs-group--platforms">
-        <button class="page-tab page-tab--active" onclick="switchPageTab('what')" id="ptab-what">What It Does</button>
-        <button class="page-tab" onclick="switchPageTab('configure')" id="ptab-configure">Configure</button>
+        <button class="page-tab page-tab--active" role="tab" aria-selected="true" aria-controls="page-what" onclick="switchPageTab('what')" id="ptab-what">What It Does</button>
+        <button class="page-tab" role="tab" aria-selected="false" aria-controls="page-configure" onclick="switchPageTab('configure')" id="ptab-configure">Configure</button>
     </div>
     <div class="page-tabs-divider"></div>
     <div class="page-tabs-group page-tabs-group--standalone">
-        <button class="page-tab" onclick="switchPageTab('research')" id="ptab-research">Research</button>
-        <button class="page-tab" onclick="switchPageTab('feedback')" id="ptab-feedback">Feedback</button>
+        <button class="page-tab" role="tab" aria-selected="false" aria-controls="page-research" onclick="switchPageTab('research')" id="ptab-research">Research</button>
+        <button class="page-tab" role="tab" aria-selected="false" aria-controls="page-feedback" onclick="switchPageTab('feedback')" id="ptab-feedback">Feedback</button>
     </div>
 </nav>
 
 <!-- Tab 1: What It Does -->
-<div class="page-content page-content--active" id="page-what">
+<div class="page-content page-content--active" id="page-what" role="tabpanel" aria-labelledby="ptab-what">
 
     <!-- A) Hero -->
     <header class="hero">
@@ -402,7 +402,7 @@
 </div>
 
 <!-- Tab 2: Configure — built in Task 7 -->
-<div class="page-content" id="page-configure">
+<div class="page-content" id="page-configure" role="tabpanel" aria-labelledby="ptab-configure">
 
     <!-- Setup Guide -->
     <section class="setup-guide" aria-label="Setup steps">
@@ -504,7 +504,7 @@
                             <button class="claude-expand-btn" onclick="toggleExpand('claude-instructions',this)" aria-expanded="false">Expand</button>
                         </div>
                     </div>
-                    <textarea id="claude-instructions" class="claude-textarea claude-textarea--code claude-textarea--collapsed" readonly>You are an expert in the GroundedGate Protocol (GGP v2.0), an anti-hallucination system for professional communications.
+                    <textarea id="claude-instructions" class="claude-textarea claude-textarea--code claude-textarea--collapsed" readonly>You are an expert in the Grounded Gate Protocol (GGP v4.5), an anti-hallucination system for professional communications.
 
 Your role: Help users create verified, transparent content by applying GGP discipline.
 
@@ -1163,7 +1163,7 @@ All eight validation points must pass before delivery. All CONFIRMED facts must 
                             <button class="gem-expand-btn" onclick="toggleExpand('gem-ggp-instructions',this)" aria-expanded="false">Expand</button>
                         </div>
                     </div>
-                    <textarea id="gem-ggp-instructions" class="gem-textarea gem-textarea--code gem-textarea--collapsed" readonly>You are an expert in the GroundedGate Protocol (GGP v2.0), an anti-hallucination system for professional communications.
+                    <textarea id="gem-ggp-instructions" class="gem-textarea gem-textarea--code gem-textarea--collapsed" readonly>You are an expert in the Grounded Gate Protocol (GGP v4.5), an anti-hallucination system for professional communications.
 
 Your role: Help users create verified, transparent content by applying GGP discipline.
 
@@ -1320,7 +1320,7 @@ NOTES:
 </div>
 
 <!-- Tab 3: Research — built in Task 8 -->
-<div class="page-content" id="page-research">
+<div class="page-content" id="page-research" role="tabpanel" aria-labelledby="ptab-research">
     <header class="hero">
         <span class="hero-tag">Published · February 2026</span>
         <h1>The Research Behind GGP</h1>
@@ -1411,10 +1411,10 @@ NOTES:
 </div>
 
 <!-- Tab 4: Feedback — built in Task 8 -->
-<div class="page-content" id="page-feedback">
+<div class="page-content" id="page-feedback" role="tabpanel" aria-labelledby="ptab-feedback">
     <section class="feedback-section" id="feedback">
         <h2>Share Your Feedback</h2>
-        <p class="fb-subtitle">Used GGP in your workflow? Found a hallucination it missed? Let me know what works, what doesn't, and what you'd like to see next.</p>
+        <p class="feedback-subtitle">Used GGP in your workflow? Found a hallucination it missed? Let me know what works, what doesn't, and what you'd like to see next.</p>
 
         <form id="feedback-form" class="fb-form">
             <input type="hidden" name="_subject" value="GGP — Website Feedback">
@@ -1487,7 +1487,10 @@ function switchPageTab(name) {
         const content = document.getElementById('page-' + t);
         const tab = document.getElementById('ptab-' + t);
         if (content) content.classList.toggle('page-content--active', t === name);
-        if (tab) tab.classList.toggle('page-tab--active', t === name);
+        if (tab) {
+            tab.classList.toggle('page-tab--active', t === name);
+            tab.setAttribute('aria-selected', String(t === name));
+        }
     });
 }
 
@@ -1508,11 +1511,15 @@ function switchGgpPlatform(name) {
 function copyField(id, btn) {
     var el = document.getElementById(id);
     if (!el) return;
-    var origText = btn.textContent;
+    var origHTML = btn.innerHTML;
+    var successClass = btn.classList.contains('gpt-copy-btn') ? 'gpt-copy-btn--success'
+        : btn.classList.contains('gem-copy-btn') ? 'gem-copy-btn--success'
+        : btn.classList.contains('claude-copy-btn') ? 'claude-copy-btn--success'
+        : 'copy-btn--success';
     navigator.clipboard.writeText(el.value).then(function() {
-        btn.textContent = 'Copied';
-        btn.classList.add('copy-btn--success');
-        setTimeout(function() { btn.textContent = origText; btn.classList.remove('copy-btn--success'); }, 2000);
+        btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" style="width:13px;height:13px"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg> Copied';
+        btn.classList.add(successClass);
+        setTimeout(function() { btn.innerHTML = origHTML; btn.classList.remove(successClass); }, 2000);
     }).catch(function() { el.select(); document.execCommand('copy'); });
 }
 
