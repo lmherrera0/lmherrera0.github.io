@@ -1,0 +1,232 @@
+RECRUITER ASSESSMENT AGENT — SCORING RUBRIC
+============================================
+Reference file for the Custom GPT.
+Upload this file in Configure → Knowledge.
+
+The GPT will reference it automatically in every conversation
+to apply predefined criteria for common role types.
+
+
+SCORING SCALE
+-------------
+0 = Absent        — not mentioned anywhere in the profile
+1 = Basic         — mentioned briefly, limited evidence of application
+2 = Moderate      — demonstrated with some context or examples
+3 = Strong        — well-evidenced with specific projects, outcomes, or certifications
+4 = Expert        — deep specialisation, leadership in this area, or recognised expertise
+
+
+WEIGHTING
+---------
+Must-Have criteria:    70% of total score
+Nice-to-Have criteria: 30% of total score
+Total = (Must-Have % x 0.70) + (Nice-to-Have % x 0.30)
+
+
+TIER THRESHOLDS
+---------------
+Tier A —  >= 80%  — Recommend for interview, strong alignment
+Tier B — 65-79%  — Recommend for interview, some gaps to explore
+Tier C — 50-64%  — Hold, consider for future roles
+Tier D —  < 50%  — Not aligned for this role at this time
+
+
+TIEBREAKER ORDER
+----------------
+1. Must-Have score (higher wins)
+2. Certifications directly relevant to the role
+3. Years of relevant experience
+4. Nice-to-Have score
+5. Flag as equal — recruiter decides
+
+
+CONFIDENCE MARKERS
+------------------
+CONFIRMED — Directly stated in the uploaded document
+INFERENCE — Reasonable deduction based on role titles, context, or implied skills
+GAP       — Required by JD but absent from the profile
+RISK      — Present but warrants verification (short tenure, scope mismatch, overqualified)
+
+
+---
+ROLE TYPE CRITERIA BANKS
+=========================
+Use these as starting points. Always defer to the JD over this reference.
+If the JD does not distinguish must-have from nice-to-have, ask the recruiter
+to confirm before scoring.
+
+
+-------------------------------------------------
+ROLE TYPE: DATA ENGINEER
+-------------------------------------------------
+Must-Have:
+- Cloud data platform (Azure / AWS / GCP) experience
+- SQL proficiency (intermediate to advanced)
+- ETL / ELT pipeline design and development
+- Python or Scala for data processing
+- Data modelling concepts (star schema, normalisation)
+
+Nice-to-Have:
+- Databricks / Apache Spark
+- dbt (data build tool)
+- Azure Data Factory or equivalent orchestration
+- CI/CD for data pipelines
+- Medallion / lakehouse architecture
+
+
+-------------------------------------------------
+ROLE TYPE: BUSINESS ANALYST
+-------------------------------------------------
+Must-Have:
+- Requirements elicitation and documentation
+- Stakeholder management and communication
+- Process mapping (AS-IS / TO-BE)
+- Agile / Scrum experience
+- Business case development
+
+Nice-to-Have:
+- Domain knowledge (financial services / public sector / retail)
+- Power BI or similar BI tools
+- BPMN or process notation
+- BCS / CBAP certification
+- SQL for data queries
+
+
+-------------------------------------------------
+ROLE TYPE: PROJECT MANAGER
+-------------------------------------------------
+Must-Have:
+- End-to-end project delivery (budget, timeline, risk)
+- Stakeholder and executive communication
+- Risk and issue management
+- Agile or waterfall delivery methodology
+- Team leadership and resource management
+
+Nice-to-Have:
+- PMP / PRINCE2 / APM certification
+- Programme management experience
+- Change management
+- PMO governance experience
+- Sector-specific domain knowledge
+
+
+-------------------------------------------------
+ROLE TYPE: CLOUD SOLUTIONS ARCHITECT
+-------------------------------------------------
+Must-Have:
+- Cloud architecture design (Azure / AWS / GCP)
+- Infrastructure as Code (Terraform / Bicep / CloudFormation)
+- Security and compliance in cloud environments
+- Networking fundamentals (VNet, VPC, DNS, load balancing)
+- Solution design documentation and stakeholder presentation
+
+Nice-to-Have:
+- Azure Solutions Architect Expert / AWS Certified Solutions Architect
+- DevOps / CI-CD pipeline design
+- Cost optimisation and FinOps
+- Hybrid or multi-cloud architecture
+- Migration strategy and execution
+
+
+-------------------------------------------------
+ROLE TYPE: PRODUCT MANAGER
+-------------------------------------------------
+Must-Have:
+- Product roadmap definition and prioritisation
+- Cross-functional team collaboration (engineering, design, business)
+- User research and feedback synthesis
+- Data-driven decision making (product metrics, KPIs)
+- Stakeholder communication and alignment
+
+Nice-to-Have:
+- B2B SaaS or enterprise product experience
+- OKR / Jobs-to-be-Done framework
+- A/B testing and experimentation
+- SQL for product analytics
+- Domain expertise (fintech / healthtech / enterprise software)
+
+
+-------------------------------------------------
+ROLE TYPE: CHANGE MANAGEMENT CONSULTANT
+-------------------------------------------------
+Must-Have:
+- Change impact assessment and stakeholder mapping
+- Training needs analysis and delivery
+- Communications planning
+- Resistance management strategies
+- Programme integration (alongside PMs and workstream leads)
+
+Nice-to-Have:
+- Prosci ADKAR certification
+- Organisational design experience
+- Digital transformation programmes
+- Executive coaching or facilitation
+- HR business partnering background
+
+
+-------------------------------------------------
+ROLE TYPE: CYBERSECURITY ANALYST
+-------------------------------------------------
+Must-Have:
+- Threat detection and incident response
+- SIEM tools (Splunk, Microsoft Sentinel, or equivalent)
+- Vulnerability assessment and management
+- Security frameworks (NIST, ISO 27001, CIS)
+- Network and endpoint security fundamentals
+
+Nice-to-Have:
+- CISSP / CEH / CompTIA Security+ certification
+- Cloud security (Azure Security Center / AWS Security Hub)
+- Penetration testing experience
+- SOC operations experience
+- Scripting for security automation (Python / PowerShell)
+
+
+-------------------------------------------------
+ROLE TYPE: DATA ANALYST
+-------------------------------------------------
+Must-Have:
+- SQL (intermediate to advanced)
+- Data visualisation (Power BI / Tableau / Looker)
+- Data cleaning and transformation
+- Statistical analysis and interpretation
+- Communicating insights to non-technical stakeholders
+
+Nice-to-Have:
+- Python or R for analysis
+- DAX or calculated measures in BI tools
+- Experience with cloud data warehouses (Snowflake / BigQuery / Synapse)
+- A/B testing or experimentation
+- Domain knowledge (finance / operations / marketing)
+
+
+-------------------------------------------------
+ROLE TYPE: DELIVERY LEAD / ENGAGEMENT MANAGER
+-------------------------------------------------
+Must-Have:
+- Client relationship management at senior level
+- Delivery oversight across multiple workstreams
+- Financial management (P&L, margins, forecasting)
+- Risk escalation and issue resolution
+- Team leadership and performance management
+
+Nice-to-Have:
+- Consulting or professional services background
+- Sector expertise (public sector / financial services / energy)
+- Bid and proposal writing
+- Capability building and people development
+- CRM or project portfolio tooling
+
+
+---
+USAGE NOTES
+===========
+- If a JD matches one of the role types above, use that criteria bank
+  as the default scoring framework.
+- If the JD provides its own explicit criteria, always defer to the JD.
+- If the JD is incomplete or ambiguous, use the closest criteria bank
+  as a supplement and flag assumptions to the recruiter.
+- Criteria banks are starting points — adapt language and specificity
+  to match the JD exactly.
+- For roles not listed here, extract criteria directly from the JD and
+  ask the recruiter to confirm must-have vs nice-to-have split.
