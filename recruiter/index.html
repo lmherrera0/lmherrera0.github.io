@@ -51,9 +51,14 @@
             --cs-tab-active: #ffffff;
             --cs-tab-inactive: rgba(255,255,255,0.55);
             --cs-accent: #7b68ee;
+            --cs-accent-soft: #9b8cf0;
             --cs-surface: #ffffff;
+            --cs-surface-alt: #fafafa;
+            --cs-code-bg: #f8f8f6;
             --cs-border: #e5e5e5;
             --cs-label: #616161;
+            --cs-text: #1a1a1a;
+            --cs-text-body: #333333;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -155,7 +160,7 @@
         }
         .cs-agent-icon {
             width: 36px; height: 36px; border-radius: 8px;
-            background: linear-gradient(135deg, var(--cs-accent), #9b8cf0);
+            background: linear-gradient(135deg, var(--cs-accent), var(--cs-accent-soft));
             display: flex; align-items: center; justify-content: center;
             font-size: 12px; font-weight: 600; color: white; font-family: 'Noto Sans Mono', monospace;
             flex-shrink: 0;
@@ -211,13 +216,13 @@
             color: var(--almond); background: var(--ivory); border: 1px solid var(--almond);
             border-radius: 100px; padding: 2px 10px; letter-spacing: 0.3px;
         }
-        .char-badge--warning { color: var(--terracotta); border-color: var(--terracotta); background: #fef6f3; }
-        .char-badge--over { color: #c0392b; border-color: #c0392b; background: #fdecea; }
+        .char-badge--warning { color: var(--terracotta); border-color: var(--terracotta); background: var(--ivory); }
+        .char-badge--over { color: var(--mahogany); border-color: var(--mahogany); background: var(--ivory); }
 
         /* Textareas */
         .field-textarea {
             width: 100%; border: 1px solid var(--cs-border); border-radius: 8px;
-            background: #fafafa; color: #1a1a1a; resize: none;
+            background: var(--cs-surface-alt); color: var(--cs-text); resize: none;
             font-family: 'Noto Sans', sans-serif; font-size: 0.88rem; line-height: 1.6;
             padding: 12px 14px; transition: border-color 0.2s;
             outline: none; cursor: default;
@@ -227,7 +232,7 @@
         .field-textarea--md { height: 80px; }
         .field-textarea--code {
             font-family: 'Noto Sans Mono', monospace; font-size: 0.78rem; line-height: 1.65;
-            background: #f8f8f6;
+            background: var(--cs-code-bg);
         }
         .field-textarea--collapsed { height: 180px; overflow-y: hidden; }
         .field-textarea--expanded { height: 560px; overflow-y: auto; }
@@ -265,7 +270,7 @@
         .prompt-header {
             display: flex; align-items: center; gap: 10px;
             padding: 12px 14px 10px; border-bottom: 1px solid var(--cs-border);
-            background: #fafafa;
+            background: var(--cs-surface-alt);
         }
         .prompt-num {
             font-family: 'Noto Sans Mono', monospace; font-size: 10px; font-weight: 500;
@@ -277,14 +282,14 @@
         }
         .prompt-card .field-textarea {
             border: none; border-radius: 0; background: white;
-            font-size: 0.8rem; padding: 12px 14px; color: #333;
+            font-size: 0.8rem; padding: 12px 14px; color: var(--cs-text-body);
         }
         .prompt-card .field-textarea:focus { box-shadow: none; border: none; }
 
         /* Expand button inside prompt */
         .prompt-expand-row {
             border-top: 1px solid var(--cs-border); padding: 6px 14px;
-            display: flex; justify-content: flex-end; background: #fafafa;
+            display: flex; justify-content: flex-end; background: var(--cs-surface-alt);
         }
         .prompt-expand-btn {
             font-family: 'Noto Sans Mono', monospace; font-size: 10px; font-weight: 400;
