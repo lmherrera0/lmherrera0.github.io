@@ -1,1 +1,1579 @@
-<!DOCTYPE html><html lang="en" class="__variable_cdb805 __variable_c17750 __variable_4b4fe4"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/ggp/_next/static/media/1755441e3a2fa970-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/ggp/_next/static/media/54021f693ae17c82-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/ggp/_next/static/media/ec14413c594b3356-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/ggp/_next/static/css/dd85cdd64fb85a55.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/ggp/_next/static/chunks/webpack-fc4ab772fd8cf4c2.js"/><script src="/ggp/_next/static/chunks/fd9d1056-ae97a97996823271.js" async=""></script><script src="/ggp/_next/static/chunks/117-dd494fefa1c9a8d0.js" async=""></script><script src="/ggp/_next/static/chunks/main-app-8f1f62ecb7c49248.js" async=""></script><script src="/ggp/_next/static/chunks/app/page-a5165dd660af7e3b.js" async=""></script><meta name="theme-color" content="#4C2632"/><title>Grounded Gate Protocol (GGP) — Anti-Hallucination Framework</title><meta name="description" content="Open-source anti-hallucination framework for AI-generated professional communications. Visual markers, source verification, and risk screening."/><meta property="og:title" content="Grounded Gate Protocol (GGP)"/><meta property="og:description" content="Open-source anti-hallucination framework for AI-generated professional communications."/><meta property="og:url" content="https://lmherrera0.github.io/ggp"/><meta property="og:image" content="https://lmherrera0.github.io/assets/og-image.svg"/><meta property="og:site_name" content="Grounded Gate Protocol"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Grounded Gate Protocol (GGP)"/><meta name="twitter:description" content="Open-source anti-hallucination framework for AI-generated professional communications."/><meta name="twitter:image" content="https://lmherrera0.github.io/assets/og-image.svg"/><link rel="canonical" href="https://lmherrera0.github.io/ggp/"/><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/><meta name="next-size-adjust"/><script src="/ggp/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body><a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 focus:bg-terracotta focus:text-ivory focus:rounded-bvvg focus:font-sans focus:font-semibold focus:text-sm">Skip to content</a><nav class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300 bg-transparent"><div class="section-container flex items-center justify-between h-14"><a href="#" class="font-serif font-bold text-lg transition-colors text-ivory">GGP</a><div class="hidden md:flex items-center gap-6"><a href="#problem" class="font-sans text-sm font-semibold transition-colors text-ivory/80 hover:text-ivory">Problem</a><a href="#markers" class="font-sans text-sm font-semibold transition-colors text-ivory/80 hover:text-ivory">Markers</a><a href="#features" class="font-sans text-sm font-semibold transition-colors text-ivory/80 hover:text-ivory">Features</a><a href="#how-it-works" class="font-sans text-sm font-semibold transition-colors text-ivory/80 hover:text-ivory">How It Works</a><a href="#platforms" class="font-sans text-sm font-semibold transition-colors text-ivory/80 hover:text-ivory">Platforms</a><a href="#research" class="font-sans text-sm font-semibold transition-colors text-ivory/80 hover:text-ivory">Research</a><a href="#feedback" class="font-sans text-sm font-semibold transition-colors text-ivory/80 hover:text-ivory">Feedback</a><button class="font-sans text-xs font-bold px-2.5 py-1 rounded-bvvg border transition-colors border-ivory/60 text-ivory/80 hover:bg-ivory/10 hover:text-ivory" aria-label="Cambiar a español">ES</button></div><div class="md:hidden flex items-center gap-3"><button class="font-sans text-xs font-bold px-2 py-1 rounded-bvvg border transition-colors border-ivory/60 text-ivory/80" aria-label="Cambiar a español">ES</button><button class="font-sans text-sm font-semibold text-ivory" aria-label="Toggle navigation">☰</button></div></div></nav><main id="main-content"><section id="hero" class="section-gap bg-wine text-ivory pt-24"><div class="section-container text-center"><p class="text-almond font-sans font-semibold text-sm tracking-widest uppercase mb-6">Open-Source Framework</p><h1 class="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-ivory leading-tight mb-6">Grounded Gate Protocol</h1><p class="text-xl sm:text-2xl text-almond max-w-3xl mx-auto mb-3">Anti-hallucination framework for AI-generated professional communications</p><p class="text-lg text-clay/90 max-w-2xl mx-auto mb-4">AI sounds confident. But confidence is not accuracy.</p><p class="text-clay font-serif font-semibold text-lg sm:text-xl italic mb-10">“Nothing passes unverified.”</p><div class="flex flex-col sm:flex-row gap-4 justify-center"><a href="#platforms" class="btn-primary">Get Started</a><a href="https://github.com/lmherrera0/ggp-skill" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 border-2 border-almond text-almond font-sans font-semibold rounded-bvvg transition-colors duration-200 hover:bg-almond/10 text-base">View on GitHub</a></div></div></section><section id="problem" class="section-gap"><div class="section-container"><h2 class="font-serif font-bold text-3xl sm:text-4xl text-terracotta text-center mb-4">The Problem</h2><p class="text-center text-wine/70 max-w-2xl mx-auto mb-12">AI sometimes makes things up. It sounds confident, uses proper grammar, and presents “facts” that turn out to be completely fabricated.</p><div class="grid gap-6 sm:grid-cols-3 max-w-4xl mx-auto mb-12"><div class="card text-center"><p class="font-serif font-bold text-lg mb-2 text-terracotta">Embarrassing</p><p class="text-sm text-wine/70">A client email with a fabricated statistic</p></div><div class="card text-center"><p class="font-serif font-bold text-lg mb-2 text-mahogany">Career-limiting</p><p class="text-sm text-wine/70">Made-up data in a leadership presentation</p></div><div class="card text-center"><p class="font-serif font-bold text-lg mb-2 text-wine">Potentially illegal</p><p class="text-sm text-wine/70">False information in a regulatory submission</p></div></div><p class="text-center text-wine/80 max-w-2xl mx-auto font-serif text-lg">GGP makes those mistakes visible so you can catch them before they matter.</p></div></section><section id="markers" class="section-gap"><div class="section-container"><h2 class="font-serif font-bold text-3xl sm:text-4xl text-terracotta text-center mb-4">Visual Markers</h2><p class="text-center text-wine/70 max-w-2xl mx-auto mb-12">Every claim gets a coloured flag so you see exactly what is verified, what is assumed, and what is missing.</p><div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5"><div class="card text-center"><div class="text-3xl mb-3">🟢</div><span class="inline-block font-mono font-semibold text-sm px-3 py-1 rounded-full bg-sage text-ivory mb-3">CONFIRMED</span><p class="text-sm text-wine/80 leading-relaxed">Fact verified with a cited source. Tier 1–3, full citation, no red flags.</p></div><div class="card text-center"><div class="text-3xl mb-3">🔴</div><span class="inline-block font-mono font-semibold text-sm px-3 py-1 rounded-full bg-wine text-ivory mb-3">GAP</span><p class="text-sm text-wine/80 leading-relaxed">Missing critical information that must be filled before delivery.</p></div><div class="card text-center"><div class="text-3xl mb-3">🟡</div><span class="inline-block font-mono font-semibold text-sm px-3 py-1 rounded-full bg-terracotta text-ivory mb-3">INFERENCE</span><p class="text-sm text-wine/80 leading-relaxed">Assumption declared — reasoned from confirmed facts but not directly sourced.</p></div><div class="card text-center"><div class="text-3xl mb-3">🟠</div><span class="inline-block font-mono font-semibold text-sm px-3 py-1 rounded-full bg-mahogany text-ivory mb-3">UNVERIFIED</span><p class="text-sm text-wine/80 leading-relaxed">Could not verify or only low-quality source found. Needs corroboration.</p></div><div class="card text-center"><div class="text-3xl mb-3">⚠️</div><span class="inline-block font-mono font-semibold text-sm px-3 py-1 rounded-full bg-terracotta text-ivory mb-3">RISK</span><p class="text-sm text-wine/80 leading-relaxed">Reputational, legal, or credibility concern flagged for review.</p></div></div></div></section><section id="source-tiers" class="section-gap bg-almond/20"><div class="section-container"><h2 class="font-serif font-bold text-3xl sm:text-4xl text-terracotta text-center mb-4">Not All Sources Are Equal</h2><p class="text-center text-wine/70 max-w-2xl mx-auto mb-12">Just because something is cited does not mean it is true. GGP classifies every source by quality tier.</p><div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto"><div class="card"><div class="flex items-center gap-3 mb-3"><span class="w-8 h-8 rounded-full bg-sage text-ivory font-mono font-bold text-sm flex items-center justify-center">1</span><span class="font-serif font-semibold text-wine">Gold Standard</span></div><p class="text-xs font-mono text-mahogany mb-2">Trust<!-- -->: <!-- -->High</p><p class="text-sm text-wine/70 leading-relaxed">SEC filings, government data, peer-reviewed research, audited financials</p></div><div class="card"><div class="flex items-center gap-3 mb-3"><span class="w-8 h-8 rounded-full bg-terracotta text-ivory font-mono font-bold text-sm flex items-center justify-center">2</span><span class="font-serif font-semibold text-wine">Solid</span></div><p class="text-xs font-mono text-mahogany mb-2">Trust<!-- -->: <!-- -->Good</p><p class="text-sm text-wine/70 leading-relaxed">Financial Times, Reuters, Gartner, McKinsey, Forrester</p></div><div class="card"><div class="flex items-center gap-3 mb-3"><span class="w-8 h-8 rounded-full bg-mahogany text-ivory font-mono font-bold text-sm flex items-center justify-center">3</span><span class="font-serif font-semibold text-wine">Decent</span></div><p class="text-xs font-mono text-mahogany mb-2">Trust<!-- -->: <!-- -->Moderate</p><p class="text-sm text-wine/70 leading-relaxed">Industry blogs, company marketing sites, Wikipedia</p></div><div class="card"><div class="flex items-center gap-3 mb-3"><span class="w-8 h-8 rounded-full bg-wine text-ivory font-mono font-bold text-sm flex items-center justify-center">4</span><span class="font-serif font-semibold text-wine">Proceed with Caution</span></div><p class="text-xs font-mono text-mahogany mb-2">Trust<!-- -->: <!-- -->Low</p><p class="text-sm text-wine/70 leading-relaxed">Forums, social media, anonymous blogs, content farms</p></div></div></div></section><section id="features" class="section-gap bg-almond/20"><div class="section-container"><h2 class="font-serif font-bold text-3xl sm:text-4xl text-terracotta text-center mb-4">What GGP Does</h2><p class="text-center text-wine/70 max-w-2xl mx-auto mb-12">A comprehensive framework that covers every stage of AI-assisted professional communication.</p><div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"><div class="card"><p class="font-mono text-sm font-semibold text-mahogany mb-2">8 dimensions (max 24)</p><h3 class="font-serif font-semibold text-lg text-wine mb-2">Devil’s Advocate</h3><p class="text-sm text-wine/70 leading-relaxed">Mandatory risk screening on all significant communications. Eight dimensions scored 1–3 — including Hostile Reader, Screenshot, and CEO tests — catch problems before they reach your audience.</p></div><div class="card"><p class="font-mono text-sm font-semibold text-mahogany mb-2">22 templates</p><h3 class="font-serif font-semibold text-lg text-wine mb-2">Channel Templates</h3><p class="text-sm text-wine/70 leading-relaxed">Tailored guidance for email, LinkedIn, HBR, presentations, academic journals, press releases, coding docs, and more.</p></div><div class="card"><p class="font-mono text-sm font-semibold text-mahogany mb-2">7 templates</p><h3 class="font-serif font-semibold text-lg text-wine mb-2">Analysis Templates</h3><p class="text-sm text-wine/70 leading-relaxed">Structured consulting deliverables: SWOT, gap analysis, benchmarks, cost-benefit, maturity assessment, stakeholder analysis, and use cases.</p></div><div class="card"><p class="font-mono text-sm font-semibold text-mahogany mb-2">4 biases + 4 patterns</p><h3 class="font-serif font-semibold text-lg text-wine mb-2">Reasoning Safeguards</h3><p class="text-sm text-wine/70 leading-relaxed">Cognitive bias detection (confirmation, survivorship, status quo, recency) and logical risk pattern screening (false dilemma, hasty generalisation, false causality, non sequitur). Tree of Thought reasoning explores multiple paths before committing.</p></div><div class="card"><p class="font-mono text-sm font-semibold text-mahogany mb-2">7 golden rules</p><h3 class="font-serif font-semibold text-lg text-wine mb-2">Professional Etiquette</h3><p class="text-sm text-wine/70 leading-relaxed">Professional conduct guardrails including language reframing — converting dangerous phrases into professional alternatives.</p></div><div class="card"><p class="font-mono text-sm font-semibold text-mahogany mb-2">12-point checklist</p><h3 class="font-serif font-semibold text-lg text-wine mb-2">Data Integrity</h3><p class="text-sm text-wine/70 leading-relaxed">Anti-hallucination rules for statistics, metrics, and analytics. Detects 7 data hallucination patterns including zombie statistics and invented precision.</p></div><div class="card"><p class="font-mono text-sm font-semibold text-mahogany mb-2">Max 2 rounds</p><h3 class="font-serif font-semibold text-lg text-wine mb-2">Anti-Fatigue System</h3><p class="text-sm text-wine/70 leading-relaxed">Prevents endless clarification loops. After each round you choose: answer, produce now, or go deeper. You control the depth.</p></div><div class="card"><p class="font-mono text-sm font-semibold text-mahogany mb-2">4 platforms + skill</p><h3 class="font-serif font-semibold text-lg text-wine mb-2">Multi-Platform</h3><p class="text-sm text-wine/70 leading-relaxed">Platform-specific templates for Claude Projects, ChatGPT, Microsoft Copilot, and Google Gems, plus a native Claude Code skill. Knowledge Base PDFs available for any platform supporting file uploads.</p></div></div></div></section><section id="how-it-works" class="section-gap"><div class="section-container"><h2 class="font-serif font-bold text-3xl sm:text-4xl text-terracotta text-center mb-4">How It Works</h2><p class="text-center text-wine/70 max-w-2xl mx-auto mb-12">GGP operates in a 3-phase cycle — the same flow whether you use Fast Mode or Deep Audit.</p><div class="relative"><div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-almond -translate-x-1/2"></div><div class="grid gap-8 lg:gap-12"><div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center"><div class=""><div class="card"><div class="flex items-center gap-4 mb-4"><span class="flex-shrink-0 w-12 h-12 rounded-full bg-terracotta text-ivory font-serif font-bold text-xl flex items-center justify-center">1</span><h3 class="font-serif font-bold text-2xl text-wine">Load Rules</h3></div><p class="text-wine/70 leading-relaxed mb-4">GGP loads its core rules — either the compact QUICK_REFERENCE card (Fast Mode) or all individual reference files (Deep Audit). This includes markers, source tiers, citation format, prohibited language, and the 8 non-negotiable rules.</p><ul class="space-y-2"><li class="flex items-start gap-2 text-sm text-wine/80"><span class="text-sage mt-0.5 flex-shrink-0">✓</span>Fast Mode: compact rules card</li><li class="flex items-start gap-2 text-sm text-wine/80"><span class="text-sage mt-0.5 flex-shrink-0">✓</span>Deep Audit: full reference files</li><li class="flex items-start gap-2 text-sm text-wine/80"><span class="text-sage mt-0.5 flex-shrink-0">✓</span>8 non-negotiable rules loaded</li></ul></div></div><div class="hidden lg:block "></div></div><div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center"><div class="lg:order-2 lg:text-left"><div class="card"><div class="flex items-center gap-4 mb-4"><span class="flex-shrink-0 w-12 h-12 rounded-full bg-terracotta text-ivory font-serif font-bold text-xl flex items-center justify-center">2</span><h3 class="font-serif font-bold text-2xl text-wine">Load Channel + Conditionals</h3></div><p class="text-wine/70 leading-relaxed mb-4">GGP identifies the target channel and loads the matching template. Conditional modules activate based on content type — data analytics, analysis deliverables, cross-platform deployment, or style learning from your examples.</p><ul class="space-y-2"><li class="flex items-start gap-2 text-sm text-wine/80"><span class="text-sage mt-0.5 flex-shrink-0">✓</span>Channel template selected</li><li class="flex items-start gap-2 text-sm text-wine/80"><span class="text-sage mt-0.5 flex-shrink-0">✓</span>Conditional modules activated</li><li class="flex items-start gap-2 text-sm text-wine/80"><span class="text-sage mt-0.5 flex-shrink-0">✓</span>Style learned from examples</li></ul></div></div><div class="hidden lg:block lg:order-1"></div></div><div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center"><div class=""><div class="card"><div class="flex items-center gap-4 mb-4"><span class="flex-shrink-0 w-12 h-12 rounded-full bg-terracotta text-ivory font-serif font-bold text-xl flex items-center justify-center">3</span><h3 class="font-serif font-bold text-2xl text-wine">Create + Validate + Deliver</h3></div><p class="text-wine/70 leading-relaxed mb-4">Content is classified, every claim audited with markers, and iteration controlled. The Reasoning Gate separates facts from inferences. Devil’s Advocate scores 8 dimensions (max 24). The Validation Gate requires 8/8 before delivery.</p><ul class="space-y-2"><li class="flex items-start gap-2 text-sm text-wine/80"><span class="text-sage mt-0.5 flex-shrink-0">✓</span>Information audit with markers</li><li class="flex items-start gap-2 text-sm text-wine/80"><span class="text-sage mt-0.5 flex-shrink-0">✓</span>Devil’s Advocate risk screening</li><li class="flex items-start gap-2 text-sm text-wine/80"><span class="text-sage mt-0.5 flex-shrink-0">✓</span>8/8 validation gate required</li></ul></div></div><div class="hidden lg:block "></div></div></div></div><div class="mt-12 card max-w-2xl mx-auto"><h3 class="font-serif font-semibold text-lg text-wine mb-4 text-center">Two Modes, Same Rules</h3><div class="grid grid-cols-2 gap-4 text-sm"><div class="text-center p-4 bg-ivory rounded-bvvg"><p class="font-semibold text-mahogany mb-1">Fast Mode</p><p class="text-wine/70">Default for any task. Compact rules card with shorthand checkpoints.</p></div><div class="text-center p-4 bg-ivory rounded-bvvg"><p class="font-semibold text-mahogany mb-1">Deep Audit</p><p class="text-wine/70">For high-stakes deliverables. Full reference files with verbose tables.</p></div></div></div></div></section><section id="platforms" class="section-gap bg-almond/20"><div class="section-container"><h2 class="font-serif font-bold text-3xl sm:text-4xl text-terracotta text-center mb-4">Platforms</h2><p class="text-center text-wine/70 max-w-2xl mx-auto mb-12">Download the knowledge base or copy a ready-made template for your platform.</p><div role="tablist" aria-label="Platform selection" class="flex flex-wrap justify-center gap-2 mb-8"><button role="tab" id="tab-knowledge-base" aria-selected="true" aria-controls="panel-knowledge-base" class="px-4 py-2 rounded-bvvg font-sans font-semibold text-sm transition-colors duration-200 bg-terracotta text-ivory">Knowledge Base</button><button role="tab" id="tab-claude-projects" aria-selected="false" aria-controls="panel-claude-projects" class="px-4 py-2 rounded-bvvg font-sans font-semibold text-sm transition-colors duration-200 bg-ivory text-wine border border-almond hover:border-terracotta">Claude Projects</button><button role="tab" id="tab-chatgpt" aria-selected="false" aria-controls="panel-chatgpt" class="px-4 py-2 rounded-bvvg font-sans font-semibold text-sm transition-colors duration-200 bg-ivory text-wine border border-almond hover:border-terracotta">ChatGPT</button><button role="tab" id="tab-copilot" aria-selected="false" aria-controls="panel-copilot" class="px-4 py-2 rounded-bvvg font-sans font-semibold text-sm transition-colors duration-200 bg-ivory text-wine border border-almond hover:border-terracotta">Copilot</button><button role="tab" id="tab-google-gems" aria-selected="false" aria-controls="panel-google-gems" class="px-4 py-2 rounded-bvvg font-sans font-semibold text-sm transition-colors duration-200 bg-ivory text-wine border border-almond hover:border-terracotta">Google Gems</button><button role="tab" id="tab-skill" aria-selected="false" aria-controls="panel-skill" class="px-4 py-2 rounded-bvvg font-sans font-semibold text-sm transition-colors duration-200 bg-ivory text-wine border border-almond hover:border-terracotta">Skill</button></div><div role="tabpanel" id="panel-knowledge-base" aria-labelledby="tab-knowledge-base" class="card max-w-4xl mx-auto"><h3 class="font-serif font-semibold text-xl text-wine mb-2 flex items-center gap-3"><span class="w-10 h-10 rounded-full bg-terracotta text-ivory font-mono font-semibold text-xs flex items-center justify-center">KB</span>Knowledge Base</h3><p class="text-wine/80 mb-6">Download 4 consolidated PDF files ready to upload as knowledge base documents in Claude Projects or any AI platform that supports file uploads.</p><div class="space-y-3 mb-8"><div class="flex items-start gap-3 text-sm"><span class="text-terracotta mt-0.5 flex-shrink-0 font-mono font-semibold">PDF</span><div><p class="font-semibold text-wine">GGP-Core-Rules.pdf</p><p class="text-wine/60">SKILL.md + general guidelines (source tiers, etiquette, reputation, data integrity, metrics)</p></div></div><div class="flex items-start gap-3 text-sm"><span class="text-terracotta mt-0.5 flex-shrink-0 font-mono font-semibold">PDF</span><div><p class="font-semibold text-wine">GGP-Channel-Templates.pdf</p><p class="text-wine/60">All 22 channel templates (email, LinkedIn, HBR, presentations, and more)</p></div></div><div class="flex items-start gap-3 text-sm"><span class="text-terracotta mt-0.5 flex-shrink-0 font-mono font-semibold">PDF</span><div><p class="font-semibold text-wine">GGP-Analysis-Templates.pdf</p><p class="text-wine/60">7 analysis templates (SWOT, gap analysis, benchmarks, cost-benefit, and more)</p></div></div><div class="flex items-start gap-3 text-sm"><span class="text-terracotta mt-0.5 flex-shrink-0 font-mono font-semibold">PDF</span><div><p class="font-semibold text-wine">GGP-About.pdf</p><p class="text-wine/60">Introduction, executive summary, and legal information</p></div></div></div><button class="btn-primary w-full justify-center">Download Knowledge Base (.zip)</button><p class="text-xs text-wine/60 text-center mt-3">Free download. No registration required.</p></div></div></section><section id="cta" class="section-gap bg-wine text-ivory"><div class="section-container text-center"><h2 class="font-serif font-bold text-3xl sm:text-4xl text-ivory mb-4">Ready to Ground Your AI Communications?</h2><p class="text-almond max-w-2xl mx-auto mb-8">Start using GGP today. Choose your platform, paste the template, and make every AI output transparent and traceable.</p><div class="flex flex-col sm:flex-row gap-4 justify-center"><a href="#platforms" class="btn-primary">Get Started</a><a href="https://github.com/lmherrera0/ggp-skill" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 border-2 border-almond text-almond font-sans font-semibold rounded-bvvg transition-colors duration-200 hover:bg-almond/10 text-base">View on GitHub</a></div></div></section><section id="research" class="section-gap bg-almond/20"><div class="section-container"><h2 class="font-serif font-bold text-3xl sm:text-4xl text-terracotta text-center mb-4">The Research</h2><p class="text-center text-wine/70 max-w-2xl mx-auto mb-12">GGP is supported by a formal research paper. The architecture was developed through Design Science Research methodology and published on Zenodo.</p><div class="card max-w-4xl mx-auto mb-12"><p class="font-mono text-xs font-semibold text-mahogany mb-3 uppercase tracking-wider">Published February 2026</p><h3 class="font-serif font-bold text-xl sm:text-2xl text-wine mb-2 leading-tight">Beyond Detection: A Hallucination Governance Architecture for AI-Verified Professional Communication</h3><p class="text-sm text-wine/60 mb-4">Herrera, L.M. (2026)<!-- --> · Independent Researcher, London, UK · ORCID: 0009-0008-1981-2953 ·<!-- --> <a href="https://www.linkedin.com/in/lmherrera0" target="_blank" rel="noopener noreferrer" class="underline hover:text-terracotta">LinkedIn</a></p><p class="text-wine/70 leading-relaxed mb-6">This paper proposes a hallucination governance architecture characterised by five interconnected components that provide the integrated verification governance the current landscape lacks. Grounded in accountability theory, the epistemology of testimony, and information governance literature, it argues that the field should shift from hallucination detection to hallucination governance. GGP is presented as a design science instantiation of this architecture.</p><div class="flex flex-wrap gap-2 mb-6"><span class="text-xs font-mono px-2.5 py-1 rounded-full bg-ivory border border-almond text-wine/60">hallucination governance</span><span class="text-xs font-mono px-2.5 py-1 rounded-full bg-ivory border border-almond text-wine/60">prompt engineering</span><span class="text-xs font-mono px-2.5 py-1 rounded-full bg-ivory border border-almond text-wine/60">source verification</span><span class="text-xs font-mono px-2.5 py-1 rounded-full bg-ivory border border-almond text-wine/60">AI accountability</span><span class="text-xs font-mono px-2.5 py-1 rounded-full bg-ivory border border-almond text-wine/60">design science research</span><span class="text-xs font-mono px-2.5 py-1 rounded-full bg-ivory border border-almond text-wine/60">adversarial testing</span><span class="text-xs font-mono px-2.5 py-1 rounded-full bg-ivory border border-almond text-wine/60">epistemology of testimony</span></div><div class="flex flex-col sm:flex-row gap-3"><a href="https://doi.org/10.5281/zenodo.18751614" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm">Read the Paper</a><a href="https://zenodo.org/records/18751614/files/LMHerrera-GGP-2026.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm">Download PDF</a></div></div><h3 class="font-serif font-semibold text-xl text-wine text-center mb-8">Five-Component Architecture</h3><div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5 mb-12"><div class="card text-center"><span class="inline-flex w-10 h-10 rounded-full bg-terracotta text-ivory font-serif font-bold text-lg items-center justify-center mb-3">1</span><h4 class="font-serif font-semibold text-sm text-wine mb-2">Calibrated Source Hierarchy</h4><p class="text-xs text-wine/70 leading-relaxed">Four-tier source hierarchy defined by epistemological criteria — institutional backing, peer corroboration, methodological transparency — with five colour-coded verification markers enabling independent human validation.</p></div><div class="card text-center"><span class="inline-flex w-10 h-10 rounded-full bg-terracotta text-ivory font-serif font-bold text-lg items-center justify-center mb-3">2</span><h4 class="font-serif font-semibold text-sm text-wine mb-2">Adversarial Quality Gate</h4><p class="text-xs text-wine/70 leading-relaxed">Quantified risk scoring across eight dimensions (scored 1–3, max 24) with cognitive bias detection and logical fallacy screening.</p></div><div class="card text-center"><span class="inline-flex w-10 h-10 rounded-full bg-terracotta text-ivory font-serif font-bold text-lg items-center justify-center mb-3">3</span><h4 class="font-serif font-semibold text-sm text-wine mb-2">Dual-Mode Execution</h4><p class="text-xs text-wine/70 leading-relaxed">Fast Mode for everyday governance and Deep Audit for high-stakes deliverables — same verification standard, adaptive depth.</p></div><div class="card text-center"><span class="inline-flex w-10 h-10 rounded-full bg-terracotta text-ivory font-serif font-bold text-lg items-center justify-center mb-3">4</span><h4 class="font-serif font-semibold text-sm text-wine mb-2">Channel-Agnostic Governance</h4><p class="text-xs text-wine/70 leading-relaxed">Universal verification rules separated from domain-specific templates across 22 professional communication channels.</p></div><div class="card text-center"><span class="inline-flex w-10 h-10 rounded-full bg-terracotta text-ivory font-serif font-bold text-lg items-center justify-center mb-3">5</span><h4 class="font-serif font-semibold text-sm text-wine mb-2">Cross-Platform Deployment</h4><p class="text-xs text-wine/70 leading-relaxed">Platform adapters for Claude, ChatGPT, Google Gems, and Microsoft Copilot ensuring consistent governance across systems.</p></div></div><div class="card max-w-4xl mx-auto mb-12"><h3 class="font-serif font-semibold text-lg text-wine mb-6 text-center">Key Paper Features Implemented in GGP</h3><div class="grid gap-6 sm:grid-cols-3"><div class="text-center p-4 bg-ivory rounded-bvvg"><p class="font-semibold text-mahogany text-sm mb-2">Tree of Thought</p><p class="text-xs text-wine/70 leading-relaxed">Explores 2–3 alternative resolution paths in parallel for each inference or gap. Evaluates consequences against audience sensitivity, channel risk, and regulatory exposure. Ranks by defensibility.</p></div><div class="text-center p-4 bg-ivory rounded-bvvg"><p class="font-semibold text-mahogany text-sm mb-2">Cognitive Bias Detection</p><p class="text-xs text-wine/70 leading-relaxed">Screens for 4 biases: Confirmation, Survivorship, Status Quo, and Recency. Named biases are flagged with actionable markers, not vague warnings.</p></div><div class="text-center p-4 bg-ivory rounded-bvvg"><p class="font-semibold text-mahogany text-sm mb-2">Logical Risk Patterns</p><p class="text-xs text-wine/70 leading-relaxed">Detects 4 fallacies: False Dilemma, Hasty Generalisation, False Causality, and Non Sequitur. Each pattern triggers a specific rewrite recommendation.</p></div></div></div><div class="card max-w-3xl mx-auto"><h3 class="font-serif font-semibold text-lg text-wine mb-4 text-center">Theoretical Foundations</h3><div class="grid gap-4 sm:grid-cols-3"><div class="text-center p-4 bg-ivory rounded-bvvg"><p class="font-semibold text-mahogany text-sm mb-1">Accountability Theory</p><p class="text-xs text-wine/70">Every claim traceable, every verification step auditable (Bovens, 2007)</p></div><div class="text-center p-4 bg-ivory rounded-bvvg"><p class="font-semibold text-mahogany text-sm mb-1">Epistemology of Testimony</p><p class="text-xs text-wine/70">Trust calibrated by institutional backing, peer corroboration, and methodological transparency (Coady, 1992; Lackey, 2008)</p></div><div class="text-center p-4 bg-ivory rounded-bvvg"><p class="font-semibold text-mahogany text-sm mb-1">Information Governance</p><p class="text-xs text-wine/70">Quality management embedded in the production workflow, not post-hoc review (Smallwood, 2014)</p></div></div><p class="text-sm text-wine/60 text-center mt-4 italic">Core design principle: verification is a workflow property, not a model property.</p><p class="text-xs text-wine/60 text-center mt-3">Herrera, L.M. (2026). DOI:<!-- --> <a href="https://doi.org/10.5281/zenodo.18751614" target="_blank" rel="noopener noreferrer" class="underline hover:text-terracotta">10.5281/zenodo.18751614</a> <!-- -->· CC BY 4.0</p></div></div></section><section id="feedback" class="section-gap"><div class="section-container"><h2 class="font-serif font-bold text-3xl sm:text-4xl text-terracotta text-center mb-4">Share Your Feedback</h2><p class="text-center text-wine/70 max-w-2xl mx-auto mb-12">Help us improve GGP. Tell us how you use it, what works, and what you would like to see next.</p><form class="card max-w-2xl mx-auto space-y-5"><div class="grid gap-5 sm:grid-cols-2"><div><label for="fb-name" class="block text-sm font-sans font-semibold text-wine mb-1">Name<!-- --> <span class="font-normal text-wine/60">(optional)</span></label><input type="text" id="fb-name" class="w-full px-4 py-2.5 border border-almond rounded-bvvg bg-ivory text-wine font-sans text-sm focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-1 transition-colors" placeholder="Your name" name="name"/></div><div><label for="fb-email" class="block text-sm font-sans font-semibold text-wine mb-1">Email<!-- --> <span class="font-normal text-wine/60">(optional)</span></label><input type="email" id="fb-email" class="w-full px-4 py-2.5 border border-almond rounded-bvvg bg-ivory text-wine font-sans text-sm focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-1 transition-colors" placeholder="your@email.com" name="email"/></div></div><div class="grid gap-5 sm:grid-cols-2"><div><label for="fb-type" class="block text-sm font-sans font-semibold text-wine mb-1">Message Type</label><select id="fb-type" name="message_type" class="w-full px-4 py-2.5 border border-almond rounded-bvvg bg-ivory text-wine font-sans text-sm focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-1 transition-colors"><option value="Feedback">Feedback</option><option value="Feature Request">Feature Request</option><option value="Bug Report">Bug Report</option><option value="General Question">General Question</option><option value="Other">Other</option></select></div><div><label for="fb-platform" class="block text-sm font-sans font-semibold text-wine mb-1">Platform</label><select id="fb-platform" name="platform" class="w-full px-4 py-2.5 border border-almond rounded-bvvg bg-ivory text-wine font-sans text-sm focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-1 transition-colors"><option value="">Select your platform</option><option value="Claude Projects">Claude Projects</option><option value="ChatGPT">ChatGPT</option><option value="Copilot">Microsoft Copilot</option><option value="Google Gems">Google Gems</option><option value="Claude Code">Claude Code</option><option value="Other">Other</option></select></div></div><div><label for="fb-message" class="block text-sm font-sans font-semibold text-wine mb-1">Feedback &amp; Recommendations</label><textarea id="fb-message" name="message" rows="4" required="" class="w-full px-4 py-2.5 border border-almond rounded-bvvg bg-ivory text-wine font-sans text-sm focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-1 transition-colors resize-y" placeholder="What works well? What could be improved? Any feature ideas?"></textarea></div><input type="hidden" name="_subject" value="GGP Website Feedback"/><input type="hidden" name="_replyto" value="lizherrerajara+ggp@gmail.com"/><button type="submit" class="btn-primary w-full justify-center disabled:opacity-60">Send Feedback</button><p class="text-xs text-wine/60 text-center">Name and email are optional. Only the message is required.</p></form></div></section></main><footer class="bg-wine text-almond py-12"><div class="section-container"><div class="flex flex-col sm:flex-row items-center justify-between gap-6"><div class="text-center sm:text-left"><p class="font-serif font-semibold text-ivory text-lg mb-1">Grounded Gate Protocol</p><p class="text-sm text-pearl">Originally created by Liz Magaly Herrera Jara</p></div><div class="text-center sm:text-right"><p class="text-sm text-pearl mb-2">Licensed under<!-- --> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" class="text-clay hover:text-ivory transition-colors underline">CC BY-NC-SA 4.0</a></p><a href="https://github.com/lmherrera0/ggp-skill" target="_blank" rel="noopener noreferrer" class="text-sm text-clay hover:text-ivory transition-colors">GitHub Repository</a><span class="text-pearl/50 mx-1">·</span><a href="https://www.linkedin.com/in/lmherrera0" target="_blank" rel="noopener noreferrer" class="text-sm text-clay hover:text-ivory transition-colors">LinkedIn</a></div></div><div class="mt-8 pt-6 border-t border-mahogany/40 flex items-center justify-between"><p class="text-xs text-pearl/70">GGP v4.5-public<!-- --> · <!-- -->“Nothing passes unverified.”</p><a href="#hero" class="text-sm text-clay hover:text-ivory transition-colors">Back to top ↑</a></div></div></footer><script src="/ggp/_next/static/chunks/webpack-fc4ab772fd8cf4c2.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/ggp/_next/static/media/1755441e3a2fa970-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n2:HL[\"/ggp/_next/static/media/54021f693ae17c82-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n3:HL[\"/ggp/_next/static/media/ec14413c594b3356-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n4:HL[\"/ggp/_next/static/css/dd85cdd64fb85a55.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"5:I[2846,[],\"\"]\n7:I[4900,[\"931\",\"static/chunks/app/page-a5165dd660af7e3b.js\"],\"default\"]\n8:I[4707,[],\"\"]\n9:I[6423,[],\"\"]\nb:I[1060,[],\"\"]\nc:[]\n0:[\"$\",\"$L5\",null,{\"buildId\":\"8z_rsmLHvVhyDCaXiOw09\",\"assetPrefix\":\"/ggp\",\"urlParts\":[\"\",\"\"],\"initialTree\":[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"__PAGE__\",{},[[\"$L6\",[\"$\",\"$L7\",null,{}],null],null],null]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/ggp/_next/static/css/dd85cdd64fb85a55.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"className\":\"__variable_cdb805 __variable_c17750 __variable_4b4fe4\",\"children\":[\"$\",\"body\",null,{\"children\":[\"$\",\"$L8\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[]}]}]}]"])</script><script>self.__next_f.push([1,"],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$La\"],\"globalErrorComponent\":\"$b\",\"missingSlots\":\"$Wc\"}]\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"name\":\"theme-color\",\"content\":\"#4C2632\"}],[\"$\",\"meta\",\"2\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"3\",{\"children\":\"Grounded Gate Protocol (GGP) — Anti-Hallucination Framework\"}],[\"$\",\"meta\",\"4\",{\"name\":\"description\",\"content\":\"Open-source anti-hallucination framework for AI-generated professional communications. Visual markers, source verification, and risk screening.\"}],[\"$\",\"meta\",\"5\",{\"property\":\"og:title\",\"content\":\"Grounded Gate Protocol (GGP)\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:description\",\"content\":\"Open-source anti-hallucination framework for AI-generated professional communications.\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:url\",\"content\":\"https://lmherrera0.github.io/ggp\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:site_name\",\"content\":\"Grounded Gate Protocol\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"10\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"11\",{\"name\":\"twitter:title\",\"content\":\"Grounded Gate Protocol (GGP)\"}],[\"$\",\"meta\",\"12\",{\"name\":\"twitter:description\",\"content\":\"Open-source anti-hallucination framework for AI-generated professional communications.\"}],[\"$\",\"meta\",\"13\",{\"name\":\"next-size-adjust\"}]]\n6:null\n"])</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grounded Gate Protocol — Anti-Hallucination Framework</title>
+    <meta name="description" content="Open-source anti-hallucination framework for AI-generated professional communications. Visual markers, source verification, and risk screening.">
+    <meta name="author" content="Liz Magaly Herrera">
+    <meta name="theme-color" content="#5C3D35">
+    <link rel="stylesheet" href="../shared/brand.css">
+    <style>
+        /* GGP-specific local styles only */
+
+        /* GGP Marker colours */
+        .ggp-marker--confirmed { background: #2e7d32; color: var(--ivory); }
+        .ggp-marker--gap { background: #c62828; color: var(--ivory); }
+        .ggp-marker--inference { background: #f9a825; color: #3e2723; }
+        .ggp-marker--unverified { background: #e65100; color: var(--ivory); }
+        .ggp-marker--risk { background: var(--mahogany); color: var(--ivory); }
+
+        /* Marker cards grid */
+        .ggp-markers-section { max-width: 1060px; margin: 0 auto; padding: 0 24px 48px; }
+        .ggp-section-title { font-family: 'Noto Serif Display', serif; font-size: 1.3rem; font-weight: 500; color: var(--mahogany); margin-bottom: 8px; text-align: center; }
+        .ggp-section-desc { font-size: 0.88rem; font-weight: 300; color: var(--wine); text-align: center; margin-bottom: 28px; }
+        .ggp-markers-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+        .ggp-marker-card { background: var(--pearl); border: 1px solid var(--almond); border-radius: var(--radius); padding: 20px 16px; text-align: center; }
+        .ggp-marker-flag { display: inline-block; font-family: 'Noto Sans Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 1px; padding: 4px 12px; border-radius: 100px; margin-bottom: 12px; }
+        .ggp-marker-card p { font-size: 0.8rem; font-weight: 300; color: var(--wine); line-height: 1.55; }
+
+        /* Inline markers (used in tables and verified output) */
+        .ggp-marker-inline { font-family: 'Noto Sans Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
+
+        /* Source tier badges */
+        .ggp-tier-badge { font-family: 'Noto Sans Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.5px; padding: 3px 10px; border-radius: 100px; }
+        .ggp-tier--gold { background: var(--sage); color: var(--ivory); }
+        .ggp-tier--solid { background: var(--almond); color: var(--mahogany); }
+        .ggp-tier--decent { background: var(--pearl); color: var(--wine); }
+        .ggp-tier--caution { background: var(--rose-clay); color: var(--ivory); }
+
+        /* Feature chips */
+        .ggp-features-section { max-width: 900px; margin: 0 auto; padding: 0 24px 48px; text-align: center; }
+        .ggp-feature-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .ggp-feature-chip { font-family: 'Noto Sans', sans-serif; font-size: 0.82rem; font-weight: 400; color: var(--wine); background: var(--pearl); border: 1px solid var(--almond); border-radius: 100px; padding: 8px 18px; }
+
+        /* Devil's Advocate score */
+        .ggp-da-score { padding: 20px 40px 28px; border-top: 1px solid var(--pearl); }
+        .ggp-da-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+        .ggp-da-label { font-family: 'Noto Serif Display', serif; font-size: 0.95rem; font-weight: 500; color: var(--mahogany); }
+        .ggp-da-value { font-family: 'Noto Sans Mono', monospace; font-size: 12px; color: var(--sage); font-weight: 500; letter-spacing: 0.5px; }
+        .ggp-da-dims { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+        .ggp-da-dim { font-family: 'Noto Sans Mono', monospace; font-size: 11px; color: var(--wine); background: var(--pearl); border: 1px solid var(--almond); border-radius: 6px; padding: 4px 10px; }
+
+        /* Verified output */
+        .ggp-verified-output { padding: 20px 40px 32px; border-top: 1px solid var(--pearl); }
+        .ggp-verified-label { font-family: 'Noto Sans Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); display: block; margin-bottom: 14px; }
+        .ggp-verified-post { background: var(--pearl); border: 1px solid var(--almond); border-radius: var(--radius); padding: 24px; }
+        .ggp-verified-post p { font-size: 0.88rem; font-weight: 300; color: var(--wine); line-height: 1.7; margin-bottom: 12px; }
+        .ggp-verified-post p:last-child { margin-bottom: 0; }
+        .ggp-verified-removed { color: var(--rose-clay); font-style: italic; }
+        .ggp-verified-removed s { opacity: 0.6; }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .ggp-markers-grid { grid-template-columns: repeat(2, 1fr); }
+            .ggp-markers-grid .ggp-marker-card:last-child { grid-column: span 2; }
+            .ggp-da-score { padding: 16px 20px 20px; }
+            .ggp-da-dims { gap: 6px; }
+            .ggp-verified-output { padding: 16px 20px 24px; }
+            .ggp-verified-post { padding: 16px; }
+            .platform-selector { flex-direction: column; }
+            .platform-btn { min-width: unset; }
+            .claude-section { padding: 24px 20px; }
+            .gpt-prompts-grid { grid-template-columns: 1fr; }
+            .cs-prompts-grid { grid-template-columns: 1fr; }
+            .ggp-arch-cards { grid-template-columns: 1fr; }
+            .ggp-arch-cards .ggp-arch-card:last-child { grid-column: span 1; }
+            .ggp-blockquote { padding: 24px 20px; font-size: 1rem; }
+        }
+
+        /* ═══════════════════════════════════════
+           PLATFORM SELECTOR
+           ═══════════════════════════════════════ */
+        .platform-selector {
+            display: flex; justify-content: center; gap: 8px;
+            padding: 0 24px 32px; max-width: 900px; margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .platform-btn {
+            display: flex; flex-direction: column; align-items: center; gap: 2px;
+            font-family: 'Noto Sans', sans-serif; font-size: 0.88rem; font-weight: 500;
+            color: var(--wine); background: var(--pearl); border: 1px solid var(--almond);
+            border-radius: 10px; padding: 12px 24px; cursor: pointer; min-width: 140px;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+        .platform-btn:hover { background: var(--almond); }
+        .platform-btn--active { background: var(--wine); color: var(--ivory); border-color: var(--wine); }
+        .platform-sub { font-size: 0.72rem; font-weight: 300; opacity: 0.75; }
+
+        /* ═══════════════════════════════════════
+           CLAUDE PROJECTS CHROME MOCK
+           ═══════════════════════════════════════ */
+        :root {
+            --claude-bg: #ffffff;
+            --claude-surface: #faf9f7;
+            --claude-accent: #c96442;
+            --claude-accent-light: #fef3ee;
+            --claude-border: #e5e0db;
+            --claude-text: #29261e;
+            --claude-muted: #6b6560;
+            --claude-label: #4a453f;
+        }
+        .claude-chrome { border-radius: 12px 12px 0 0; overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--claude-border); border-bottom: none; }
+        .claude-topbar { background: var(--claude-bg); border-bottom: 1px solid var(--claude-border); padding: 0 24px; display: flex; align-items: center; height: 56px; gap: 10px; }
+        .claude-breadcrumb { display: flex; align-items: center; gap: 6px; font-family: 'Noto Sans', sans-serif; font-size: 13px; color: var(--claude-muted); }
+        .claude-breadcrumb-icon { width: 18px; height: 18px; flex-shrink: 0; }
+        .claude-breadcrumb-sep { color: var(--claude-border); }
+        .claude-breadcrumb-current { font-weight: 600; color: var(--claude-text); }
+        .claude-content { background: var(--claude-bg); border-radius: 0 0 12px 12px; border: 1px solid var(--claude-border); border-top: none; box-shadow: var(--shadow-lg); overflow: hidden; }
+        .claude-section { padding: 32px 40px; }
+        .claude-section + .claude-section { border-top: 1px solid var(--claude-border); }
+        .claude-section-label { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 22px; }
+        .claude-section-num { font-family: 'Noto Sans Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 1px; color: var(--claude-accent); border: 1px solid rgba(201,100,66,0.25); border-radius: 100px; padding: 4px 10px; white-space: nowrap; margin-top: 3px; background: var(--claude-accent-light); }
+        .claude-section-label h2 { font-family: 'Noto Serif Display', Georgia, serif; font-size: 1.1rem; font-weight: 500; color: var(--claude-text); margin-bottom: 2px; }
+        .claude-section-location { font-family: 'Noto Sans Mono', monospace; font-size: 11px; color: var(--claude-muted); letter-spacing: 0.3px; }
+        .claude-field { margin-bottom: 20px; }
+        .claude-field:last-child { margin-bottom: 0; }
+        .claude-field-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+        .claude-field-label { font-family: 'Noto Sans', sans-serif; font-size: 12px; font-weight: 500; color: var(--claude-label); letter-spacing: 0.3px; display: flex; align-items: center; gap: 8px; }
+        .claude-field-actions { display: flex; align-items: center; gap: 8px; }
+        .claude-textarea { width: 100%; border: 1px solid var(--claude-border); border-radius: 8px; background: var(--claude-surface); color: var(--claude-text); resize: none; font-family: 'Noto Sans', sans-serif; font-size: 0.88rem; line-height: 1.6; padding: 12px 14px; transition: border-color 0.2s; outline: none; cursor: default; }
+        .claude-textarea:focus { border-color: var(--claude-accent); box-shadow: 0 0 0 2px rgba(201,100,66,0.12); }
+        .claude-textarea--sm { height: 44px; overflow: hidden; }
+        .claude-textarea--code { font-family: 'Noto Sans Mono', monospace; font-size: 0.78rem; line-height: 1.65; }
+        .claude-textarea--collapsed { height: 180px; overflow-y: hidden; }
+        .claude-textarea--expanded { height: 560px; overflow-y: auto; }
+        .claude-copy-btn { display: inline-flex; align-items: center; gap: 6px; font-family: 'Noto Sans', sans-serif; font-size: 12px; font-weight: 500; color: var(--claude-accent); background: var(--claude-accent-light); border: 1px solid rgba(201,100,66,0.2); border-radius: 8px; padding: 5px 12px; cursor: pointer; letter-spacing: 0.3px; transition: background 0.2s, color 0.2s, transform 0.1s; white-space: nowrap; }
+        .claude-copy-btn:hover { background: var(--claude-accent); color: white; border-color: var(--claude-accent); }
+        .claude-copy-btn:active { transform: scale(0.97); }
+        .claude-copy-btn--success { background: var(--claude-accent); color: white; }
+        .claude-copy-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+        .claude-expand-btn { display: inline-flex; align-items: center; gap: 5px; font-family: 'Noto Sans', sans-serif; font-size: 12px; color: var(--claude-muted); background: transparent; border: 1px solid var(--claude-border); border-radius: 8px; padding: 5px 12px; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+        .claude-expand-btn:hover { border-color: var(--claude-accent); color: var(--claude-accent); }
+        .claude-knowledge-hint { display: block; font-size: 0.82rem; font-weight: 300; color: var(--claude-muted); margin-bottom: 16px; line-height: 1.6; }
+        .claude-file-card { display: flex; align-items: center; gap: 12px; background: var(--claude-surface); border: 1px solid var(--claude-border); border-radius: 8px; padding: 10px 16px; margin-bottom: 12px; text-align: left; }
+        .claude-file-name { font-family: 'Noto Sans Mono', monospace; font-size: 12px; color: var(--claude-text); display: block; }
+        .claude-file-meta { font-size: 11px; color: var(--claude-muted); }
+        .claude-download-btn { display: inline-flex; align-items: center; gap: 7px; font-family: 'Noto Sans', sans-serif; font-size: 0.84rem; font-weight: 500; color: white; background: var(--claude-accent); border: none; border-radius: 8px; padding: 9px 18px; cursor: pointer; letter-spacing: 0.2px; text-decoration: none; transition: opacity 0.2s, transform 0.1s; }
+        .claude-download-btn:hover { opacity: 0.88; }
+        .claude-download-btn:active { transform: scale(0.97); }
+        .claude-download-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+        /* M365 Prompts Grid */
+        .cs-prompts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .cs-prompt-card { border: 1px solid var(--cs-border); border-radius: 10px; overflow: hidden; background: var(--cs-surface); }
+        .cs-prompt-header { display: flex; align-items: center; gap: 10px; padding: 12px 14px 10px; border-bottom: 1px solid var(--cs-border); background: var(--cs-surface-alt); }
+        .cs-prompt-num { font-family: 'Noto Sans Mono', monospace; font-size: 10px; color: var(--cs-accent); opacity: 0.7; }
+        .cs-prompt-title { font-size: 12px; font-weight: 500; color: var(--cs-text); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .cs-prompt-card .field-textarea { border: none; border-radius: 0; background: var(--cs-surface); font-size: 0.8rem; padding: 12px 14px; color: var(--cs-text-body); }
+
+        /* ═══════════════════════════════════════
+           RESEARCH SECTION
+           ═══════════════════════════════════════ */
+        .ggp-research-paper { max-width: 760px; margin: 0 auto; padding: 0 24px 48px; }
+        .ggp-paper-meta { text-align: center; margin-bottom: 40px; }
+        .ggp-paper-title { font-family: 'Noto Serif Display', serif; font-size: 1.2rem; font-weight: 500; color: var(--mahogany); line-height: 1.4; margin-bottom: 12px; }
+        .ggp-paper-author { font-size: 0.88rem; font-weight: 300; color: var(--wine); margin-bottom: 14px; }
+        .ggp-doi-badge { display: inline-block; font-family: 'Noto Sans Mono', monospace; font-size: 11px; color: var(--sage); background: rgba(122,155,142,0.1); border: 1px solid rgba(122,155,142,0.3); border-radius: 100px; padding: 5px 14px; text-decoration: none; transition: background 0.2s; }
+        .ggp-doi-badge:hover { background: rgba(122,155,142,0.2); }
+        .ggp-paper-section { margin-bottom: 36px; }
+        .ggp-paper-section h3 { font-family: 'Noto Serif Display', serif; font-size: 1.05rem; font-weight: 500; color: var(--mahogany); margin-bottom: 16px; }
+        .ggp-paper-section p { font-size: 0.88rem; font-weight: 300; color: var(--wine); line-height: 1.7; margin-bottom: 12px; }
+        .ggp-paper-section p:last-child { margin-bottom: 0; }
+
+        /* Architecture cards */
+        .ggp-arch-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .ggp-arch-card { background: var(--pearl); border: 1px solid var(--almond); border-radius: var(--radius); padding: 20px; }
+        .ggp-arch-num { font-family: 'Noto Sans Mono', monospace; font-size: 11px; color: var(--sage); display: block; margin-bottom: 8px; }
+        .ggp-arch-card strong { display: block; font-family: 'Noto Serif Display', serif; font-size: 0.95rem; font-weight: 500; color: var(--mahogany); margin-bottom: 6px; }
+        .ggp-arch-card p { font-size: 0.8rem; font-weight: 300; color: var(--wine); line-height: 1.55; margin: 0; }
+        .ggp-arch-cards .ggp-arch-card:last-child { grid-column: span 2; }
+
+        /* Foundations */
+        .ggp-foundations { display: flex; flex-direction: column; gap: 16px; }
+        .ggp-foundation { background: var(--pearl); border: 1px solid var(--almond); border-radius: var(--radius); padding: 20px; }
+        .ggp-foundation strong { font-family: 'Noto Serif Display', serif; font-size: 0.95rem; color: var(--mahogany); }
+        .ggp-citation { font-family: 'Noto Sans Mono', monospace; font-size: 11px; color: var(--sage); margin-left: 8px; }
+        .ggp-foundation p { font-size: 0.82rem; font-weight: 300; color: var(--wine); line-height: 1.6; margin: 8px 0 0; }
+
+        /* Blockquote */
+        .ggp-blockquote { font-family: 'Noto Serif Display', serif; font-size: 1.1rem; font-weight: 400; font-style: italic; color: var(--mahogany); text-align: center; padding: 32px 40px; margin: 0 0 36px; border-top: 1px solid var(--almond); border-bottom: 1px solid var(--almond); }
+
+        /* Download link */
+        .ggp-paper-download { text-align: center; }
+        .ggp-download-link { display: inline-flex; align-items: center; gap: 8px; font-family: 'Noto Sans', sans-serif; font-size: 0.88rem; font-weight: 500; color: var(--ivory); background: var(--wine); border-radius: var(--radius); padding: 12px 24px; text-decoration: none; transition: background 0.2s, transform 0.1s; }
+        .ggp-download-link:hover { background: var(--rose-clay); }
+        .ggp-download-link:active { transform: scale(0.97); }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="site-nav">
+    <a href="/" class="nav-back">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+        lmherrera0
+    </a>
+</nav>
+
+<!-- Page-Level Tabs -->
+<nav class="page-tabs" role="tablist" aria-label="Page sections">
+    <div class="page-tabs-group page-tabs-group--platforms">
+        <button class="page-tab page-tab--active" role="tab" aria-selected="true" aria-controls="page-what" onclick="switchPageTab('what')" id="ptab-what">What It Does</button>
+        <button class="page-tab" role="tab" aria-selected="false" aria-controls="page-configure" onclick="switchPageTab('configure')" id="ptab-configure">Configure</button>
+    </div>
+    <div class="page-tabs-divider"></div>
+    <div class="page-tabs-group page-tabs-group--standalone">
+        <button class="page-tab" role="tab" aria-selected="false" aria-controls="page-research" onclick="switchPageTab('research')" id="ptab-research">Research</button>
+        <button class="page-tab" role="tab" aria-selected="false" aria-controls="page-feedback" onclick="switchPageTab('feedback')" id="ptab-feedback">Feedback</button>
+    </div>
+</nav>
+
+<!-- Tab 1: What It Does -->
+<div class="page-content page-content--active" id="page-what" role="tabpanel" aria-labelledby="ptab-what">
+
+    <!-- A) Hero -->
+    <header class="hero">
+        <span class="hero-tag">Anti-Hallucination Framework · v4.5</span>
+        <h1>Grounded Gate Protocol</h1>
+        <p class="hero-desc">AI sounds confident. But confidence is not accuracy. GGP ensures nothing passes unverified — every claim is sourced, every assumption declared, every risk flagged.</p>
+    </header>
+
+    <!-- B) The Problem — 3 failure cards -->
+    <section class="setup-guide" aria-label="The problem">
+        <div class="guide-inner">
+            <div class="guide-step" style="text-align:center;">
+                <span class="step-num" style="font-size:1.6rem;">Embarrassing</span>
+                <p>A client email with a fabricated statistic</p>
+            </div>
+            <div class="guide-step" style="text-align:center;">
+                <span class="step-num" style="font-size:1.6rem;">Career-limiting</span>
+                <p>Made-up data in a leadership presentation</p>
+            </div>
+            <div class="guide-step" style="text-align:center;">
+                <span class="step-num" style="font-size:1.6rem;">Potentially illegal</span>
+                <p>False information in a regulatory submission</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- C) Workflow Phases — 3-column -->
+    <section style="max-width:1060px;margin:0 auto;padding:0 24px 48px;">
+        <div class="workflow-phases">
+            <div class="workflow-phase">
+                <span class="phase-tag">Phase 01 · Load</span>
+                <div class="phase-title">Load Rules</div>
+                <ul class="phase-list">
+                    <li>8 non-negotiable verification rules</li>
+                    <li>4-tier source hierarchy (Gold to Caution)</li>
+                    <li>Select mode: Fast or Deep Audit</li>
+                </ul>
+            </div>
+            <div class="workflow-phase">
+                <span class="phase-tag">Phase 02 · Configure</span>
+                <div class="phase-title">Channel + Conditionals</div>
+                <ul class="phase-list">
+                    <li>Select from 22 channel templates</li>
+                    <li>Activate conditional modules</li>
+                    <li>Data analytics, style learning</li>
+                </ul>
+            </div>
+            <div class="workflow-phase">
+                <span class="phase-tag">Phase 03 · Validate</span>
+                <div class="phase-title">Create + Verify + Deliver</div>
+                <ul class="phase-list">
+                    <li>Information audit with 5 markers</li>
+                    <li>Devil's Advocate 8-dimension gate</li>
+                    <li>8/8 required for delivery</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- D) 5 Verification Markers -->
+    <section class="ggp-markers-section">
+        <h2 class="ggp-section-title">Verification Markers</h2>
+        <p class="ggp-section-desc">Every claim in your content gets one of five markers</p>
+        <div class="ggp-markers-grid">
+            <div class="ggp-marker-card">
+                <span class="ggp-marker-flag ggp-marker--confirmed">CONFIRMED</span>
+                <p>Fact verified with a cited source. Tier 1–3, full citation, no red flags.</p>
+            </div>
+            <div class="ggp-marker-card">
+                <span class="ggp-marker-flag ggp-marker--gap">GAP</span>
+                <p>Missing critical information requiring completion before publishing.</p>
+            </div>
+            <div class="ggp-marker-card">
+                <span class="ggp-marker-flag ggp-marker--inference">INFERENCE</span>
+                <p>Assumption declared — reasoned from confirmed facts but not directly sourced.</p>
+            </div>
+            <div class="ggp-marker-card">
+                <span class="ggp-marker-flag ggp-marker--unverified">UNVERIFIED</span>
+                <p>Low-quality or unverifiable source requiring corroboration.</p>
+            </div>
+            <div class="ggp-marker-card">
+                <span class="ggp-marker-flag ggp-marker--risk">RISK</span>
+                <p>Reputational, legal, or credibility concern flagged for review.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- E) Features Summary — compact chips -->
+    <section class="ggp-features-section">
+        <div class="ggp-feature-chips">
+            <span class="ggp-feature-chip">8 Risk Dimensions</span>
+            <span class="ggp-feature-chip">22 Channel Templates</span>
+            <span class="ggp-feature-chip">7 Analysis Templates</span>
+            <span class="ggp-feature-chip">Bias Detection</span>
+            <span class="ggp-feature-chip">Data Integrity</span>
+            <span class="ggp-feature-chip">Anti-Fatigue</span>
+            <span class="ggp-feature-chip">Fast + Deep Audit Modes</span>
+        </div>
+    </section>
+
+    <!-- F) Sample Output — LinkedIn Post Verification -->
+    <div class="sample-output">
+        <div class="sample-output-header">
+            <span class="sample-badge">Sample Output</span>
+            <span class="sample-note">Illustrative — fictional LinkedIn post, real GGP format</span>
+        </div>
+
+        <!-- Verification Table -->
+        <div class="sample-table-wrap">
+            <table class="sample-table" aria-label="Claim verification table">
+                <thead>
+                    <tr><th>Claim</th><th>Marker</th><th>Source</th><th>Tier</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>"Enterprise AI market reached $184bn in 2025"</td>
+                        <td><span class="ggp-marker-inline ggp-marker--confirmed">CONFIRMED</span></td>
+                        <td>Gartner, 2025</td>
+                        <td><span class="ggp-tier-badge ggp-tier--gold">Gold</span></td>
+                    </tr>
+                    <tr>
+                        <td>"70% of Fortune 500 deployed AI at scale"</td>
+                        <td><span class="ggp-marker-inline ggp-marker--unverified">UNVERIFIED</span></td>
+                        <td>Industry blog</td>
+                        <td><span class="ggp-tier-badge ggp-tier--caution">Caution</span></td>
+                    </tr>
+                    <tr>
+                        <td>"AI will replace 40% of knowledge work within 3 years"</td>
+                        <td><span class="ggp-marker-inline ggp-marker--inference">INFERENCE</span></td>
+                        <td>Extrapolation</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>"Our team increased efficiency by 3x"</td>
+                        <td><span class="ggp-marker-inline ggp-marker--gap">GAP</span></td>
+                        <td>No data provided</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>"McKinsey projects $4.4tn in annual AI value"</td>
+                        <td><span class="ggp-marker-inline ggp-marker--confirmed">CONFIRMED</span></td>
+                        <td>McKinsey Global Institute</td>
+                        <td><span class="ggp-tier-badge ggp-tier--solid">Solid</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Devil's Advocate Score -->
+        <div class="ggp-da-score">
+            <div class="ggp-da-header">
+                <span class="ggp-da-label">Devil's Advocate</span>
+                <span class="ggp-da-value">19/24 — Pass</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill bar-mh" style="width:79%"></div></div>
+            <div class="ggp-da-dims">
+                <span class="ggp-da-dim">Hostile Reader 2/3</span>
+                <span class="ggp-da-dim">Screenshot 3/3</span>
+                <span class="ggp-da-dim">CEO Test 2/3</span>
+                <span class="ggp-da-dim">Regulatory 3/3</span>
+                <span class="ggp-da-dim">Competitor 2/3</span>
+                <span class="ggp-da-dim">Legal 3/3</span>
+                <span class="ggp-da-dim">Reputation 2/3</span>
+                <span class="ggp-da-dim">Data Integrity 2/3</span>
+            </div>
+        </div>
+
+        <!-- Verified Output -->
+        <div class="ggp-verified-output">
+            <span class="ggp-verified-label">Verified Post</span>
+            <div class="ggp-verified-post">
+                <p>The enterprise AI market reached $184 billion in 2025 <span class="ggp-marker-inline ggp-marker--confirmed">CONFIRMED · Gartner</span>, with McKinsey projecting $4.4 trillion in annual value creation <span class="ggp-marker-inline ggp-marker--confirmed">CONFIRMED · McKinsey GI</span>.</p>
+                <p>While adoption is accelerating across the Fortune 500, specific deployment figures vary by source and definition <span class="ggp-marker-inline ggp-marker--inference">INFERENCE</span>. The competitive advantage lies not in AI adoption itself, but in the governance frameworks that ensure accuracy and accountability.</p>
+                <p class="ggp-verified-removed"><s>"Our team increased efficiency by 3x"</s> — Removed: no supporting data <span class="ggp-marker-inline ggp-marker--gap">GAP</span></p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Tab 2: Configure — built in Task 7 -->
+<div class="page-content" id="page-configure" role="tabpanel" aria-labelledby="ptab-configure">
+
+    <!-- Setup Guide -->
+    <section class="setup-guide" aria-label="Setup steps">
+        <div class="guide-inner">
+            <div class="guide-step">
+                <span class="step-num">01</span>
+                <strong>Choose Your Platform</strong>
+                <p>Select Claude, ChatGPT, M365 Copilot, or Google Gems below</p>
+            </div>
+            <div class="guide-step">
+                <span class="step-num">02</span>
+                <strong>Copy Each Field</strong>
+                <p>Use the Copy button to grab each field and paste it into your platform</p>
+            </div>
+            <div class="guide-step">
+                <span class="step-num">03</span>
+                <strong>Upload Knowledge Files</strong>
+                <p>Download the reference PDFs and upload them as knowledge files</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Selector -->
+    <div class="platform-selector" role="group" aria-label="Select platform">
+        <button class="platform-btn platform-btn--active" id="btn-claude" onclick="switchGgpPlatform('claude')" aria-pressed="true">
+            Claude
+            <span class="platform-sub">Projects</span>
+        </button>
+        <button class="platform-btn" id="btn-ggp-gpt" onclick="switchGgpPlatform('gpt')" aria-pressed="false">
+            ChatGPT
+            <span class="platform-sub">Custom GPT</span>
+        </button>
+        <button class="platform-btn" id="btn-ggp-m365" onclick="switchGgpPlatform('m365')" aria-pressed="false">
+            M365 Copilot
+            <span class="platform-sub">Agent Builder</span>
+        </button>
+        <button class="platform-btn" id="btn-gems" onclick="switchGgpPlatform('gems')" aria-pressed="false">
+            Google Gems
+            <span class="platform-sub">Gemini</span>
+        </button>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         CLAUDE PROJECTS CHROME MOCK
+         ═══════════════════════════════════════ -->
+    <div id="ggp-claude-wrapper" style="display:block; max-width:1060px; margin:0 auto 80px; padding:0 24px;">
+        <div class="claude-chrome">
+            <div class="claude-topbar">
+                <div class="claude-breadcrumb">
+                    <svg class="claude-breadcrumb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"/></svg>
+                    Projects
+                    <span class="claude-breadcrumb-sep">/</span>
+                    <span class="claude-breadcrumb-current">Grounded Gate Protocol</span>
+                </div>
+            </div>
+        </div>
+        <div class="claude-content">
+
+            <!-- 01 Project Name -->
+            <div class="claude-section">
+                <div class="claude-section-label">
+                    <span class="claude-section-num">01</span>
+                    <div>
+                        <h2>Project Name</h2>
+                        <span class="claude-section-location">Projects &rarr; New Project &rarr; Name</span>
+                    </div>
+                </div>
+                <div class="claude-field">
+                    <div class="claude-field-header">
+                        <span class="claude-field-label">Name</span>
+                        <div class="claude-field-actions">
+                            <button class="claude-copy-btn" onclick="copyField('claude-name',this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9.75a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"/></svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                    <textarea id="claude-name" class="claude-textarea claude-textarea--sm" readonly>Grounded Gate Protocol</textarea>
+                </div>
+            </div>
+
+            <!-- 02 Project Instructions -->
+            <div class="claude-section">
+                <div class="claude-section-label">
+                    <span class="claude-section-num">02</span>
+                    <div>
+                        <h2>Project Instructions</h2>
+                        <span class="claude-section-location">Projects &rarr; Project Instructions</span>
+                    </div>
+                </div>
+                <div class="claude-field">
+                    <div class="claude-field-header">
+                        <span class="claude-field-label">System Prompt</span>
+                        <div class="claude-field-actions">
+                            <button class="claude-copy-btn" onclick="copyField('claude-instructions',this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9.75a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"/></svg>
+                                Copy All
+                            </button>
+                            <button class="claude-expand-btn" onclick="toggleExpand('claude-instructions',this)" aria-expanded="false">Expand</button>
+                        </div>
+                    </div>
+                    <textarea id="claude-instructions" class="claude-textarea claude-textarea--code claude-textarea--collapsed" readonly>You are an expert in the Grounded Gate Protocol (GGP v4.5), an anti-hallucination system for professional communications.
+
+Your role: Help users create verified, transparent content by applying GGP discipline.
+
+CORE PRINCIPLE: "Nothing passes unverified."
+
+### GGP MARKERS (5 Types)
+Tag every claim with exactly ONE marker:
+
+[CONFIRMED] — Fact verified with Tier 1-3 source. ALWAYS cite the source with format: [CONFIRMED: Source Name | Tier X | Location | Date | URL]
+
+[GAP] — Critical information is missing. The user must fill it before delivery.
+
+[INFERENCE] — An assumption or reasoned interpretation from confirmed facts. User must explicitly accept or reject.
+
+[UNVERIFIED] — Could not verify OR source is Tier 4 only. NEVER mark a Tier 4 source as [CONFIRMED].
+
+[RISK] — Reputational, legal, or credibility concern flagged. Describe the risk explicitly.
+
+### SOURCE TIERS (Quality Hierarchy)
+TIER 1 (Gold) — SEC filings, government databases, peer-reviewed journals, audited financials, court documents, official entity press releases
+→ High confidence; use as primary evidence
+
+TIER 2 (Solid) — Financial Times, Wall Street Journal, Reuters, BBC, Gartner, McKinsey, Forrester, official industry reports
+→ Good confidence; verify if critical
+
+TIER 3 (Moderate) — General news, expert blogs, company marketing sites, Wikipedia (context), university websites
+→ Moderate confidence; cross-reference recommended
+
+TIER 4 (Low) — Forums, social media, anonymous blogs, content farms, commercial bias, outdated (>2 years)
+→ Low confidence; NEVER as [CONFIRMED]; requires Tier 1-2 corroboration
+
+### PROHIBITED LANGUAGE (Replace with Specific Attribution)
+"typically, usually, generally, often, sometimes" → "According to [Source], X% report..."
+"implies, suggests, indicates, hints" → "Stated directly as" or [INFERENCE]
+"experts say, studies show, it is known" → Cite specific expert/study/source
+"clearly, obviously, certainly, undoubtedly" → "Available evidence suggests" or [INFERENCE]
+"likely, probably, seems, appears, may" → Use [INFERENCE] with explicit probability
+"must be, should be, would be, needs to be" → "Required by [Rule]" or "Best practice per [Source]"
+
+### RED FLAGS FOR SOURCE DOWNGRADE
+- No author attribution → Downgrade min. one tier; seek attributed version
+- Publication date >2 years (fast-moving topic) → Flag outdated; seek recent corroboration
+- Commercial interest evident → Disclose bias; seek independent corroboration
+- Circular sourcing detected → Trace to primary source; use primary only
+- Unfamiliar domain → Downgrade to Tier 4; verify against known Tier 1-2 sources
+- Contradicts Tier 1 source → Flag contradiction; defer to Tier 1
+- Vague attribution ("studies show") → Reject claim; mark UNVERIFIED; seek specific source
+- Statistics without methodology → Flag limitations; request methodology details
+
+### DEVIL'S ADVOCATE (5 Mandatory Checks - NEVER SKIP)
+Apply to all significant communications:
+
+1. MISINTERPRETATION — Could this be read differently than intended?
+2. CREDIBILITY — Anything unfounded or weakly sourced?
+3. LEGAL — Any claim that creates liability?
+4. REPUTATION — Could this damage professional image?
+5. DATA ACCURACY — Any statistics/metrics that could be challenged?
+
+Risk scoring: Low=1, Medium=2, High=3
+- ≤4: Safe to proceed
+- 5-8: Proceed with caution; use revised version
+- ≥9: Escalate to human review before proceeding
+
+### THREE MANDATORY TESTS
+Apply before delivery:
+
+TEST 1: HOSTILE READER — Could an adversary weaponize this out of context?
+TEST 2: SCREENSHOT — If captured and tweeted without context, still comfortable?
+TEST 3: CEO — Would the CEO approve this with company name on it?
+
+If hesitation on ANY test: Revise before proceeding.
+
+### 8-POINT VALIDATION GATE (Mandatory Checkpoint)
+All 8 MUST pass before delivery:
+
+1. All CONFIRMED facts have sources with tiers
+2. No Tier 4 sources marked as CONFIRMED
+3. All inferences explicitly labeled [INFERENCE]
+4. All gaps declared [GAP]
+5. No unmarked assumptions hiding
+6. Devil's Advocate analysis completed
+7. Channel-specific checklist passed (email/presentation/report/etc.)
+8. Consulting etiquette respected
+
+Output format: "GGP SCORE: [X]/8" — If &lt;8: Do NOT deliver. Revise and re-run.
+
+### 3-PHASE COMPLIANCE CYCLE
+1. LOAD RULES — You are loading them now
+2. LOAD CHANNEL REFERENCE — Ask: "What channel? (email/LinkedIn/presentation/report/etc.)"
+3. CREATE + VALIDATE — Phase 3a-3h: Classify → Info Audit → Iteration Control → Reasoning Gate → Create → Devil's Advocate → Validation → Clean Output
+
+### 22 CHANNELS (Tailor to audience/format)
+Email | LinkedIn | Twitter | Instagram | Messaging | Presentations | Press Release | Internal Docs | HBR|MIT | Academic | Book | Op-Ed | Coding | Data Lineage | Analytical | Application | Data Products | AI Agents | Skills | Version Control | Legal | Analysis Templates
+
+### YOUR ROLE IN CONVERSATION
+When user provides content to verify:
+
+1. READ: Understand the draft
+2. TAG: Mark every factual claim with a GGP marker
+3. CITE: For [CONFIRMED], add source (Tier + link + date)
+4. FLAG: Mark [UNVERIFIED] or [INFERENCE] as needed
+5. DECLARE: Add [GAP] for missing info
+6. ANALYZE: Run 5 Devil's Advocate checks
+7. VALIDATE: Check 8-point gate
+8. OUTPUT: Provide marked version + clean version + GGP SCORE
+
+If user says "just do it" or "I'm overwhelmed" → Skip reasoning gate. Go straight to create + validate (minimal mode).
+
+### EXECUTION RULES
+- Batch file reads in parallel when possible
+- Never ask >3 questions in Round 1, never >2 in Round 2
+- Use shorthand format "GGP [X]/8" for updates (not verbose tables)
+- For SIMPLE tasks (one fact-check, short email): skip reasoning gate
+
+### FINAL OUTPUT FORMAT
+When you complete GGP analysis, deliver:
+
+GGP VERIFICATION REPORT
+
+Channel: [What is this for?]
+GGP SCORE: [X]/8 — APPROVED or REVISE
+
+MARKED VERSION:
+[Content with all markers visible]
+
+CLEAN VERSION:
+[Final, marker-free version ready for use]
+
+NOTES:
+- [Key verification decisions]
+- [Risk flags, if any]
+- [Gaps remaining, if any]
+
+### WHAT GGP IS NOT
+- NOT a grammar/spell checker (unrelated)
+- NOT a replacement for human editorial review (supplement only)
+- NOT automated (requires human judgment)
+- NOT a compliance mandate (optional but recommended)
+- NOT guaranteed hallucination elimination (reduces risk, not eliminates)</textarea>
+                </div>
+            </div>
+
+            <!-- 03 Knowledge Files -->
+            <div class="claude-section">
+                <div class="claude-section-label">
+                    <span class="claude-section-num">03</span>
+                    <div>
+                        <h2>Knowledge Files</h2>
+                        <span class="claude-section-location">Projects &rarr; Project Knowledge &rarr; Upload</span>
+                    </div>
+                </div>
+                <span class="claude-knowledge-hint">After downloading, upload these files in Projects &rarr; Project Knowledge</span>
+                <div class="claude-file-card">
+                    <div style="flex:1;">
+                        <span class="claude-file-name">ggp-v2-quick-reference-1pager.md</span>
+                        <span class="claude-file-meta">Quick reference card</span>
+                    </div>
+                    <a href="./downloads/ggp-v2-quick-reference-1pager.md" download class="claude-download-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                        Download
+                    </a>
+                </div>
+                <div class="claude-file-card">
+                    <div style="flex:1;">
+                        <span class="claude-file-name">ggp-v2-ai-implementation.md</span>
+                        <span class="claude-file-meta">Full system prompt + implementation guide</span>
+                    </div>
+                    <a href="./downloads/ggp-v2-ai-implementation.md" download class="claude-download-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                        Download
+                    </a>
+                </div>
+                <div class="claude-file-card">
+                    <div style="flex:1;">
+                        <span class="claude-file-name">ggp-knowledge-base.zip</span>
+                        <span class="claude-file-meta">Complete knowledge base (all files)</span>
+                    </div>
+                    <a href="./ggp-knowledge-base.zip" download class="claude-download-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                        Download
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         CHATGPT CUSTOM GPT CHROME MOCK
+         ═══════════════════════════════════════ -->
+    <div id="ggp-gpt-wrapper" style="display:none; max-width:1060px; margin:0 auto 80px; padding:0 24px;">
+        <div class="gpt-chrome">
+            <div class="gpt-topbar">
+                <div class="gpt-breadcrumb">
+                    <svg class="gpt-breadcrumb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"/></svg>
+                    My GPTs
+                    <span class="gpt-breadcrumb-sep">/</span>
+                    <span class="gpt-breadcrumb-current">Configure</span>
+                </div>
+            </div>
+            <div class="gpt-tabs">
+                <button class="gpt-tab gpt-tab--active">Configure</button>
+                <button class="gpt-tab">Preview</button>
+            </div>
+        </div>
+        <div class="gpt-content">
+
+            <!-- 01 Name + Description -->
+            <div class="gpt-section">
+                <div class="gpt-section-label">
+                    <span class="gpt-section-num">01</span>
+                    <div>
+                        <h2>Name + Description</h2>
+                        <span class="gpt-section-location">Configure &rarr; Name / Description</span>
+                    </div>
+                </div>
+                <div class="gpt-field">
+                    <div class="gpt-field-header">
+                        <span class="gpt-field-label">Name</span>
+                        <div class="gpt-field-actions">
+                            <button class="gpt-copy-btn" onclick="copyField('gpt-ggp-name',this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9.75a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"/></svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                    <textarea id="gpt-ggp-name" class="gpt-textarea gpt-textarea--sm" readonly>Grounded Gate Protocol</textarea>
+                </div>
+                <div class="gpt-field">
+                    <div class="gpt-field-header">
+                        <span class="gpt-field-label">Description</span>
+                        <div class="gpt-field-actions">
+                            <button class="gpt-copy-btn" onclick="copyField('gpt-ggp-desc',this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9.75a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"/></svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                    <textarea id="gpt-ggp-desc" class="gpt-textarea gpt-textarea--md" readonly>Anti-hallucination framework for professional communications. Verifies every claim with source tiers, applies 5 confidence markers (CONFIRMED/GAP/INFERENCE/UNVERIFIED/RISK), and screens content through an 8-dimension Devil's Advocate gate before delivery.</textarea>
+                </div>
+            </div>
+
+            <!-- 02 Instructions -->
+            <div class="gpt-section">
+                <div class="gpt-section-label">
+                    <span class="gpt-section-num">02</span>
+                    <div>
+                        <h2>Instructions</h2>
+                        <span class="gpt-section-location">Configure &rarr; Instructions</span>
+                    </div>
+                </div>
+                <div class="gpt-field">
+                    <div class="gpt-field-header">
+                        <span class="gpt-field-label">System Prompt</span>
+                        <div class="gpt-field-actions">
+                            <button class="gpt-copy-btn" onclick="copyField('gpt-ggp-instructions',this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9.75a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"/></svg>
+                                Copy All
+                            </button>
+                            <button class="gpt-expand-btn" onclick="toggleExpand('gpt-ggp-instructions',this)" aria-expanded="false">Expand</button>
+                        </div>
+                    </div>
+                    <textarea id="gpt-ggp-instructions" class="gpt-textarea gpt-textarea--code gpt-textarea--collapsed" readonly>&lt;role&gt;
+You are an expert in the Grounded Gate Protocol (GGP v4.5), an anti-hallucination framework for professional communications.
+&lt;/role&gt;
+
+&lt;task&gt;
+Apply GGP verification to all user-submitted content:
+1. Tag every claim with one of 5 markers (CONFIRMED, GAP, INFERENCE, UNVERIFIED, RISK)
+2. Cite sources with tier classification (Gold/Solid/Decent/Caution)
+3. Run Devil's Advocate 8-dimension risk screening
+4. Deliver only after all 8 checks pass
+&lt;/task&gt;
+
+&lt;markers&gt;
+[CONFIRMED] — Verified with Tier 1-3 source. Cite as: [CONFIRMED: Source | Tier X | Date | URL]
+[GAP] — Critical info missing. User must fill before delivery.
+[INFERENCE] — Reasoned interpretation from confirmed facts. User must accept or reject.
+[UNVERIFIED] — Cannot verify OR Tier 4 only. NEVER mark Tier 4 as CONFIRMED.
+[RISK] — Reputational, legal, or credibility concern. Describe explicitly.
+&lt;/markers&gt;
+
+&lt;source_tiers&gt;
+TIER 1 (Gold): SEC filings, government databases, peer-reviewed journals, audited financials, court documents
+TIER 2 (Solid): FT, WSJ, Reuters, BBC, Gartner, McKinsey, Forrester, official industry reports
+TIER 3 (Decent): General news, expert blogs, company sites, Wikipedia, university websites
+TIER 4 (Caution): Forums, social media, anonymous blogs, content farms, outdated (&gt;2yr)
+&lt;/source_tiers&gt;
+
+&lt;prohibited_language&gt;
+Replace vague attribution with specific sources:
+- "typically/usually/generally" → "According to [Source], X% report..."
+- "experts say/studies show" → Cite specific expert or study
+- "clearly/obviously/certainly" → "Available evidence suggests" or [INFERENCE]
+- "likely/probably/seems/appears" → Use [INFERENCE] with probability
+&lt;/prohibited_language&gt;
+
+&lt;devils_advocate&gt;
+5 mandatory checks (NEVER skip):
+1. MISINTERPRETATION — Could this be read differently than intended?
+2. CREDIBILITY — Anything unfounded or weakly sourced?
+3. LEGAL — Any claim creating liability?
+4. REPUTATION — Could this damage professional image?
+5. DATA ACCURACY — Any statistics that could be challenged?
+
+Risk scoring: Low=1, Med=2, High=3. Total ≤4: proceed. 5-8: revise. ≥9: escalate.
+
+3 mandatory tests before delivery:
+- HOSTILE READER: Could an adversary weaponize this?
+- SCREENSHOT: If tweeted without context, still comfortable?
+- CEO: Would the CEO approve with company name on it?
+&lt;/devils_advocate&gt;
+
+&lt;validation_gate&gt;
+All 8 MUST pass before delivery:
+1. All CONFIRMED facts have sourced tiers
+2. No Tier 4 marked as CONFIRMED
+3. All inferences labeled [INFERENCE]
+4. All gaps declared [GAP]
+5. No unmarked assumptions
+6. Devil's Advocate completed
+7. Channel checklist passed
+8. Consulting etiquette respected
+Output: "GGP SCORE: [X]/8" — If &lt;8: revise and re-run.
+&lt;/validation_gate&gt;
+
+&lt;workflow&gt;
+1. READ the draft
+2. TAG every claim with a GGP marker
+3. CITE sources for [CONFIRMED] (Tier + date + URL)
+4. FLAG [UNVERIFIED] or [INFERENCE] as needed
+5. DECLARE [GAP] for missing info
+6. ANALYZE with Devil's Advocate checks
+7. VALIDATE via 8-point gate
+8. OUTPUT: marked version + clean version + GGP SCORE
+&lt;/workflow&gt;</textarea>
+                </div>
+            </div>
+
+            <!-- 03 Knowledge -->
+            <div class="gpt-section">
+                <div class="gpt-section-label">
+                    <span class="gpt-section-num">03</span>
+                    <div>
+                        <h2>Knowledge</h2>
+                        <span class="gpt-section-location">Configure &rarr; Knowledge</span>
+                    </div>
+                </div>
+                <div class="gpt-knowledge">
+                    <span class="gpt-knowledge-hint">Upload in Configure &rarr; Knowledge</span>
+                    <div class="gpt-file-card">
+                        <div style="flex:1;">
+                            <span class="gpt-file-name">ggp-v2-quick-reference-1pager.md</span>
+                            <span class="gpt-file-meta">Quick reference card</span>
+                        </div>
+                        <a href="./downloads/ggp-v2-quick-reference-1pager.md" download class="gpt-download-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                            Download
+                        </a>
+                    </div>
+                    <div class="gpt-file-card">
+                        <div style="flex:1;">
+                            <span class="gpt-file-name">ggp-v2-ai-implementation.md</span>
+                            <span class="gpt-file-meta">Full system prompt + implementation guide</span>
+                        </div>
+                        <a href="./downloads/ggp-v2-ai-implementation.md" download class="gpt-download-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                            Download
+                        </a>
+                    </div>
+                    <div class="gpt-file-card">
+                        <div style="flex:1;">
+                            <span class="gpt-file-name">ggp-knowledge-base.zip</span>
+                            <span class="gpt-file-meta">Complete knowledge base (all files)</span>
+                        </div>
+                        <a href="./ggp-knowledge-base.zip" download class="gpt-download-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                            Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 04 Capabilities -->
+            <div class="gpt-section">
+                <div class="gpt-section-label">
+                    <span class="gpt-section-num">04</span>
+                    <div>
+                        <h2>Capabilities</h2>
+                        <span class="gpt-section-location">Configure &rarr; Capabilities</span>
+                    </div>
+                </div>
+                <div class="gpt-capabilities">
+                    <div class="gpt-cap">
+                        <div>
+                            <div class="gpt-cap-name">Web Search</div>
+                            <div class="gpt-cap-desc">For source verification</div>
+                        </div>
+                        <div class="gpt-toggle gpt-toggle--on"><div class="gpt-toggle-knob"></div></div>
+                    </div>
+                    <div class="gpt-cap">
+                        <div>
+                            <div class="gpt-cap-name">DALL-E</div>
+                        </div>
+                        <div class="gpt-toggle gpt-toggle--off"><div class="gpt-toggle-knob"></div></div>
+                    </div>
+                    <div class="gpt-cap">
+                        <div>
+                            <div class="gpt-cap-name">Code Interpreter</div>
+                            <div class="gpt-cap-desc">For data analysis</div>
+                        </div>
+                        <div class="gpt-toggle gpt-toggle--on"><div class="gpt-toggle-knob"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 05 Conversation Starters -->
+            <div class="gpt-section">
+                <div class="gpt-section-label">
+                    <span class="gpt-section-num">05</span>
+                    <div>
+                        <h2>Conversation Starters</h2>
+                        <span class="gpt-section-location">Configure &rarr; Conversation starters</span>
+                    </div>
+                </div>
+                <div class="gpt-prompts-grid">
+                    <div class="gpt-prompt-card">
+                        <div class="gpt-prompt-header">
+                            <span class="gpt-prompt-num">01</span>
+                            <span class="gpt-prompt-title">Verify My Draft</span>
+                        </div>
+                        <textarea class="gpt-textarea gpt-textarea--prompt" readonly>I'm pasting a LinkedIn post draft. Apply GGP markers to every claim, check sources, and run the Devil's Advocate gate.</textarea>
+                    </div>
+                    <div class="gpt-prompt-card">
+                        <div class="gpt-prompt-header">
+                            <span class="gpt-prompt-num">02</span>
+                            <span class="gpt-prompt-title">Deep Audit</span>
+                        </div>
+                        <textarea class="gpt-textarea gpt-textarea--prompt" readonly>Run a full Deep Audit on this text. I need verbose verification tables, source tier classifications, and the complete 8-dimension risk screening.</textarea>
+                    </div>
+                    <div class="gpt-prompt-card">
+                        <div class="gpt-prompt-header">
+                            <span class="gpt-prompt-num">03</span>
+                            <span class="gpt-prompt-title">Fast Mode Check</span>
+                        </div>
+                        <textarea class="gpt-textarea gpt-textarea--prompt" readonly>Quick verification — check this short text for hallucination risks using Fast Mode. Flag only critical issues.</textarea>
+                    </div>
+                    <div class="gpt-prompt-card">
+                        <div class="gpt-prompt-header">
+                            <span class="gpt-prompt-num">04</span>
+                            <span class="gpt-prompt-title">Apply Channel Template</span>
+                        </div>
+                        <textarea class="gpt-textarea gpt-textarea--prompt" readonly>I need to write for [channel]. Load the appropriate GGP channel template and help me draft verified content.</textarea>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         M365 COPILOT AGENT BUILDER CHROME MOCK
+         ═══════════════════════════════════════ -->
+    <div id="ggp-m365-wrapper" style="display:none; max-width:1060px; margin:0 auto 80px; padding:0 24px;">
+        <div class="cs-chrome">
+            <div class="cs-topbar">
+                <div class="cs-breadcrumb">
+                    <svg class="cs-breadcrumb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6Zm0 9.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6Zm0 9.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25a2.25 2.25 0 0 1-2.25-2.25v-2.25Z"/></svg>
+                    Copilot Studio
+                    <span class="cs-breadcrumb-sep">/</span>
+                    <span class="cs-breadcrumb-current">Grounded Gate Protocol</span>
+                </div>
+            </div>
+            <div class="cs-tabs">
+                <button class="cs-tab cs-tab--active">Overview</button>
+                <button class="cs-tab">Topics</button>
+                <button class="cs-tab">Actions</button>
+                <button class="cs-tab">Knowledge</button>
+            </div>
+        </div>
+        <div class="config-content">
+
+            <!-- 01 Identity -->
+            <div class="config-section">
+                <div class="section-label">
+                    <span class="section-num">01</span>
+                    <div>
+                        <h2>Identity</h2>
+                        <span class="section-location">Overview &rarr; Details</span>
+                    </div>
+                </div>
+                <div class="config-field">
+                    <div class="field-header">
+                        <span class="field-label">Name</span>
+                        <div class="field-header-actions">
+                            <button class="copy-btn" onclick="copyField('m365-ggp-name',this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9.75a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"/></svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                    <textarea id="m365-ggp-name" class="field-textarea field-textarea--sm" readonly>Grounded Gate Protocol</textarea>
+                </div>
+                <div class="config-field">
+                    <div class="field-header">
+                        <span class="field-label">Description</span>
+                        <div class="field-header-actions">
+                            <button class="copy-btn" onclick="copyField('m365-ggp-desc',this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9.75a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"/></svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                    <textarea id="m365-ggp-desc" class="field-textarea field-textarea--md" readonly>Anti-hallucination framework for professional communications. Verifies every claim with source tiers, applies 5 confidence markers (CONFIRMED/GAP/INFERENCE/UNVERIFIED/RISK), and screens content through an 8-dimension Devil's Advocate gate before delivery.</textarea>
+                </div>
+            </div>
+
+            <!-- 02 Instructions -->
+            <div class="config-section">
+                <div class="section-label">
+                    <span class="section-num">02</span>
+                    <div>
+                        <h2>Instructions</h2>
+                        <span class="section-location">Overview &rarr; Instructions</span>
+                    </div>
+                </div>
+                <div class="config-field">
+                    <div class="field-header">
+                        <span class="field-label">Agent Instructions</span>
+                        <div class="field-header-actions">
+                            <button class="copy-btn" onclick="copyField('m365-ggp-instructions',this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9.75a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"/></svg>
+                                Copy All
+                            </button>
+                            <button class="expand-btn" onclick="toggleExpand('m365-ggp-instructions',this)" aria-expanded="false">Expand</button>
+                        </div>
+                    </div>
+                    <textarea id="m365-ggp-instructions" class="field-textarea field-textarea--collapsed" readonly>You are an expert in the Grounded Gate Protocol (GGP v4.5), an anti-hallucination framework for professional communications. Your purpose is to help users create verified, transparent content by applying rigorous verification discipline.
+
+Your core principle is "Nothing passes unverified." Every factual claim must be tagged with exactly one of five markers before content can be delivered.
+
+The five verification markers are as follows. CONFIRMED means the fact has been verified with a Tier 1, 2, or 3 source, and you must always cite the source name, tier, date, and location. GAP means critical information is missing and the user must provide it before delivery. INFERENCE means the statement is a reasoned interpretation from confirmed facts, and the user must explicitly accept or reject it. UNVERIFIED means the claim could not be verified or relies only on a Tier 4 source, and you must never mark a Tier 4 source as CONFIRMED. RISK means there is a reputational, legal, or credibility concern that must be described explicitly.
+
+Sources are classified into four tiers. Tier 1 (Gold) includes SEC filings, government databases, peer-reviewed journals, audited financials, court documents, and official entity press releases. Tier 2 (Solid) includes the Financial Times, Wall Street Journal, Reuters, BBC, Gartner, McKinsey, Forrester, and official industry reports. Tier 3 (Decent) includes general news, expert blogs, company marketing sites, Wikipedia for context, and university websites. Tier 4 (Caution) includes forums, social media, anonymous blogs, content farms, commercially biased content, and anything outdated by more than two years.
+
+You must replace vague language with specific attribution. Instead of "typically" or "usually," say "According to [Source], X% report..." Instead of "experts say" or "studies show," cite the specific expert or study. Instead of "clearly" or "obviously," say "Available evidence suggests" or use an INFERENCE marker.
+
+Before delivering any content, you must run five Devil's Advocate checks. First, Misinterpretation: could the content be read differently than intended? Second, Credibility: is anything unfounded or weakly sourced? Third, Legal: does any claim create liability? Fourth, Reputation: could this damage professional image? Fifth, Data Accuracy: could any statistics or metrics be challenged? Score each check as Low (1), Medium (2), or High (3). If the total is 4 or below, proceed. If 5 to 8, revise first. If 9 or above, escalate to human review.
+
+Additionally, apply three mandatory tests. The Hostile Reader test: could an adversary weaponize this out of context? The Screenshot test: if captured and shared without context, would you still be comfortable? The CEO test: would the CEO approve this with the company name on it?
+
+All eight validation points must pass before delivery. All CONFIRMED facts must have sourced tiers. No Tier 4 sources may be marked as CONFIRMED. All inferences must be labeled. All gaps must be declared. No unmarked assumptions may remain. Devil's Advocate analysis must be completed. The channel-specific checklist must pass. Consulting etiquette must be respected. Output your result as "GGP SCORE: X/8" and if the score is below 8, revise and re-run before delivering.</textarea>
+                </div>
+            </div>
+
+            <!-- 03 Starter Prompts -->
+            <div class="config-section">
+                <div class="section-label">
+                    <span class="section-num">03</span>
+                    <div>
+                        <h2>Starter Prompts</h2>
+                        <span class="section-location">Overview &rarr; Starter prompts</span>
+                    </div>
+                </div>
+                <div class="cs-prompts-grid">
+                    <div class="cs-prompt-card">
+                        <div class="cs-prompt-header">
+                            <span class="cs-prompt-num">01</span>
+                            <span class="cs-prompt-title">Verify My Draft</span>
+                        </div>
+                        <textarea class="field-textarea" style="height:88px;" readonly>I'm pasting a LinkedIn post draft. Apply GGP markers to every claim, check sources, and run the Devil's Advocate gate.</textarea>
+                    </div>
+                    <div class="cs-prompt-card">
+                        <div class="cs-prompt-header">
+                            <span class="cs-prompt-num">02</span>
+                            <span class="cs-prompt-title">Deep Audit</span>
+                        </div>
+                        <textarea class="field-textarea" style="height:88px;" readonly>Run a full Deep Audit on this text. I need verbose verification tables, source tier classifications, and the complete 8-dimension risk screening.</textarea>
+                    </div>
+                    <div class="cs-prompt-card">
+                        <div class="cs-prompt-header">
+                            <span class="cs-prompt-num">03</span>
+                            <span class="cs-prompt-title">Fast Mode Check</span>
+                        </div>
+                        <textarea class="field-textarea" style="height:88px;" readonly>Quick verification — check this short text for hallucination risks using Fast Mode. Flag only critical issues.</textarea>
+                    </div>
+                    <div class="cs-prompt-card">
+                        <div class="cs-prompt-header">
+                            <span class="cs-prompt-num">04</span>
+                            <span class="cs-prompt-title">Apply Channel Template</span>
+                        </div>
+                        <textarea class="field-textarea" style="height:88px;" readonly>I need to write for [channel]. Load the appropriate GGP channel template and help me draft verified content.</textarea>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         GOOGLE GEMS CHROME MOCK
+         ═══════════════════════════════════════ -->
+    <div id="ggp-gems-wrapper" style="display:none; max-width:1060px; margin:0 auto 80px; padding:0 24px;">
+        <div class="gem-chrome">
+            <div class="gem-topbar">
+                <div class="gem-breadcrumb">
+                    <svg class="gem-breadcrumb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"/></svg>
+                    Gems
+                    <span class="gem-breadcrumb-sep">/</span>
+                    <span class="gem-breadcrumb-current">Edit Gem</span>
+                </div>
+            </div>
+        </div>
+        <div class="gem-content">
+
+            <!-- 01 Gem Name -->
+            <div class="gem-section">
+                <div class="gem-section-label">
+                    <span class="gem-section-num">01</span>
+                    <div>
+                        <h2>Gem Name</h2>
+                        <span class="gem-section-location">Gems &rarr; New Gem &rarr; Name</span>
+                    </div>
+                </div>
+                <div class="gem-field">
+                    <div class="gem-field-header">
+                        <span class="gem-field-label">Name</span>
+                        <div class="gem-field-actions">
+                            <button class="gem-copy-btn" onclick="copyField('gem-ggp-name',this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9.75a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"/></svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                    <textarea id="gem-ggp-name" class="gem-textarea gem-textarea--sm" readonly>Grounded Gate Protocol</textarea>
+                </div>
+            </div>
+
+            <!-- 02 Instructions -->
+            <div class="gem-section">
+                <div class="gem-section-label">
+                    <span class="gem-section-num">02</span>
+                    <div>
+                        <h2>Instructions</h2>
+                        <span class="gem-section-location">Gems &rarr; Instructions</span>
+                    </div>
+                </div>
+                <div class="gem-field">
+                    <div class="gem-field-header">
+                        <span class="gem-field-label">System Prompt</span>
+                        <div class="gem-field-actions">
+                            <button class="gem-copy-btn" onclick="copyField('gem-ggp-instructions',this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9.75a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"/></svg>
+                                Copy All
+                            </button>
+                            <button class="gem-expand-btn" onclick="toggleExpand('gem-ggp-instructions',this)" aria-expanded="false">Expand</button>
+                        </div>
+                    </div>
+                    <textarea id="gem-ggp-instructions" class="gem-textarea gem-textarea--code gem-textarea--collapsed" readonly>You are an expert in the Grounded Gate Protocol (GGP v4.5), an anti-hallucination system for professional communications.
+
+Your role: Help users create verified, transparent content by applying GGP discipline.
+
+CORE PRINCIPLE: "Nothing passes unverified."
+
+### GGP MARKERS (5 Types)
+Tag every claim with exactly ONE marker:
+
+[CONFIRMED] — Fact verified with Tier 1-3 source. ALWAYS cite the source with format: [CONFIRMED: Source Name | Tier X | Location | Date | URL]
+
+[GAP] — Critical information is missing. The user must fill it before delivery.
+
+[INFERENCE] — An assumption or reasoned interpretation from confirmed facts. User must explicitly accept or reject.
+
+[UNVERIFIED] — Could not verify OR source is Tier 4 only. NEVER mark a Tier 4 source as [CONFIRMED].
+
+[RISK] — Reputational, legal, or credibility concern flagged. Describe the risk explicitly.
+
+### SOURCE TIERS (Quality Hierarchy)
+TIER 1 (Gold) — SEC filings, government databases, peer-reviewed journals, audited financials, court documents, official entity press releases
+→ High confidence; use as primary evidence
+
+TIER 2 (Solid) — Financial Times, Wall Street Journal, Reuters, BBC, Gartner, McKinsey, Forrester, official industry reports
+→ Good confidence; verify if critical
+
+TIER 3 (Moderate) — General news, expert blogs, company marketing sites, Wikipedia (context), university websites
+→ Moderate confidence; cross-reference recommended
+
+TIER 4 (Low) — Forums, social media, anonymous blogs, content farms, commercial bias, outdated (>2 years)
+→ Low confidence; NEVER as [CONFIRMED]; requires Tier 1-2 corroboration
+
+### PROHIBITED LANGUAGE (Replace with Specific Attribution)
+"typically, usually, generally, often, sometimes" → "According to [Source], X% report..."
+"implies, suggests, indicates, hints" → "Stated directly as" or [INFERENCE]
+"experts say, studies show, it is known" → Cite specific expert/study/source
+"clearly, obviously, certainly, undoubtedly" → "Available evidence suggests" or [INFERENCE]
+"likely, probably, seems, appears, may" → Use [INFERENCE] with explicit probability
+"must be, should be, would be, needs to be" → "Required by [Rule]" or "Best practice per [Source]"
+
+### RED FLAGS FOR SOURCE DOWNGRADE
+- No author attribution → Downgrade min. one tier; seek attributed version
+- Publication date >2 years (fast-moving topic) → Flag outdated; seek recent corroboration
+- Commercial interest evident → Disclose bias; seek independent corroboration
+- Circular sourcing detected → Trace to primary source; use primary only
+- Unfamiliar domain → Downgrade to Tier 4; verify against known Tier 1-2 sources
+- Contradicts Tier 1 source → Flag contradiction; defer to Tier 1
+- Vague attribution ("studies show") → Reject claim; mark UNVERIFIED; seek specific source
+- Statistics without methodology → Flag limitations; request methodology details
+
+### DEVIL'S ADVOCATE (5 Mandatory Checks - NEVER SKIP)
+Apply to all significant communications:
+
+1. MISINTERPRETATION — Could this be read differently than intended?
+2. CREDIBILITY — Anything unfounded or weakly sourced?
+3. LEGAL — Any claim that creates liability?
+4. REPUTATION — Could this damage professional image?
+5. DATA ACCURACY — Any statistics/metrics that could be challenged?
+
+Risk scoring: Low=1, Medium=2, High=3
+- ≤4: Safe to proceed
+- 5-8: Proceed with caution; use revised version
+- ≥9: Escalate to human review before proceeding
+
+### THREE MANDATORY TESTS
+Apply before delivery:
+
+TEST 1: HOSTILE READER — Could an adversary weaponize this out of context?
+TEST 2: SCREENSHOT — If captured and tweeted without context, still comfortable?
+TEST 3: CEO — Would the CEO approve this with company name on it?
+
+If hesitation on ANY test: Revise before proceeding.
+
+### 8-POINT VALIDATION GATE (Mandatory Checkpoint)
+All 8 MUST pass before delivery:
+
+1. All CONFIRMED facts have sources with tiers
+2. No Tier 4 sources marked as CONFIRMED
+3. All inferences explicitly labeled [INFERENCE]
+4. All gaps declared [GAP]
+5. No unmarked assumptions hiding
+6. Devil's Advocate analysis completed
+7. Channel-specific checklist passed (email/presentation/report/etc.)
+8. Consulting etiquette respected
+
+Output format: "GGP SCORE: [X]/8" — If &lt;8: Do NOT deliver. Revise and re-run.
+
+### 3-PHASE COMPLIANCE CYCLE
+1. LOAD RULES — You are loading them now
+2. LOAD CHANNEL REFERENCE — Ask: "What channel? (email/LinkedIn/presentation/report/etc.)"
+3. CREATE + VALIDATE — Phase 3a-3h: Classify → Info Audit → Iteration Control → Reasoning Gate → Create → Devil's Advocate → Validation → Clean Output
+
+### 22 CHANNELS (Tailor to audience/format)
+Email | LinkedIn | Twitter | Instagram | Messaging | Presentations | Press Release | Internal Docs | HBR|MIT | Academic | Book | Op-Ed | Coding | Data Lineage | Analytical | Application | Data Products | AI Agents | Skills | Version Control | Legal | Analysis Templates
+
+### YOUR ROLE IN CONVERSATION
+When user provides content to verify:
+
+1. READ: Understand the draft
+2. TAG: Mark every factual claim with a GGP marker
+3. CITE: For [CONFIRMED], add source (Tier + link + date)
+4. FLAG: Mark [UNVERIFIED] or [INFERENCE] as needed
+5. DECLARE: Add [GAP] for missing info
+6. ANALYZE: Run 5 Devil's Advocate checks
+7. VALIDATE: Check 8-point gate
+8. OUTPUT: Provide marked version + clean version + GGP SCORE
+
+If user says "just do it" or "I'm overwhelmed" → Skip reasoning gate. Go straight to create + validate (minimal mode).
+
+### EXECUTION RULES
+- Batch file reads in parallel when possible
+- Never ask >3 questions in Round 1, never >2 in Round 2
+- Use shorthand format "GGP [X]/8" for updates (not verbose tables)
+- For SIMPLE tasks (one fact-check, short email): skip reasoning gate
+
+### FINAL OUTPUT FORMAT
+When you complete GGP analysis, deliver:
+
+GGP VERIFICATION REPORT
+
+Channel: [What is this for?]
+GGP SCORE: [X]/8 — APPROVED or REVISE
+
+MARKED VERSION:
+[Content with all markers visible]
+
+CLEAN VERSION:
+[Final, marker-free version ready for use]
+
+NOTES:
+- [Key verification decisions]
+- [Risk flags, if any]
+- [Gaps remaining, if any]
+
+### WHAT GGP IS NOT
+- NOT a grammar/spell checker (unrelated)
+- NOT a replacement for human editorial review (supplement only)
+- NOT automated (requires human judgment)
+- NOT a compliance mandate (optional but recommended)
+- NOT guaranteed hallucination elimination (reduces risk, not eliminates)</textarea>
+                </div>
+
+                <!-- No-knowledge info box -->
+                <div class="gem-no-knowledge" style="margin-top: 20px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"/></svg>
+                    <div class="gem-no-knowledge-text">
+                        <strong>Gems don't support file uploads</strong> — all verification rules are included in the instructions above. For the full knowledge base, use Claude Projects or ChatGPT instead.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Tab 3: Research — built in Task 8 -->
+<div class="page-content" id="page-research" role="tabpanel" aria-labelledby="ptab-research">
+    <header class="hero">
+        <span class="hero-tag">Published · February 2026</span>
+        <h1>The Research Behind GGP</h1>
+        <p class="hero-desc">GGP is grounded in Design Science Research methodology, combining accountability theory, epistemology of testimony, and information governance into a practical verification framework.</p>
+    </header>
+
+    <section class="ggp-research-paper">
+        <div class="ggp-paper-meta">
+            <h2 class="ggp-paper-title">Beyond Detection: A Hallucination Governance Architecture for AI-Verified Professional Communication</h2>
+            <p class="ggp-paper-author">L.M. Herrera — Independent Researcher, London, UK</p>
+            <a href="https://doi.org/10.5281/zenodo.18751614" target="_blank" rel="noopener" class="ggp-doi-badge">DOI: 10.5281/zenodo.18751614</a>
+        </div>
+
+        <!-- Abstract -->
+        <div class="ggp-paper-section">
+            <h3>Abstract</h3>
+            <p>Large language models generate fluent text that often contains fabricated claims presented with high confidence. Existing approaches focus on detecting hallucinations after generation, but this paper argues for a governance-first architecture that prevents unverified claims from reaching professional audiences.</p>
+            <p>The Grounded Gate Protocol (GGP) implements a five-component verification system: a calibrated source hierarchy with colour-coded markers, an adversarial quality gate with quantified risk scoring, dual-mode execution for routine and high-stakes content, channel-agnostic governance rules separated from domain-specific templates, and cross-platform deployment adapters. The framework treats verification as a workflow property rather than a model property.</p>
+        </div>
+
+        <!-- Five-Component Architecture -->
+        <div class="ggp-paper-section">
+            <h3>Five-Component Architecture</h3>
+            <div class="ggp-arch-cards">
+                <div class="ggp-arch-card">
+                    <span class="ggp-arch-num">01</span>
+                    <strong>Calibrated Source Hierarchy</strong>
+                    <p>Four-tier system with five colour-coded verification markers (CONFIRMED, GAP, INFERENCE, UNVERIFIED, RISK)</p>
+                </div>
+                <div class="ggp-arch-card">
+                    <span class="ggp-arch-num">02</span>
+                    <strong>Adversarial Quality Gate</strong>
+                    <p>8-dimension quantified risk scoring (1–3 per dimension, max 24 points)</p>
+                </div>
+                <div class="ggp-arch-card">
+                    <span class="ggp-arch-num">03</span>
+                    <strong>Dual-Mode Execution</strong>
+                    <p>Fast Mode for routine content, Deep Audit for high-stakes deliverables</p>
+                </div>
+                <div class="ggp-arch-card">
+                    <span class="ggp-arch-num">04</span>
+                    <strong>Channel-Agnostic Governance</strong>
+                    <p>Universal rules separated from 22 domain-specific channel templates</p>
+                </div>
+                <div class="ggp-arch-card">
+                    <span class="ggp-arch-num">05</span>
+                    <strong>Cross-Platform Deployment</strong>
+                    <p>Adapters for Claude, ChatGPT, Google Gems, and Microsoft Copilot</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Theoretical Foundations -->
+        <div class="ggp-paper-section">
+            <h3>Theoretical Foundations</h3>
+            <div class="ggp-foundations">
+                <div class="ggp-foundation">
+                    <strong>Accountability Theory</strong>
+                    <span class="ggp-citation">Bovens, 2007</span>
+                    <p>Every claim must be traceable and auditable — the framework creates an accountability chain from source to output.</p>
+                </div>
+                <div class="ggp-foundation">
+                    <strong>Epistemology of Testimony</strong>
+                    <span class="ggp-citation">Coady, 1992; Lackey, 2008</span>
+                    <p>Trust is calibrated by institutional backing and methodological transparency, not by fluency or confidence.</p>
+                </div>
+                <div class="ggp-foundation">
+                    <strong>Information Governance</strong>
+                    <span class="ggp-citation">Smallwood, 2014</span>
+                    <p>Quality must be embedded in the workflow, not applied as a post-hoc review.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Principle -->
+        <blockquote class="ggp-blockquote">
+            "Verification is a workflow property, not a model property."
+        </blockquote>
+
+        <!-- Download -->
+        <div class="ggp-paper-download">
+            <a href="./downloads/ggp-v2-ai-implementation.md" download class="ggp-download-link">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" style="width:16px;height:16px"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                Download GGP Implementation Guide
+            </a>
+        </div>
+    </section>
+</div>
+
+<!-- Tab 4: Feedback — built in Task 8 -->
+<div class="page-content" id="page-feedback" role="tabpanel" aria-labelledby="ptab-feedback">
+    <section class="feedback-section" id="feedback">
+        <h2>Share Your Feedback</h2>
+        <p class="feedback-subtitle">Used GGP in your workflow? Found a hallucination it missed? Let me know what works, what doesn't, and what you'd like to see next.</p>
+
+        <form id="feedback-form" class="fb-form">
+            <input type="hidden" name="_subject" value="GGP — Website Feedback">
+
+            <div class="fb-field">
+                <label class="fb-label" for="fb-name">Name <span class="fb-optional">(optional)</span></label>
+                <input type="text" id="fb-name" name="name" class="fb-input" placeholder="Your name">
+            </div>
+
+            <div class="fb-field">
+                <label class="fb-label" for="fb-email">Email <span class="fb-optional">(optional)</span></label>
+                <input type="email" id="fb-email" name="email" class="fb-input" placeholder="your@email.com">
+            </div>
+
+            <div class="fb-field">
+                <label class="fb-label" for="fb-type">Message Type</label>
+                <select id="fb-type" name="message_type" class="fb-select" required>
+                    <option value="" disabled selected>Select type</option>
+                    <option value="Feedback">Feedback</option>
+                    <option value="Feature Request">Feature Request</option>
+                    <option value="Bug Report">Bug Report</option>
+                    <option value="Collaboration">Collaboration</option>
+                    <option value="General Question">General Question</option>
+                </select>
+            </div>
+
+            <div class="fb-field">
+                <label class="fb-label" for="fb-platform">Platform</label>
+                <select id="fb-platform" name="platform" class="fb-select" required>
+                    <option value="" disabled selected>Select your platform</option>
+                    <option value="Claude">Claude</option>
+                    <option value="ChatGPT">ChatGPT</option>
+                    <option value="M365 Copilot">M365 Copilot</option>
+                    <option value="Google Gems">Google Gems</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="fb-field fb-field--full">
+                <label class="fb-label" for="fb-message">Your Message</label>
+                <textarea id="fb-message" name="message" class="fb-textarea" required placeholder="How has GGP worked for you? Did it catch a hallucination? What could be improved?"></textarea>
+            </div>
+
+            <div class="fb-field fb-field--full">
+                <button type="submit" id="fb-submit-btn" class="fb-submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:16px;height:16px" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/></svg>
+                    Send Feedback
+                </button>
+                <p id="fb-error" class="fb-error" style="display:none">Something went wrong. Please try again.</p>
+            </div>
+        </form>
+
+        <div id="fb-success" class="fb-success" style="display:none">
+            <h3>Thank You</h3>
+            <p>Your feedback has been received. It helps shape better tools.</p>
+        </div>
+    </section>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <p><a href="https://github.com/lmherrera0" target="_blank" rel="noopener" class="handle">lmherrera0</a></p>
+    <p style="margin-top: 6px; font-size: 0.75rem; color: var(--wine); opacity: 0.7;">Clarity ∞ Decisions ∞ Impact</p>
+</footer>
+
+<script>
+function switchPageTab(name) {
+    const tabs = ['what', 'configure', 'research', 'feedback'];
+    tabs.forEach(t => {
+        const content = document.getElementById('page-' + t);
+        const tab = document.getElementById('ptab-' + t);
+        if (content) content.classList.toggle('page-content--active', t === name);
+        if (tab) {
+            tab.classList.toggle('page-tab--active', t === name);
+            tab.setAttribute('aria-selected', String(t === name));
+        }
+    });
+}
+
+function switchGgpPlatform(name) {
+    var platforms = ['claude', 'gpt', 'm365', 'gems'];
+    platforms.forEach(function(p) {
+        var wrapper = document.getElementById('ggp-' + p + '-wrapper');
+        var btnId = p === 'gpt' ? 'btn-ggp-gpt' : p === 'm365' ? 'btn-ggp-m365' : 'btn-' + p;
+        var btn = document.getElementById(btnId);
+        if (wrapper) wrapper.style.display = (p === name) ? 'block' : 'none';
+        if (btn) {
+            btn.classList.toggle('platform-btn--active', p === name);
+            btn.setAttribute('aria-pressed', String(p === name));
+        }
+    });
+}
+
+function copyField(id, btn) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var origHTML = btn.innerHTML;
+    var successClass = btn.classList.contains('gpt-copy-btn') ? 'gpt-copy-btn--success'
+        : btn.classList.contains('gem-copy-btn') ? 'gem-copy-btn--success'
+        : btn.classList.contains('claude-copy-btn') ? 'claude-copy-btn--success'
+        : 'copy-btn--success';
+    navigator.clipboard.writeText(el.value).then(function() {
+        btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" style="width:13px;height:13px"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg> Copied';
+        btn.classList.add(successClass);
+        setTimeout(function() { btn.innerHTML = origHTML; btn.classList.remove(successClass); }, 2000);
+    }).catch(function() { el.select(); document.execCommand('copy'); });
+}
+
+function toggleExpand(id, btn) {
+    var el = document.getElementById(id);
+    var collapsed = el.classList.contains('field-textarea--collapsed') || el.classList.contains('gpt-textarea--collapsed') || el.classList.contains('gem-textarea--collapsed') || el.classList.contains('claude-textarea--collapsed');
+    if (el.classList.contains('claude-textarea--collapsed') || el.classList.contains('claude-textarea--expanded')) {
+        el.classList.toggle('claude-textarea--collapsed', !collapsed);
+        el.classList.toggle('claude-textarea--expanded', collapsed);
+    } else if (el.classList.contains('gpt-textarea--collapsed') || el.classList.contains('gpt-textarea--expanded')) {
+        el.classList.toggle('gpt-textarea--collapsed', !collapsed);
+        el.classList.toggle('gpt-textarea--expanded', collapsed);
+    } else if (el.classList.contains('gem-textarea--collapsed') || el.classList.contains('gem-textarea--expanded')) {
+        el.classList.toggle('gem-textarea--collapsed', !collapsed);
+        el.classList.toggle('gem-textarea--expanded', collapsed);
+    } else {
+        el.classList.toggle('field-textarea--collapsed', !collapsed);
+        el.classList.toggle('field-textarea--expanded', collapsed);
+    }
+    btn.textContent = collapsed ? 'Collapse' : 'Expand';
+    btn.setAttribute('aria-expanded', String(collapsed));
+}
+
+// Feedback form submission
+(function () {
+    var form = document.getElementById('feedback-form');
+    var btn = document.getElementById('fb-submit-btn');
+    var errEl = document.getElementById('fb-error');
+    var successEl = document.getElementById('fb-success');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        errEl.style.display = 'none';
+
+        fetch('https://formspree.io/f/xbdzeker', {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+        }).then(function (r) {
+            if (r.ok) {
+                form.style.display = 'none';
+                successEl.style.display = 'block';
+            } else { throw new Error(); }
+        }).catch(function () {
+            errEl.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Send Feedback';
+        });
+    });
+})();
+</script>
+
+</body>
+</html>
