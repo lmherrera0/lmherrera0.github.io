@@ -10,7 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@400;500;600&family=Noto+Sans:wght@300;400;500;600&family=Noto+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        /* ═══════════════════════════════════════
+           V5 JAPANDI PALETTE — BVVG Compliant
+           Only these colours permitted. No pure black/white.
+           ═══════════════════════════════════════ */
         :root {
+            /* Core palette */
             --ivory: #F5F1ED;
             --wine: #6B4C47;
             --pearl: #E8DFD5;
@@ -19,11 +24,25 @@
             --rose-clay: #C5847B;
             --terracotta: #B8785F;
             --sage: #7A9B8E;
-            --sage-light: #e8f1ef;
+
+            /* Semantic mappings — Light Mode */
             --canvas: var(--ivory);
+            --text-primary: var(--wine);
+            --text-heading: var(--mahogany);
+            --text-secondary: var(--wine);
+            --accent-decorative: var(--terracotta);
+            --accent-interactive: var(--sage);
+            --surface: var(--pearl);
+            --border: var(--pearl);
+            --btn-bg: var(--wine);
+            --btn-text: var(--ivory);
+            --btn-hover: var(--rose-clay);
+
+            /* Shadows — warm, no pure black */
             --shadow-sm: 0 1px 3px rgba(92,61,53,0.06);
             --shadow-md: 0 4px 16px rgba(92,61,53,0.08);
             --shadow-lg: 0 8px 32px rgba(92,61,53,0.10);
+
             --radius: 12px;
 
             /* Copilot Studio mock colors */
@@ -53,23 +72,16 @@
         }
         .nav-back:hover { color: var(--rose-clay); }
         .nav-back svg { width: 16px; height: 16px; }
-        .nav-eyebrow {
-            font-family: 'Noto Sans Mono', monospace; font-size: 11px; font-weight: 500;
-            letter-spacing: 1.5px; color: var(--almond); text-transform: uppercase;
-        }
-
         /* ---- HERO ---- */
         .hero {
-            text-align: center; padding: 48px 24px 40px; max-width: 680px; margin: 0 auto;
+            text-align: center; padding: 80px 24px 48px; max-width: 680px; margin: 0 auto;
         }
-        .hero-eyebrow {
-            display: inline-flex; align-items: center; gap: 8px;
-            font-family: 'Noto Sans Mono', monospace; font-size: 11px; font-weight: 500;
-            letter-spacing: 1.5px; color: var(--sage); text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-        .hero-eyebrow-dot {
-            width: 6px; height: 6px; border-radius: 50%; background: var(--sage); display: inline-block;
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Noto Sans', Arial, sans-serif; font-size: 11px; font-weight: 600;
+            letter-spacing: 2.5px; text-transform: uppercase;
+            color: var(--text-heading); margin-bottom: 20px;
+            padding: 6px 16px; border: 1.5px solid var(--almond); border-radius: 100px;
         }
         .hero h1 {
             font-family: 'Noto Serif Display', Georgia, serif; font-size: clamp(1.75rem, 4vw, 2.5rem);
@@ -167,8 +179,8 @@
         }
         .section-num {
             font-family: 'Noto Sans Mono', monospace; font-size: 11px; font-weight: 500;
-            letter-spacing: 1px; color: var(--sage); background: var(--sage-light);
-            border-radius: 100px; padding: 4px 10px; white-space: nowrap; margin-top: 3px;
+            letter-spacing: 1px; color: var(--sage); background: var(--ivory);
+            border: 1px solid var(--sage); border-radius: 100px; padding: 4px 10px; white-space: nowrap; margin-top: 3px;
         }
         .section-label h2 {
             font-family: 'Noto Serif Display', Georgia, serif; font-size: 1.2rem;
@@ -226,7 +238,7 @@
         .copy-btn {
             display: inline-flex; align-items: center; gap: 6px;
             font-family: 'Noto Sans', sans-serif; font-size: 12px; font-weight: 500;
-            color: var(--sage); background: var(--sage-light); border: 1px solid var(--sage);
+            color: var(--sage); background: var(--ivory); border: 1px solid var(--sage);
             border-radius: 8px; padding: 5px 12px; cursor: pointer; letter-spacing: 0.3px;
             transition: background 0.2s, color 0.2s, transform 0.1s; white-space: nowrap;
         }
@@ -294,7 +306,7 @@
         /* ---- RESPONSIVE ---- */
         @media (max-width: 700px) {
             .site-nav { padding: 16px 20px; }
-            .hero { padding: 32px 20px 28px; }
+            .hero { padding: 48px 20px 36px; }
             .setup-guide { padding: 20px 20px 28px; }
             .guide-inner { grid-template-columns: 1fr; }
             .guide-arrow { display: none; }
@@ -318,15 +330,11 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
             lmherrera0
         </a>
-        <span class="nav-eyebrow">Copilot Agent</span>
     </nav>
 
     <!-- HERO -->
     <header class="hero">
-        <div class="hero-eyebrow">
-            <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-            Microsoft Copilot Studio
-        </div>
+        <span class="hero-tag">Microsoft Copilot Studio</span>
         <h1>Recruiter Assessment Agent</h1>
         <p class="hero-desc">An AI agent that screens candidates against job descriptions using objective scoring and confidence markers. Copy each field below directly into your Copilot Studio agent — no setup required.</p>
     </header>
