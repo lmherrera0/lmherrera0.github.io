@@ -432,6 +432,49 @@
         }
         .prompt-expand-btn:hover { color: var(--wine); }
 
+        /* ---- SHORTLIST CARDS ---- */
+        .shortlist-section { padding: 0 40px 28px; }
+        .shortlist-heading {
+            font-family: 'Noto Serif Display', Georgia, serif; font-size: 0.95rem; font-weight: 500;
+            color: var(--mahogany); margin-bottom: 14px; padding-top: 20px;
+            border-top: 1px solid var(--pearl);
+        }
+        .shortlist-cards { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+        .shortlist-card { border: 1px solid var(--almond); border-radius: 10px; overflow: hidden; }
+        .shortlist-card-header {
+            display: flex; align-items: center; gap: 10px; padding: 12px 16px;
+            background: var(--pearl);
+        }
+        .shortlist-rank {
+            font-family: 'Noto Serif Display', Georgia, serif; font-size: 1.1rem; color: var(--almond);
+            font-weight: 400; min-width: 22px; line-height: 1;
+        }
+        .shortlist-name { font-weight: 500; color: var(--mahogany); font-size: 0.9rem; flex: 1; }
+        .shortlist-score { font-family: 'Noto Sans Mono', monospace; font-size: 11px; color: var(--wine); }
+        .shortlist-rows { display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid var(--almond); }
+        .shortlist-col { padding: 14px 16px; }
+        .shortlist-col + .shortlist-col { border-left: 1px solid var(--almond); }
+        .shortlist-col-label {
+            font-family: 'Noto Sans Mono', monospace; font-size: 10px; font-weight: 500;
+            letter-spacing: 1px; text-transform: uppercase; color: var(--almond); margin-bottom: 6px; display: block;
+        }
+        .shortlist-col-text { font-size: 0.8rem; font-weight: 300; color: var(--wine); line-height: 1.55; }
+        .shortlist-col-text .risk { color: var(--terracotta); font-weight: 400; }
+        .not-shortlisted-list { list-style: none; padding: 0; margin: 0 0 20px; }
+        .not-shortlisted-list li {
+            display: flex; align-items: baseline; gap: 8px; padding: 9px 0;
+            border-bottom: 1px solid var(--pearl); font-size: 0.82rem; color: var(--wine); font-weight: 300;
+        }
+        .not-shortlisted-list li:last-child { border-bottom: none; }
+        .ns-name { font-weight: 500; color: var(--mahogany); white-space: nowrap; min-width: 100px; }
+        .ns-score { font-family: 'Noto Sans Mono', monospace; font-size: 11px; white-space: nowrap; }
+        .ns-reason { font-size: 0.79rem; color: var(--almond); font-style: italic; }
+        .final-rec {
+            padding: 16px 18px; background: var(--pearl); border-radius: 8px;
+            border-left: 3px solid var(--sage); font-size: 0.83rem; color: var(--wine); line-height: 1.65;
+        }
+        .final-rec strong { color: var(--mahogany); font-weight: 500; }
+
         /* ---- FOOTER ---- */
         .site-footer {
             text-align: center; padding: 32px 24px 48px;
@@ -459,6 +502,13 @@
             .workflow-phase + .workflow-phase { border-left: none; border-top: 1px solid var(--cs-border); }
             .describe-intro { padding: 32px 24px 28px; }
             .describe-footer { flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px 24px; }
+            .sample-table-wrap { padding: 0 20px 20px; }
+            .sample-chart { padding: 8px 20px 20px; }
+            .chart-legend { padding: 0 20px 16px; }
+            .sample-ranking { padding: 16px 20px 28px; }
+            .shortlist-section { padding: 0 20px 20px; }
+            .shortlist-rows { grid-template-columns: 1fr; }
+            .shortlist-col + .shortlist-col { border-left: none; border-top: 1px solid var(--almond); }
         }
     </style>
 </head>
@@ -565,8 +615,9 @@
             <div class="sample-output">
                 <div class="sample-output-header">
                     <span class="sample-badge">Sample Output</span>
-                    <span class="sample-note">What the agent produces after uploading a JD and 4 candidate CVs</span>
+                    <span class="sample-note">Illustrative output — fictional role and candidates, real agent format</span>
                 </div>
+                <!-- Comparison table -->
                 <div class="sample-table-wrap">
                     <table class="sample-table" aria-label="Sample candidate comparison table">
                         <thead>
@@ -576,32 +627,32 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="cand-name">Candidate 1</td>
+                                <td class="cand-name">Alex Chen</td>
                                 <td><span class="tier-badge tier-a">A</span></td>
-                                <td><strong>86%</strong></td><td>90%</td><td>78%</td>
-                                <td>Deep Databricks + Delta; best ADF &amp; Medallion mastery</td>
-                                <td class="gap-cell">Unity Catalog</td>
+                                <td><strong>84%</strong></td><td>87%</td><td>76%</td>
+                                <td>Regulatory reporting expertise; C-suite stakeholder track record; Agile delivery</td>
+                                <td class="gap-cell">SQL listed as intermediate — JD requires advanced</td>
                             </tr>
                             <tr>
-                                <td class="cand-name">Candidate 3</td>
+                                <td class="cand-name">Maya Patel</td>
                                 <td><span class="tier-badge tier-a">A</span></td>
-                                <td><strong>82%</strong></td><td>85%</td><td>72%</td>
-                                <td>Unity Catalog; Spark optimisation; strong Databricks</td>
-                                <td class="gap-cell">Weak explicit ADF evidence</td>
+                                <td><strong>79%</strong></td><td>82%</td><td>70%</td>
+                                <td>Advanced Power BI; process redesign across 3 product launches; strong data storytelling</td>
+                                <td class="gap-cell">Enterprise banking exposure limited to FinTech startups</td>
                             </tr>
                             <tr>
-                                <td class="cand-name">Candidate 2</td>
+                                <td class="cand-name">Sam Okafor</td>
                                 <td><span class="tier-badge tier-b">B</span></td>
-                                <td><strong>68%</strong></td><td>71%</td><td>60%</td>
-                                <td>Solid ADF; good validation; reliable mid-level</td>
-                                <td class="gap-cell">Limited Databricks depth; no Unity Catalog</td>
+                                <td><strong>66%</strong></td><td>68%</td><td>60%</td>
+                                <td>Solid cross-functional delivery; PMP certified; clear communicator</td>
+                                <td class="gap-cell">No financial services domain experience; limited data tooling</td>
                             </tr>
                             <tr>
-                                <td class="cand-name">Candidate 4</td>
-                                <td><span class="tier-badge tier-b">B</span></td>
-                                <td><strong>64%</strong></td><td>66%</td><td>62%</td>
-                                <td>Strong engineering / ML pipelines</td>
-                                <td class="gap-cell">Weak Medallion + BI modelling</td>
+                                <td class="cand-name">Jordan Lee</td>
+                                <td><span class="tier-badge" style="background:var(--rose-clay);color:var(--ivory);">C</span></td>
+                                <td><strong>48%</strong></td><td>42%</td><td>62%</td>
+                                <td>Strong soft skills; fast learner; enthusiastic about financial services</td>
+                                <td class="gap-cell">Insufficient domain and analytical depth for senior role</td>
                             </tr>
                         </tbody>
                     </table>
@@ -614,20 +665,82 @@
                 </div>
                 <div class="sample-chart">
                     <div class="chart-rows">
-                        <div class="chart-row"><span class="chart-label">Candidate 1</span><div class="chart-bars"><div class="bar-track"><div class="bar-fill bar-mh" style="width:90%"></div></div><div class="bar-track"><div class="bar-fill bar-total" style="width:86%"></div></div><div class="bar-track"><div class="bar-fill bar-nth" style="width:78%"></div></div></div></div>
-                        <div class="chart-row"><span class="chart-label">Candidate 3</span><div class="chart-bars"><div class="bar-track"><div class="bar-fill bar-mh" style="width:85%"></div></div><div class="bar-track"><div class="bar-fill bar-total" style="width:82%"></div></div><div class="bar-track"><div class="bar-fill bar-nth" style="width:72%"></div></div></div></div>
-                        <div class="chart-row"><span class="chart-label">Candidate 2</span><div class="chart-bars"><div class="bar-track"><div class="bar-fill bar-mh" style="width:71%"></div></div><div class="bar-track"><div class="bar-fill bar-total" style="width:68%"></div></div><div class="bar-track"><div class="bar-fill bar-nth" style="width:60%"></div></div></div></div>
-                        <div class="chart-row"><span class="chart-label">Candidate 4</span><div class="chart-bars"><div class="bar-track"><div class="bar-fill bar-mh" style="width:66%"></div></div><div class="bar-track"><div class="bar-fill bar-total" style="width:64%"></div></div><div class="bar-track"><div class="bar-fill bar-nth" style="width:62%"></div></div></div></div>
+                        <div class="chart-row"><span class="chart-label">Alex Chen</span><div class="chart-bars"><div class="bar-track"><div class="bar-fill bar-mh" style="width:87%"></div></div><div class="bar-track"><div class="bar-fill bar-total" style="width:84%"></div></div><div class="bar-track"><div class="bar-fill bar-nth" style="width:76%"></div></div></div></div>
+                        <div class="chart-row"><span class="chart-label">Maya Patel</span><div class="chart-bars"><div class="bar-track"><div class="bar-fill bar-mh" style="width:82%"></div></div><div class="bar-track"><div class="bar-fill bar-total" style="width:79%"></div></div><div class="bar-track"><div class="bar-fill bar-nth" style="width:70%"></div></div></div></div>
+                        <div class="chart-row"><span class="chart-label">Sam Okafor</span><div class="chart-bars"><div class="bar-track"><div class="bar-fill bar-mh" style="width:68%"></div></div><div class="bar-track"><div class="bar-fill bar-total" style="width:66%"></div></div><div class="bar-track"><div class="bar-fill bar-nth" style="width:60%"></div></div></div></div>
+                        <div class="chart-row"><span class="chart-label">Jordan Lee</span><div class="chart-bars"><div class="bar-track"><div class="bar-fill bar-mh" style="width:42%"></div></div><div class="bar-track"><div class="bar-fill bar-total" style="width:48%"></div></div><div class="bar-track"><div class="bar-fill bar-nth" style="width:62%"></div></div></div></div>
                     </div>
                 </div>
-                <div class="sample-ranking">
-                    <div class="ranking-title">Final Ranking</div>
-                    <ol class="ranking-list">
-                        <li><span class="rank-candidate">Candidate 1</span><span class="tier-badge tier-a">A</span><span class="rank-score">86%</span><span class="rank-note">Highest alignment — strongest Azure Databricks + ADF + Medallion profile.</span></li>
-                        <li><span class="rank-candidate">Candidate 3</span><span class="tier-badge tier-a">A</span><span class="rank-score">82%</span><span class="rank-note">Excellent Databricks/Spark specialist, Unity Catalog expertise.</span></li>
-                        <li><span class="rank-candidate">Candidate 2</span><span class="tier-badge tier-b">B</span><span class="rank-score">68%</span><span class="rank-note">Solid mid-level engineer, strong ADF, moderate Databricks.</span></li>
-                        <li><span class="rank-candidate">Candidate 4</span><span class="tier-badge tier-b">B</span><span class="rank-score">64%</span><span class="rank-note">Good generalist/ML engineer; weaker BI pipeline alignment.</span></li>
-                    </ol>
+
+                <!-- Shortlist Summary -->
+                <div class="shortlist-section">
+                    <div class="shortlist-heading">Recommended Candidates for Interview</div>
+                    <div class="shortlist-cards">
+                        <!-- Alex Chen -->
+                        <div class="shortlist-card">
+                            <div class="shortlist-card-header">
+                                <span class="shortlist-rank">#1</span>
+                                <span class="shortlist-name">Alex Chen</span>
+                                <span class="tier-badge tier-a">A</span>
+                                <span class="shortlist-score">84% · Must-Have 87%</span>
+                            </div>
+                            <div class="shortlist-rows">
+                                <div class="shortlist-col">
+                                    <span class="shortlist-col-label">Why shortlisted</span>
+                                    <p class="shortlist-col-text">Proven delivery of regulatory reporting frameworks for banking clients. Stakeholder management at Board level CONFIRMED across two roles. Strongest must-have alignment in the pool.</p>
+                                </div>
+                                <div class="shortlist-col">
+                                    <span class="shortlist-col-label">Risk · Gap</span>
+                                    <p class="shortlist-col-text"><span class="risk">GAP — SQL proficiency:</span> CV states intermediate; JD requires advanced for self-serve analytics. Recommend a short technical screen before second-round offer.</p>
+                                </div>
+                                <div class="shortlist-col">
+                                    <span class="shortlist-col-label">Summary</span>
+                                    <p class="shortlist-col-text">Strongest overall match. Prioritise as first-choice interview. SQL gap is closable — weight against leadership strength at offer stage.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Maya Patel -->
+                        <div class="shortlist-card">
+                            <div class="shortlist-card-header">
+                                <span class="shortlist-rank">#2</span>
+                                <span class="shortlist-name">Maya Patel</span>
+                                <span class="tier-badge tier-a">A</span>
+                                <span class="shortlist-score">79% · Must-Have 82%</span>
+                            </div>
+                            <div class="shortlist-rows">
+                                <div class="shortlist-col">
+                                    <span class="shortlist-col-label">Why shortlisted</span>
+                                    <p class="shortlist-col-text">Advanced Power BI and data storytelling directly match must-have criteria. Led process redesign across three product launches; requirements documentation quality is CONFIRMED as high.</p>
+                                </div>
+                                <div class="shortlist-col">
+                                    <span class="shortlist-col-label">Risk · Gap</span>
+                                    <p class="shortlist-col-text"><span class="risk">INFERENCE — Enterprise banking:</span> FinTech experience is adjacent but not equivalent. Regulatory exposure at scale is unverified — explore at interview.</p>
+                                </div>
+                                <div class="shortlist-col">
+                                    <span class="shortlist-col-label">Summary</span>
+                                    <p class="shortlist-col-text">Strong technical fit; brings data visualisation depth the team currently lacks. Clarify enterprise banking exposure. Recommend as second-choice interview alongside Alex.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shortlist-heading">Not Shortlisted</div>
+                    <ul class="not-shortlisted-list">
+                        <li>
+                            <span class="ns-name">Sam Okafor</span>
+                            <span class="tier-badge tier-b" style="font-size:10px;padding:2px 8px;">B · 66%</span>
+                            <span class="ns-reason">Solid delivery track record but no financial services domain or advanced data tooling — critical gaps for this role at senior level.</span>
+                        </li>
+                        <li>
+                            <span class="ns-name">Jordan Lee</span>
+                            <span class="tier-badge" style="background:var(--rose-clay);color:var(--ivory);font-size:10px;padding:2px 8px;">C · 48%</span>
+                            <span class="ns-reason">Must-have alignment at 42% — below threshold for interview consideration. Strong soft skills noted; could be a future candidate with 2–3 years domain experience.</span>
+                        </li>
+                    </ul>
+
+                    <div class="final-rec">
+                        <strong>Final Recommendation —</strong> Advance Alex Chen and Maya Patel to first-round interview. Alex is the strongest alignment on domain and stakeholder criteria; Maya brings technical depth the team currently lacks. Request a short work sample demonstrating requirements documentation before second round. Hold Sam Okafor's profile for future roles where domain experience is not a hard requirement.
+                    </div>
                 </div>
             </div>
 
