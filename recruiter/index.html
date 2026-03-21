@@ -163,6 +163,80 @@
         }
         .cs-tab--active { color: var(--cs-accent); border-bottom-color: var(--cs-accent); font-weight: 600; }
 
+        /* ---- TAB SWITCHING ---- */
+        .cs-tab { cursor: pointer; background: none; border: none; }
+        .cs-tab:focus-visible { outline: 2px solid var(--cs-accent); outline-offset: -2px; }
+        .config-panel { display: none; }
+        .config-panel--active { display: block; }
+
+        /* ---- DESCRIBE PANEL ---- */
+        .describe-panel {
+            background: var(--ivory); border-radius: 0 0 12px 12px;
+            border: 1px solid var(--cs-border); border-top: none;
+            box-shadow: var(--shadow-lg); overflow: hidden;
+        }
+        .describe-intro {
+            padding: 44px 40px 36px;
+            border-bottom: 1px solid var(--almond);
+        }
+        .describe-intro-label {
+            font-family: 'Noto Sans Mono', monospace; font-size: 10px; font-weight: 500;
+            letter-spacing: 2px; text-transform: uppercase; color: var(--almond);
+            display: block; margin-bottom: 14px;
+        }
+        .describe-intro p {
+            font-family: 'Noto Serif Display', Georgia, serif;
+            font-size: 1.15rem; font-weight: 400; color: var(--mahogany);
+            line-height: 1.75; max-width: 620px;
+        }
+        .workflow-phases {
+            display: grid; grid-template-columns: 1fr 1fr 1fr;
+        }
+        .workflow-phase {
+            padding: 32px 32px 36px; background: var(--cs-surface);
+        }
+        .workflow-phase + .workflow-phase { border-left: 1px solid var(--cs-border); }
+        .phase-tag {
+            font-family: 'Noto Sans Mono', monospace; font-size: 10px; font-weight: 500;
+            letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage);
+            display: block; margin-bottom: 12px;
+        }
+        .phase-title {
+            font-family: 'Noto Serif Display', Georgia, serif; font-size: 1.05rem;
+            font-weight: 500; color: var(--mahogany); margin-bottom: 18px; line-height: 1.3;
+        }
+        .phase-list { list-style: none; padding: 0; margin: 0; }
+        .phase-list li {
+            font-family: 'Noto Sans', sans-serif; font-size: 0.84rem; font-weight: 300;
+            color: var(--wine); padding: 7px 0;
+            border-bottom: 1px solid var(--pearl);
+            display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
+        }
+        .phase-list li:last-child { border-bottom: none; }
+        .phase-list li::before {
+            content: '—'; color: var(--almond); font-size: 0.75rem;
+            flex-shrink: 0; margin-top: 2px;
+        }
+        .describe-footer {
+            padding: 20px 40px; background: var(--pearl);
+            border-top: 1px solid var(--almond);
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .describe-footer-note {
+            font-family: 'Noto Sans Mono', monospace; font-size: 11px;
+            color: var(--almond); letter-spacing: 0.3px;
+        }
+        .describe-cta {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-family: 'Noto Sans', sans-serif; font-size: 0.82rem; font-weight: 500;
+            color: var(--ivory); background: var(--wine);
+            border: none; border-radius: 8px; padding: 8px 16px;
+            cursor: pointer; letter-spacing: 0.3px;
+            transition: background 0.2s;
+        }
+        .describe-cta:hover { background: var(--rose-clay); }
+        .describe-cta svg { width: 14px; height: 14px; }
+
         /* ---- CONFIG CONTENT ---- */
         .config-content {
             background: var(--cs-surface); border-radius: 0 0 12px 12px;
@@ -316,6 +390,10 @@
             .cs-tabs { padding: 0 16px; }
             .cs-tab { font-size: 12px; }
             .prompts-grid { grid-template-columns: 1fr; }
+            .workflow-phases { grid-template-columns: 1fr; }
+            .workflow-phase + .workflow-phase { border-left: none; border-top: 1px solid var(--cs-border); }
+            .describe-intro { padding: 32px 24px 28px; }
+            .describe-footer { flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px 24px; }
         }
     </style>
 </head>
@@ -374,13 +452,61 @@
                 </div>
             </div>
             <nav class="cs-tabs" aria-label="Agent Builder tabs">
-                <span class="cs-tab">Describe</span>
-                <span class="cs-tab cs-tab--active">Configure</span>
+                <button class="cs-tab" id="tab-describe" onclick="switchTab('describe')" aria-controls="panel-describe">Describe</button>
+                <button class="cs-tab cs-tab--active" id="tab-configure" onclick="switchTab('configure')" aria-controls="panel-configure">Configure</button>
             </nav>
         </div>
 
-        <!-- Config content -->
-        <div class="config-content">
+        <!-- DESCRIBE PANEL -->
+        <div class="describe-panel config-panel" id="panel-describe" role="tabpanel">
+            <div class="describe-intro">
+                <span class="describe-intro-label">What this agent does</span>
+                <p>Upload a Job Description and one or more CVs — the agent screens, scores, and ranks candidates objectively, then helps you communicate results to clients and candidates with confidence.</p>
+            </div>
+            <div class="workflow-phases">
+                <div class="workflow-phase">
+                    <span class="phase-tag">Phase 01 · Evaluate</span>
+                    <div class="phase-title">Screen &amp; Rank Candidates</div>
+                    <ul class="phase-list">
+                        <li>Score each CV against the JD (0–4 per criterion)</li>
+                        <li>Weighted scoring: 70% must-have, 30% nice-to-have</li>
+                        <li>Tier classification: A / B / C / D</li>
+                        <li>Every claim marked CONFIRMED, INFERENCE, GAP, or RISK</li>
+                        <li>Ranked output with tiebreaker logic</li>
+                    </ul>
+                </div>
+                <div class="workflow-phase">
+                    <span class="phase-tag">Phase 02 · Analyse</span>
+                    <div class="phase-title">Go Deeper on Your Pool</div>
+                    <ul class="phase-list">
+                        <li>Side-by-side comparison matrix of top candidates</li>
+                        <li>Gap analysis across the full candidate pool</li>
+                        <li>Compare two or more JDs against each other</li>
+                        <li>Synthesise a new JD from multiple uploaded ones</li>
+                    </ul>
+                </div>
+                <div class="workflow-phase">
+                    <span class="phase-tag">Phase 03 · Communicate</span>
+                    <div class="phase-title">Close the Loop</div>
+                    <ul class="phase-list">
+                        <li>Draft a client introduction email for the top candidate</li>
+                        <li>Request CV updates with specific gaps highlighted</li>
+                        <li>Send warm, constructive rejection feedback</li>
+                        <li>Generate clean output ready for client sharing</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="describe-footer">
+                <span class="describe-footer-note">Ready to set it up? Switch to Configure →</span>
+                <button class="describe-cta" onclick="switchTab('configure')">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+                    Configure Agent
+                </button>
+            </div>
+        </div>
+
+        <!-- CONFIGURE PANEL -->
+        <div class="config-content config-panel config-panel--active" id="panel-configure" role="tabpanel">
 
             <!-- SECTION 01: Identity -->
             <section class="config-section" id="sec-identity">
@@ -718,6 +844,14 @@ Offer:
     </footer>
 
     <script>
+        // Tab switching
+        function switchTab(name) {
+            document.querySelectorAll('.cs-tab').forEach(t => t.classList.remove('cs-tab--active'));
+            document.querySelectorAll('.config-panel').forEach(p => p.classList.remove('config-panel--active'));
+            document.getElementById('tab-' + name).classList.add('cs-tab--active');
+            document.getElementById('panel-' + name).classList.add('config-panel--active');
+        }
+
         // Copy field value to clipboard
         function copyField(id, btn) {
             const el = document.getElementById(id);
