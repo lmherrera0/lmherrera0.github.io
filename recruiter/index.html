@@ -45,20 +45,19 @@
 
             --radius: 12px;
 
-            /* Copilot Studio mock colors */
-            --cs-bg: #1b1b1b;
-            --cs-sidebar: #252525;
-            --cs-tab-active: #ffffff;
-            --cs-tab-inactive: rgba(255,255,255,0.55);
-            --cs-accent: #7b68ee;
-            --cs-accent-soft: #9b8cf0;
+            /* M365 Copilot Agent Builder mock colors — light interface */
+            --cs-header: #f3f2f1;
+            --cs-header-border: #edebe9;
+            --cs-accent: #0078d4;
             --cs-surface: #ffffff;
-            --cs-surface-alt: #fafafa;
+            --cs-surface-alt: #faf9f8;
             --cs-code-bg: #f8f8f6;
-            --cs-border: #e5e5e5;
-            --cs-label: #616161;
-            --cs-text: #1a1a1a;
-            --cs-text-body: #333333;
+            --cs-border: #edebe9;
+            --cs-label: #605e5c;
+            --cs-text: #323130;
+            --cs-text-body: #605e5c;
+            --cs-tab-active: #323130;
+            --cs-tab-inactive: #605e5c;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -126,47 +125,43 @@
             max-width: 1060px; margin: 0 auto 80px; padding: 0 24px;
         }
 
-        /* Mock Copilot Studio chrome */
+        /* Mock M365 Copilot Agent Builder chrome */
         .cs-chrome {
             border-radius: 12px 12px 0 0; overflow: hidden;
             box-shadow: var(--shadow-md);
+            border: 1px solid var(--cs-border); border-bottom: none;
         }
         .cs-topbar {
-            background: var(--cs-bg); padding: 0 24px;
-            display: flex; align-items: center; gap: 0; height: 48px;
+            background: var(--cs-header);
+            border-bottom: 1px solid var(--cs-header-border);
+            padding: 0 24px;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 48px;
         }
-        .cs-brand {
-            display: flex; align-items: center; gap: 10px;
-            margin-right: 32px; flex-shrink: 0;
+        .cs-breadcrumb {
+            display: flex; align-items: center; gap: 6px;
+            font-family: 'Noto Sans', sans-serif; font-size: 13px;
+            color: var(--cs-text-body);
         }
-        .cs-brand-icon {
-            width: 24px; height: 24px; background: var(--cs-accent);
-            border-radius: 4px; display: flex; align-items: center; justify-content: center;
-            font-size: 11px; font-weight: 700; color: white; font-family: 'Noto Sans Mono', monospace;
+        .cs-breadcrumb-icon {
+            width: 18px; height: 18px; flex-shrink: 0;
         }
-        .cs-brand span { font-size: 13px; font-weight: 400; color: var(--cs-tab-inactive); font-family: 'Noto Sans', sans-serif; }
-        .cs-tabs { display: flex; gap: 0; flex: 1; }
+        .cs-breadcrumb-sep { color: var(--cs-label); font-size: 11px; }
+        .cs-breadcrumb-current {
+            font-weight: 600; color: var(--cs-tab-active);
+        }
+        .cs-tabs {
+            display: flex; gap: 0; border-bottom: 1px solid var(--cs-border);
+            background: var(--cs-surface); padding: 0 24px;
+        }
         .cs-tab {
-            font-size: 12px; font-weight: 400; color: var(--cs-tab-inactive);
-            padding: 0 16px; height: 48px; display: flex; align-items: center;
-            cursor: default; letter-spacing: 0.2px; transition: color 0.2s;
-            font-family: 'Noto Sans', sans-serif; border-bottom: 2px solid transparent;
+            font-size: 13px; font-weight: 400; color: var(--cs-tab-inactive);
+            padding: 0 4px; height: 44px; display: flex; align-items: center;
+            cursor: default; letter-spacing: 0.2px;
+            font-family: 'Noto Sans', sans-serif;
+            border-bottom: 2px solid transparent; margin-right: 24px;
         }
-        .cs-tab--active { color: var(--cs-tab-active); border-bottom-color: var(--cs-accent); }
-
-        .cs-agent-bar {
-            background: var(--cs-sidebar); padding: 12px 24px;
-            display: flex; align-items: center; gap: 14px;
-        }
-        .cs-agent-icon {
-            width: 36px; height: 36px; border-radius: 8px;
-            background: linear-gradient(135deg, var(--cs-accent), var(--cs-accent-soft));
-            display: flex; align-items: center; justify-content: center;
-            font-size: 12px; font-weight: 600; color: white; font-family: 'Noto Sans Mono', monospace;
-            flex-shrink: 0;
-        }
-        .cs-agent-name { font-size: 14px; font-weight: 500; color: white; font-family: 'Noto Sans', sans-serif; }
-        .cs-agent-status { font-size: 11px; color: var(--cs-tab-inactive); font-family: 'Noto Sans', sans-serif; margin-top: 1px; }
+        .cs-tab--active { color: var(--cs-accent); border-bottom-color: var(--cs-accent); font-weight: 600; }
 
         /* ---- CONFIG CONTENT ---- */
         .config-content {
@@ -227,7 +222,7 @@
             padding: 12px 14px; transition: border-color 0.2s;
             outline: none; cursor: default;
         }
-        .field-textarea:focus { border-color: var(--cs-accent); box-shadow: 0 0 0 2px rgba(123,104,238,0.12); }
+        .field-textarea:focus { border-color: var(--cs-accent); box-shadow: 0 0 0 2px rgba(0,120,212,0.12); }
         .field-textarea--sm { height: 44px; overflow: hidden; }
         .field-textarea--md { height: 80px; }
         .field-textarea--code {
@@ -265,7 +260,7 @@
         .prompts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .prompt-card {
             border: 1px solid var(--cs-border); border-radius: 10px;
-            overflow: hidden; background: white;
+            overflow: hidden; background: var(--cs-surface);
         }
         .prompt-header {
             display: flex; align-items: center; gap: 10px;
@@ -281,7 +276,7 @@
             color: var(--mahogany); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
         }
         .prompt-card .field-textarea {
-            border: none; border-radius: 0; background: white;
+            border: none; border-radius: 0; background: var(--cs-surface);
             font-size: 0.8rem; padding: 12px 14px; color: var(--cs-text-body);
         }
         .prompt-card .field-textarea:focus { box-shadow: none; border: none; }
@@ -320,9 +315,8 @@
             .config-wrapper { padding: 0 16px; }
             .config-section { padding: 28px 24px; }
             .cs-topbar { padding: 0 16px; }
-            .cs-tabs { gap: 0; overflow-x: auto; }
-            .cs-tab { padding: 0 12px; font-size: 11px; }
-            .cs-agent-bar { padding: 10px 16px; }
+            .cs-tabs { padding: 0 16px; }
+            .cs-tab { font-size: 12px; }
             .prompts-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -339,9 +333,9 @@
 
     <!-- HERO -->
     <header class="hero">
-        <span class="hero-tag">Microsoft Copilot Studio</span>
+        <span class="hero-tag">M365 Copilot · Agent Builder</span>
         <h1>Recruiter Assessment Agent</h1>
-        <p class="hero-desc">An AI agent that screens candidates against job descriptions using objective scoring and confidence markers. Copy each field below directly into your Copilot Studio agent — no setup required.</p>
+        <p class="hero-desc">An AI agent that screens candidates against job descriptions using objective scoring and confidence markers. Copy each field below directly into your M365 Copilot agent — no setup required.</p>
     </header>
 
     <!-- SETUP GUIDE -->
@@ -350,8 +344,8 @@
             <div class="guide-step">
                 <span class="step-num">01</span>
                 <div>
-                    <strong>Open Copilot Studio</strong>
-                    <p>Go to copilotstudio.microsoft.com and create a new agent</p>
+                    <strong>Open M365 Copilot</strong>
+                    <p>Go to Microsoft 365, open Copilot, click <em>Create</em> in the left sidebar</p>
                 </div>
             </div>
             <div class="guide-arrow" aria-hidden="true">→</div>
@@ -359,7 +353,7 @@
                 <span class="step-num">02</span>
                 <div>
                     <strong>Copy each field below</strong>
-                    <p>Each section tells you exactly where to paste in Copilot Studio</p>
+                    <p>Each section tells you exactly where to paste in the Agent Builder</p>
                 </div>
             </div>
             <div class="guide-arrow" aria-hidden="true">→</div>
@@ -367,7 +361,7 @@
                 <span class="step-num">03</span>
                 <div>
                     <strong>Add Starter Prompts, then Publish</strong>
-                    <p>Test your agent in the Copilot Studio test panel before publishing</p>
+                    <p>Test your agent in the Agent preview panel before publishing</p>
                 </div>
             </div>
         </div>
@@ -376,28 +370,23 @@
     <!-- MAIN SIMULATOR -->
     <div class="config-wrapper">
 
-        <!-- Mock Copilot Studio chrome -->
-        <div class="cs-chrome" role="img" aria-label="Copilot Studio interface simulation">
+        <!-- Mock M365 Copilot Agent Builder chrome -->
+        <div class="cs-chrome" role="img" aria-label="M365 Copilot Agent Builder interface simulation">
             <div class="cs-topbar">
-                <div class="cs-brand">
-                    <div class="cs-brand-icon" aria-hidden="true">M</div>
-                    <span>Copilot Studio</span>
-                </div>
-                <nav class="cs-tabs" aria-label="Copilot Studio tabs">
-                    <span class="cs-tab">Overview</span>
-                    <span class="cs-tab cs-tab--active">Configure</span>
-                    <span class="cs-tab">Knowledge</span>
-                    <span class="cs-tab">Actions</span>
-                    <span class="cs-tab">Analytics</span>
-                </nav>
-            </div>
-            <div class="cs-agent-bar">
-                <div class="cs-agent-icon" aria-hidden="true">RA</div>
-                <div>
-                    <div class="cs-agent-name">Recruiter Assessment Agent</div>
-                    <div class="cs-agent-status">Draft · Not published</div>
+                <div class="cs-breadcrumb">
+                    <svg class="cs-breadcrumb-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="9" cy="9" r="9" fill="#0078d4"/>
+                        <path d="M5 9.5L7.5 12L13 6.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Agent Builder</span>
+                    <span class="cs-breadcrumb-sep">›</span>
+                    <span class="cs-breadcrumb-current">Recruiter</span>
                 </div>
             </div>
+            <nav class="cs-tabs" aria-label="Agent Builder tabs">
+                <span class="cs-tab">Describe</span>
+                <span class="cs-tab cs-tab--active">Configure</span>
+            </nav>
         </div>
 
         <!-- Config content -->
@@ -409,7 +398,7 @@
                     <span class="section-num">01</span>
                     <div>
                         <h2>Identity</h2>
-                        <span class="section-location">Configure → Agent details</span>
+                        <span class="section-location">Configure → Details</span>
                     </div>
                 </div>
 
