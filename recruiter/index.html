@@ -475,6 +475,76 @@
         }
         .final-rec strong { color: var(--mahogany); font-weight: 500; }
 
+        /* ---- FEEDBACK SECTION ---- */
+        .feedback-section {
+            max-width: 680px; margin: 0 auto; padding: 64px 24px 48px;
+        }
+        .feedback-section h2 {
+            font-family: 'Noto Serif Display', Georgia, serif;
+            font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 500;
+            color: var(--mahogany); text-align: center; margin-bottom: 10px;
+        }
+        .feedback-subtitle {
+            font-size: 0.95rem; font-weight: 300; color: var(--wine);
+            text-align: center; margin-bottom: 36px; line-height: 1.7;
+        }
+        .fb-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .fb-field { display: flex; flex-direction: column; gap: 6px; }
+        .fb-field--full { grid-column: 1 / -1; }
+        .fb-label {
+            font-family: 'Noto Sans', sans-serif; font-size: 0.82rem; font-weight: 600;
+            color: var(--mahogany); letter-spacing: 0.3px;
+        }
+        .fb-label .fb-optional {
+            font-weight: 300; color: var(--almond); font-size: 0.78rem;
+        }
+        .fb-input, .fb-select, .fb-textarea {
+            width: 100%; padding: 10px 14px;
+            border: 1px solid var(--almond); border-radius: 8px;
+            background: var(--ivory); color: var(--wine);
+            font-family: 'Noto Sans', sans-serif; font-size: 0.88rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+        .fb-input:focus, .fb-select:focus, .fb-textarea:focus {
+            border-color: var(--terracotta);
+            box-shadow: 0 0 0 2px rgba(184,120,95,0.15);
+        }
+        .fb-select { appearance: none; cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' viewBox='0 0 24 24' stroke='%236B4C47' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 14px center;
+            padding-right: 36px;
+        }
+        .fb-textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+        .fb-submit {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 12px 28px;
+            background: var(--btn-bg); color: var(--btn-text);
+            border: none; border-radius: 8px;
+            font-family: 'Noto Sans', sans-serif; font-size: 0.88rem; font-weight: 500;
+            letter-spacing: 0.3px; cursor: pointer;
+            transition: background 0.25s, transform 0.15s;
+        }
+        .fb-submit:hover { background: var(--btn-hover); }
+        .fb-submit:active { transform: scale(0.98); }
+        .fb-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+        .fb-success {
+            text-align: center; padding: 32px 0;
+        }
+        .fb-success h3 {
+            font-family: 'Noto Serif Display', Georgia, serif;
+            font-size: 1.3rem; font-weight: 500; color: var(--sage); margin-bottom: 8px;
+        }
+        .fb-success p { font-size: 0.9rem; font-weight: 300; color: var(--wine); }
+        .fb-error {
+            font-size: 0.85rem; color: var(--terracotta); font-weight: 400;
+            margin-top: 8px; grid-column: 1 / -1;
+        }
+        @media (max-width: 700px) {
+            .fb-form { grid-template-columns: 1fr; }
+            .feedback-section { padding: 48px 20px 36px; }
+        }
+
         /* ---- FOOTER ---- */
         .site-footer {
             text-align: center; padding: 32px 24px 48px;
@@ -1517,6 +1587,68 @@ Only handle requests related to recruitment screening, staffing assessment, JD a
         </div>
     </div>
 
+    <!-- FEEDBACK -->
+    <section class="feedback-section" id="feedback">
+        <h2>Share Your Feedback</h2>
+        <p class="feedback-subtitle">Tried the agent? Have ideas for new tools? Let me know what works, what doesn't, and what you'd like to see next.</p>
+
+        <form id="feedback-form" class="fb-form">
+            <input type="hidden" name="_subject" value="Recruiter Agent — Website Feedback">
+
+            <div class="fb-field">
+                <label class="fb-label" for="fb-name">Name <span class="fb-optional">(optional)</span></label>
+                <input type="text" id="fb-name" name="name" class="fb-input" placeholder="Your name">
+            </div>
+
+            <div class="fb-field">
+                <label class="fb-label" for="fb-email">Email <span class="fb-optional">(optional)</span></label>
+                <input type="email" id="fb-email" name="email" class="fb-input" placeholder="your@email.com">
+            </div>
+
+            <div class="fb-field">
+                <label class="fb-label" for="fb-type">Message Type</label>
+                <select id="fb-type" name="message_type" class="fb-select" required>
+                    <option value="" disabled selected>Select type</option>
+                    <option value="Feedback">Feedback</option>
+                    <option value="Feature Request">Feature Request</option>
+                    <option value="Bug Report">Bug Report</option>
+                    <option value="Collaboration">Collaboration</option>
+                    <option value="General Question">General Question</option>
+                </select>
+            </div>
+
+            <div class="fb-field">
+                <label class="fb-label" for="fb-platform">Platform</label>
+                <select id="fb-platform" name="platform" class="fb-select" required>
+                    <option value="" disabled selected>Select your platform</option>
+                    <option value="M365 Copilot">M365 Copilot</option>
+                    <option value="ChatGPT">ChatGPT</option>
+                    <option value="Google Gems">Google Gems</option>
+                    <option value="Claude">Claude</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="fb-field fb-field--full">
+                <label class="fb-label" for="fb-message">Your Message</label>
+                <textarea id="fb-message" name="message" class="fb-textarea" required placeholder="How did the agent work for you? What could be improved? Any ideas for new tools?"></textarea>
+            </div>
+
+            <div class="fb-field fb-field--full">
+                <button type="submit" id="fb-submit-btn" class="fb-submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:16px;height:16px" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/></svg>
+                    Send Feedback
+                </button>
+                <p id="fb-error" class="fb-error" style="display:none">Something went wrong. Please try again.</p>
+            </div>
+        </form>
+
+        <div id="fb-success" class="fb-success" style="display:none">
+            <h3>Thank You</h3>
+            <p>Your feedback has been received. It helps shape better tools.</p>
+        </div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="site-footer">
         <p><a href="https://github.com/lmherrera0" target="_blank" rel="noopener" class="handle">lmherrera0</a></p>
@@ -1597,6 +1729,41 @@ Only handle requests related to recruitment screening, staffing assessment, JD a
             el.classList.toggle('gpt-textarea--prompt-expanded', isCollapsed);
             btn.textContent = isCollapsed ? 'Show less ↑' : 'Show more ↓';
         }
+
+        // Feedback form submission
+        (function () {
+            var form = document.getElementById('feedback-form');
+            var btn = document.getElementById('fb-submit-btn');
+            var errEl = document.getElementById('fb-error');
+            var successEl = document.getElementById('fb-success');
+            if (!form) return;
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                btn.disabled = true;
+                btn.textContent = 'Sending…';
+                errEl.style.display = 'none';
+
+                fetch('https://formspree.io/f/xbdzeker', {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                }).then(function (res) {
+                    if (res.ok) {
+                        form.style.display = 'none';
+                        successEl.style.display = 'block';
+                    } else {
+                        errEl.style.display = 'block';
+                        btn.disabled = false;
+                        btn.textContent = 'Send Feedback';
+                    }
+                }).catch(function () {
+                    errEl.style.display = 'block';
+                    btn.disabled = false;
+                    btn.textContent = 'Send Feedback';
+                });
+            });
+        })();
 
         // ── Character counters ──────────────────────────────────────
         (function () {
