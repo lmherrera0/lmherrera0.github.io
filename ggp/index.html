@@ -72,6 +72,9 @@
             .claude-section { padding: 24px 20px; }
             .gpt-prompts-grid { grid-template-columns: 1fr; }
             .cs-prompts-grid { grid-template-columns: 1fr; }
+            .ggp-arch-cards { grid-template-columns: 1fr; }
+            .ggp-arch-cards .ggp-arch-card:last-child { grid-column: span 1; }
+            .ggp-blockquote { padding: 24px 20px; font-size: 1rem; }
         }
 
         /* ═══════════════════════════════════════
@@ -153,6 +156,44 @@
         .cs-prompt-num { font-family: 'Noto Sans Mono', monospace; font-size: 10px; color: var(--cs-accent); opacity: 0.7; }
         .cs-prompt-title { font-size: 12px; font-weight: 500; color: var(--cs-text); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .cs-prompt-card .field-textarea { border: none; border-radius: 0; background: var(--cs-surface); font-size: 0.8rem; padding: 12px 14px; color: var(--cs-text-body); }
+
+        /* ═══════════════════════════════════════
+           RESEARCH SECTION
+           ═══════════════════════════════════════ */
+        .ggp-research-paper { max-width: 760px; margin: 0 auto; padding: 0 24px 48px; }
+        .ggp-paper-meta { text-align: center; margin-bottom: 40px; }
+        .ggp-paper-title { font-family: 'Noto Serif Display', serif; font-size: 1.2rem; font-weight: 500; color: var(--mahogany); line-height: 1.4; margin-bottom: 12px; }
+        .ggp-paper-author { font-size: 0.88rem; font-weight: 300; color: var(--wine); margin-bottom: 14px; }
+        .ggp-doi-badge { display: inline-block; font-family: 'Noto Sans Mono', monospace; font-size: 11px; color: var(--sage); background: rgba(122,155,142,0.1); border: 1px solid rgba(122,155,142,0.3); border-radius: 100px; padding: 5px 14px; text-decoration: none; transition: background 0.2s; }
+        .ggp-doi-badge:hover { background: rgba(122,155,142,0.2); }
+        .ggp-paper-section { margin-bottom: 36px; }
+        .ggp-paper-section h3 { font-family: 'Noto Serif Display', serif; font-size: 1.05rem; font-weight: 500; color: var(--mahogany); margin-bottom: 16px; }
+        .ggp-paper-section p { font-size: 0.88rem; font-weight: 300; color: var(--wine); line-height: 1.7; margin-bottom: 12px; }
+        .ggp-paper-section p:last-child { margin-bottom: 0; }
+
+        /* Architecture cards */
+        .ggp-arch-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .ggp-arch-card { background: var(--pearl); border: 1px solid var(--almond); border-radius: var(--radius); padding: 20px; }
+        .ggp-arch-num { font-family: 'Noto Sans Mono', monospace; font-size: 11px; color: var(--sage); display: block; margin-bottom: 8px; }
+        .ggp-arch-card strong { display: block; font-family: 'Noto Serif Display', serif; font-size: 0.95rem; font-weight: 500; color: var(--mahogany); margin-bottom: 6px; }
+        .ggp-arch-card p { font-size: 0.8rem; font-weight: 300; color: var(--wine); line-height: 1.55; margin: 0; }
+        .ggp-arch-cards .ggp-arch-card:last-child { grid-column: span 2; }
+
+        /* Foundations */
+        .ggp-foundations { display: flex; flex-direction: column; gap: 16px; }
+        .ggp-foundation { background: var(--pearl); border: 1px solid var(--almond); border-radius: var(--radius); padding: 20px; }
+        .ggp-foundation strong { font-family: 'Noto Serif Display', serif; font-size: 0.95rem; color: var(--mahogany); }
+        .ggp-citation { font-family: 'Noto Sans Mono', monospace; font-size: 11px; color: var(--sage); margin-left: 8px; }
+        .ggp-foundation p { font-size: 0.82rem; font-weight: 300; color: var(--wine); line-height: 1.6; margin: 8px 0 0; }
+
+        /* Blockquote */
+        .ggp-blockquote { font-family: 'Noto Serif Display', serif; font-size: 1.1rem; font-weight: 400; font-style: italic; color: var(--mahogany); text-align: center; padding: 32px 40px; margin: 0 0 36px; border-top: 1px solid var(--almond); border-bottom: 1px solid var(--almond); }
+
+        /* Download link */
+        .ggp-paper-download { text-align: center; }
+        .ggp-download-link { display: inline-flex; align-items: center; gap: 8px; font-family: 'Noto Sans', sans-serif; font-size: 0.88rem; font-weight: 500; color: var(--ivory); background: var(--wine); border-radius: var(--radius); padding: 12px 24px; text-decoration: none; transition: background 0.2s, transform 0.1s; }
+        .ggp-download-link:hover { background: var(--rose-clay); }
+        .ggp-download-link:active { transform: scale(0.97); }
     </style>
 </head>
 <body>
@@ -1280,10 +1321,157 @@ NOTES:
 
 <!-- Tab 3: Research — built in Task 8 -->
 <div class="page-content" id="page-research">
+    <header class="hero">
+        <span class="hero-tag">Published · February 2026</span>
+        <h1>The Research Behind GGP</h1>
+        <p class="hero-desc">GGP is grounded in Design Science Research methodology, combining accountability theory, epistemology of testimony, and information governance into a practical verification framework.</p>
+    </header>
+
+    <section class="ggp-research-paper">
+        <div class="ggp-paper-meta">
+            <h2 class="ggp-paper-title">Beyond Detection: A Hallucination Governance Architecture for AI-Verified Professional Communication</h2>
+            <p class="ggp-paper-author">L.M. Herrera — Independent Researcher, London, UK</p>
+            <a href="https://doi.org/10.5281/zenodo.18751614" target="_blank" rel="noopener" class="ggp-doi-badge">DOI: 10.5281/zenodo.18751614</a>
+        </div>
+
+        <!-- Abstract -->
+        <div class="ggp-paper-section">
+            <h3>Abstract</h3>
+            <p>Large language models generate fluent text that often contains fabricated claims presented with high confidence. Existing approaches focus on detecting hallucinations after generation, but this paper argues for a governance-first architecture that prevents unverified claims from reaching professional audiences.</p>
+            <p>The Grounded Gate Protocol (GGP) implements a five-component verification system: a calibrated source hierarchy with colour-coded markers, an adversarial quality gate with quantified risk scoring, dual-mode execution for routine and high-stakes content, channel-agnostic governance rules separated from domain-specific templates, and cross-platform deployment adapters. The framework treats verification as a workflow property rather than a model property.</p>
+        </div>
+
+        <!-- Five-Component Architecture -->
+        <div class="ggp-paper-section">
+            <h3>Five-Component Architecture</h3>
+            <div class="ggp-arch-cards">
+                <div class="ggp-arch-card">
+                    <span class="ggp-arch-num">01</span>
+                    <strong>Calibrated Source Hierarchy</strong>
+                    <p>Four-tier system with five colour-coded verification markers (CONFIRMED, GAP, INFERENCE, UNVERIFIED, RISK)</p>
+                </div>
+                <div class="ggp-arch-card">
+                    <span class="ggp-arch-num">02</span>
+                    <strong>Adversarial Quality Gate</strong>
+                    <p>8-dimension quantified risk scoring (1–3 per dimension, max 24 points)</p>
+                </div>
+                <div class="ggp-arch-card">
+                    <span class="ggp-arch-num">03</span>
+                    <strong>Dual-Mode Execution</strong>
+                    <p>Fast Mode for routine content, Deep Audit for high-stakes deliverables</p>
+                </div>
+                <div class="ggp-arch-card">
+                    <span class="ggp-arch-num">04</span>
+                    <strong>Channel-Agnostic Governance</strong>
+                    <p>Universal rules separated from 22 domain-specific channel templates</p>
+                </div>
+                <div class="ggp-arch-card">
+                    <span class="ggp-arch-num">05</span>
+                    <strong>Cross-Platform Deployment</strong>
+                    <p>Adapters for Claude, ChatGPT, Google Gems, and Microsoft Copilot</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Theoretical Foundations -->
+        <div class="ggp-paper-section">
+            <h3>Theoretical Foundations</h3>
+            <div class="ggp-foundations">
+                <div class="ggp-foundation">
+                    <strong>Accountability Theory</strong>
+                    <span class="ggp-citation">Bovens, 2007</span>
+                    <p>Every claim must be traceable and auditable — the framework creates an accountability chain from source to output.</p>
+                </div>
+                <div class="ggp-foundation">
+                    <strong>Epistemology of Testimony</strong>
+                    <span class="ggp-citation">Coady, 1992; Lackey, 2008</span>
+                    <p>Trust is calibrated by institutional backing and methodological transparency, not by fluency or confidence.</p>
+                </div>
+                <div class="ggp-foundation">
+                    <strong>Information Governance</strong>
+                    <span class="ggp-citation">Smallwood, 2014</span>
+                    <p>Quality must be embedded in the workflow, not applied as a post-hoc review.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Principle -->
+        <blockquote class="ggp-blockquote">
+            "Verification is a workflow property, not a model property."
+        </blockquote>
+
+        <!-- Download -->
+        <div class="ggp-paper-download">
+            <a href="./downloads/ggp-v2-ai-implementation.md" download class="ggp-download-link">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" style="width:16px;height:16px"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                Download GGP Implementation Guide
+            </a>
+        </div>
+    </section>
 </div>
 
 <!-- Tab 4: Feedback — built in Task 8 -->
 <div class="page-content" id="page-feedback">
+    <section class="feedback-section" id="feedback">
+        <h2>Share Your Feedback</h2>
+        <p class="fb-subtitle">Used GGP in your workflow? Found a hallucination it missed? Let me know what works, what doesn't, and what you'd like to see next.</p>
+
+        <form id="feedback-form" class="fb-form">
+            <input type="hidden" name="_subject" value="GGP — Website Feedback">
+
+            <div class="fb-field">
+                <label class="fb-label" for="fb-name">Name <span class="fb-optional">(optional)</span></label>
+                <input type="text" id="fb-name" name="name" class="fb-input" placeholder="Your name">
+            </div>
+
+            <div class="fb-field">
+                <label class="fb-label" for="fb-email">Email <span class="fb-optional">(optional)</span></label>
+                <input type="email" id="fb-email" name="email" class="fb-input" placeholder="your@email.com">
+            </div>
+
+            <div class="fb-field">
+                <label class="fb-label" for="fb-type">Message Type</label>
+                <select id="fb-type" name="message_type" class="fb-select" required>
+                    <option value="" disabled selected>Select type</option>
+                    <option value="Feedback">Feedback</option>
+                    <option value="Feature Request">Feature Request</option>
+                    <option value="Bug Report">Bug Report</option>
+                    <option value="Collaboration">Collaboration</option>
+                    <option value="General Question">General Question</option>
+                </select>
+            </div>
+
+            <div class="fb-field">
+                <label class="fb-label" for="fb-platform">Platform</label>
+                <select id="fb-platform" name="platform" class="fb-select" required>
+                    <option value="" disabled selected>Select your platform</option>
+                    <option value="Claude">Claude</option>
+                    <option value="ChatGPT">ChatGPT</option>
+                    <option value="M365 Copilot">M365 Copilot</option>
+                    <option value="Google Gems">Google Gems</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="fb-field fb-field--full">
+                <label class="fb-label" for="fb-message">Your Message</label>
+                <textarea id="fb-message" name="message" class="fb-textarea" required placeholder="How has GGP worked for you? Did it catch a hallucination? What could be improved?"></textarea>
+            </div>
+
+            <div class="fb-field fb-field--full">
+                <button type="submit" id="fb-submit-btn" class="fb-submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:16px;height:16px" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/></svg>
+                    Send Feedback
+                </button>
+                <p id="fb-error" class="fb-error" style="display:none">Something went wrong. Please try again.</p>
+            </div>
+        </form>
+
+        <div id="fb-success" class="fb-success" style="display:none">
+            <h3>Thank You</h3>
+            <p>Your feedback has been received. It helps shape better tools.</p>
+        </div>
+    </section>
 </div>
 
 <!-- Footer -->
@@ -1347,6 +1535,37 @@ function toggleExpand(id, btn) {
     btn.textContent = collapsed ? 'Collapse' : 'Expand';
     btn.setAttribute('aria-expanded', String(collapsed));
 }
+
+// Feedback form submission
+(function () {
+    var form = document.getElementById('feedback-form');
+    var btn = document.getElementById('fb-submit-btn');
+    var errEl = document.getElementById('fb-error');
+    var successEl = document.getElementById('fb-success');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        errEl.style.display = 'none';
+
+        fetch('https://formspree.io/f/xbdzeker', {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+        }).then(function (r) {
+            if (r.ok) {
+                form.style.display = 'none';
+                successEl.style.display = 'block';
+            } else { throw new Error(); }
+        }).catch(function () {
+            errEl.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Send Feedback';
+        });
+    });
+})();
 </script>
 
 </body>
