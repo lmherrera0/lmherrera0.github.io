@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maximizando la IA · Capellanía Latinoamericana de Londres</title>
+<meta name="description" content="Taller de Inteligencia Artificial para padres de la Capellanía Latinoamericana de Londres. Fundamentos, agentes, lenguaje estructurado y ejercicios prácticos.">
+<meta name="author" content="Liz Magaly Herrera">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Maximizando la IA · Capellanía Latinoamericana de Londres">
+<meta property="og:description" content="Taller de IA para padres. Material en línea para seguir desde el celular.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://lmherrera0.github.io/cal/ia-padres/">
+<meta property="og:locale" content="es_ES">
+<link rel="canonical" href="https://lmherrera0.github.io/cal/ia-padres/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<style>
+  :root{
+    --charcoal:#2E2E2E;
+    --teal:#3F8FA8;
+    --amber:#E8A347;
+    --white:#FFFFFF;
+    --gray:#F5F5F5;
+    --gray-rule:#E0E0E0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Avenir Next','Segoe UI','Helvetica Neue',Arial,sans-serif;
+    color:var(--charcoal);
+    background:var(--white);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    -webkit-text-size-adjust:100%;
+  }
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code,pre,.mono{font-family:'SF Mono','Menlo','Consolas','Liberation Mono',monospace;font-size:.85em}
+
+  /* TOP BAR */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    background:var(--charcoal);color:var(--white);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 20px;border-bottom:3px solid var(--teal);
+  }
+  .topbar .brand{font-weight:600;font-size:14px;letter-spacing:-0.01em}
+  .topbar .brand span{color:var(--amber)}
+  .toc-toggle{
+    background:transparent;border:1px solid var(--white);color:var(--white);
+    padding:6px 12px;font-size:12px;font-family:inherit;cursor:pointer;
+    letter-spacing:0.02em;
+  }
+  .toc-toggle:hover{background:var(--teal);border-color:var(--teal)}
+
+  /* TOC DRAWER */
+  .toc{
+    display:none;
+    background:var(--charcoal);color:var(--white);
+    padding:0 20px 20px;
+  }
+  .toc.open{display:block}
+  .toc ol{list-style:none;counter-reset:m}
+  .toc li{counter-increment:m;border-bottom:1px solid #444;padding:10px 0}
+  .toc li::before{content:counter(m,decimal-leading-zero) "  ";color:var(--amber);font-weight:600}
+  .toc a{color:var(--white);font-size:14px}
+
+  /* HERO */
+  .hero{
+    background:var(--charcoal);color:var(--white);
+    padding:64px 24px 80px;text-align:left;
+  }
+  .hero-wrap{max-width:760px;margin:0 auto}
+  .hero .eyebrow{
+    color:var(--teal);font-size:13px;font-weight:500;
+    letter-spacing:0.08em;text-transform:uppercase;margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(32px,7vw,54px);font-weight:600;line-height:1.15;
+    letter-spacing:-0.01em;margin-bottom:20px;
+  }
+  .hero h1 .accent{color:var(--amber)}
+  .hero .meta{font-size:15px;color:#cfd6d8;margin-top:24px;line-height:1.7}
+  .hero .meta strong{color:var(--white);font-weight:500}
+
+  /* SECTIONS */
+  section{padding:64px 24px;border-bottom:1px solid var(--gray-rule)}
+  section.alt{background:var(--gray)}
+  .wrap{max-width:760px;margin:0 auto}
+
+  .module-tag{
+    display:inline-block;background:var(--teal);color:var(--white);
+    padding:6px 14px;font-size:12px;letter-spacing:0.1em;font-weight:600;
+    margin-bottom:18px;
+  }
+  h2{
+    font-size:clamp(26px,5vw,38px);font-weight:600;line-height:1.2;
+    letter-spacing:-0.01em;color:var(--charcoal);margin-bottom:14px;
+  }
+  h3{
+    font-size:clamp(20px,4vw,26px);font-weight:500;line-height:1.25;
+    margin:28px 0 10px;color:var(--charcoal);
+  }
+  h4{
+    font-size:18px;font-weight:600;margin:24px 0 8px;color:var(--charcoal);
+  }
+  .lede{font-size:18px;color:var(--charcoal);margin-bottom:18px;line-height:1.6}
+  p{margin-bottom:14px;font-size:16px}
+  p.small{font-size:14px;color:#555}
+  ul,ol{margin:10px 0 16px 22px}
+  li{margin-bottom:8px;font-size:16px}
+  strong{font-weight:600}
+  em{font-style:italic}
+  blockquote{
+    border-left:4px solid var(--amber);
+    padding:8px 0 8px 18px;margin:18px 0;
+    font-style:italic;color:#555;
+  }
+
+  /* CARDS (used for CRAFTS, AGENTS, technique pairs) */
+  .cards{display:grid;grid-template-columns:1fr;gap:14px;margin:18px 0}
+  .card{
+    background:var(--white);border:1px solid var(--gray-rule);
+    padding:18px 20px;
+  }
+  section.alt .card{background:var(--white)}
+  .card .badge{
+    display:inline-block;background:var(--charcoal);color:var(--white);
+    width:32px;height:32px;line-height:32px;text-align:center;
+    font-weight:700;font-size:15px;margin-right:10px;
+  }
+  .card .badge.amber{background:var(--amber);color:var(--charcoal)}
+  .card h4{margin-top:0;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .card .role{font-size:14px;color:var(--teal);font-weight:500;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:6px}
+  .card .what{font-size:15px;margin-bottom:10px}
+  .card .how{font-size:14px;color:#444}
+  .card .how strong{color:var(--charcoal)}
+
+  .pair-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
+  @media(min-width:720px){
+    .pair-grid{grid-template-columns:1fr 1fr}
+  }
+
+  /* TABLES (responsive) */
+  .table-wrap{overflow-x:auto;margin:18px -4px;-webkit-overflow-scrolling:touch}
+  table{
+    width:100%;border-collapse:collapse;font-size:14px;
+    min-width:520px;
+  }
+  th,td{
+    text-align:left;padding:10px 12px;border-bottom:1px solid var(--gray-rule);
+    vertical-align:top;
+  }
+  th{background:var(--gray);font-weight:600;color:var(--charcoal)}
+  section.alt th{background:var(--white)}
+  td.sym{font-family:'SF Mono','Menlo','Consolas',monospace;color:var(--teal);font-weight:600;white-space:nowrap}
+
+  /* CODE BLOCKS */
+  pre{
+    background:var(--charcoal);color:#e8e8e8;
+    padding:16px 18px;overflow-x:auto;
+    font-size:13px;line-height:1.55;margin:14px 0;
+    -webkit-overflow-scrolling:touch;
+  }
+  pre code{font-size:inherit;color:inherit}
+
+  /* PRAYER block */
+  .prayer{
+    background:var(--white);
+    border-top:3px solid var(--teal);border-bottom:3px solid var(--teal);
+    padding:32px 28px;margin:18px 0;
+  }
+  section.alt .prayer{background:var(--gray)}
+  .prayer p{font-size:17px;line-height:1.7;color:var(--charcoal)}
+  .prayer .amen{display:block;margin-top:14px;color:var(--amber);font-weight:600;letter-spacing:0.05em}
+
+  /* RULES highlight (slide 15) */
+  .rules{counter-reset:r;margin-top:14px}
+  .rules .rule{
+    counter-increment:r;background:var(--white);
+    border-left:4px solid var(--amber);padding:18px 20px;margin-bottom:14px;
+  }
+  section.alt .rules .rule{background:var(--white)}
+  .rules .rule::before{
+    content:counter(r);display:inline-block;background:var(--amber);color:var(--charcoal);
+    width:28px;height:28px;line-height:28px;text-align:center;font-weight:700;
+    margin-right:10px;font-size:14px;
+  }
+  .rules .rule strong{color:var(--charcoal)}
+
+  /* Exercise options */
+  .options{display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px}
+  @media(min-width:720px){.options{grid-template-columns:1fr 1fr 1fr}}
+  .option{background:var(--white);border:1px solid var(--gray-rule);padding:22px}
+  section.alt .option{background:var(--white)}
+  .option .letter{
+    display:inline-block;background:var(--teal);color:var(--white);
+    padding:4px 10px;font-weight:700;font-size:13px;letter-spacing:0.08em;
+    margin-bottom:12px;
+  }
+  .option h4{margin-top:0}
+  .option ol{margin-left:20px;font-size:14px}
+  .option li{margin-bottom:6px}
+
+  /* Three-column language reference (slide 19) */
+  .lang-grid{display:grid;grid-template-columns:1fr;gap:24px;margin:24px 0}
+  @media(min-width:900px){.lang-grid{grid-template-columns:1fr 1fr 1fr}}
+  .lang{background:var(--white);border:1px solid var(--gray-rule);padding:18px}
+  section.alt .lang{background:var(--white)}
+  .lang h4{margin-top:0;color:var(--teal)}
+  .lang .label{font-size:11px;letter-spacing:0.1em;color:var(--amber);font-weight:700;margin-bottom:8px;text-transform:uppercase}
+
+  /* Notes / sidebar */
+  .note{
+    background:var(--gray);border-left:3px solid var(--teal);
+    padding:14px 18px;font-size:14px;margin:14px 0;
+  }
+  section.alt .note{background:var(--white)}
+  .note strong{color:var(--charcoal)}
+
+  /* FOOTER */
+  footer{
+    background:var(--teal);color:var(--white);
+    padding:48px 24px;text-align:center;
+  }
+  footer h3{color:var(--white);margin-bottom:14px;font-size:22px;font-weight:600}
+  footer p{font-size:14px;margin-bottom:6px;line-height:1.7}
+  footer a{color:var(--white);text-decoration:underline}
+  footer .oar{
+    margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.3);
+    font-size:13px;color:#dde7eb;
+  }
+  footer .oar .accent{color:var(--amber);font-weight:600}
+  footer .author{margin-top:18px;font-size:12px;color:#dde7eb;font-style:italic}
+
+  /* Print */
+  @media print{
+    .topbar,.toc-toggle{display:none}
+    section{padding:24px 0;page-break-inside:avoid}
+    .hero{padding:24px 0}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">CLA Londres · <span>IA para padres</span></div>
+  <button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('open')">Contenido</button>
+</header>
+
+<nav id="toc" class="toc" aria-label="Índice del taller">
+  <ol>
+    <li><a href="#oracion-apertura">Oración al Espíritu Santo</a></li>
+    <li><a href="#m1">Fundamentos del prompting</a></li>
+    <li><a href="#m2">Prompting nivel intermedio</a></li>
+    <li><a href="#m3">Agentes de IA</a></li>
+    <li><a href="#m4">Lenguaje estructurado</a></li>
+    <li><a href="#m5">Ejercicios prácticos</a></li>
+    <li><a href="#oracion-cierre">Oración de cierre</a></li>
+  </ol>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-wrap">
+    <div class="eyebrow">Taller · Capellanía Latinoamericana de Londres</div>
+    <h1>Maximizando la <span class="accent">Inteligencia Artificial</span></h1>
+    <div class="meta">
+      <strong>Preparado por Liz Magaly Herrera</strong><br>
+      Exclusivamente para la Capellanía Latinoamericana de Londres, Iglesia Católica.<br><br>
+      Esta es la versión web del taller, pensada para que puedas seguir el contenido desde tu celular.
+    </div>
+  </div>
+</div>
+
+<!-- ORACIÓN APERTURA -->
+<section id="oracion-apertura">
+  <div class="wrap">
+    <h2>Oración al Espíritu Santo</h2>
+    <div class="prayer">
+      <p>Oh Espíritu Santo, Amor del Padre y del Hijo, inspírame siempre lo que debo pensar, lo que debo decir, cómo debo decirlo, lo que debo callar, cómo debo actuar, lo que debo hacer, para gloria de Dios, bien de las almas y mi propia santificación.</p>
+      <p>Espíritu Santo, dame agudeza para entender, capacidad para retener, método y facultad para aprender, sutileza para interpretar, gracia y eficacia para hablar.</p>
+      <p>Dame acierto al empezar, dirección al progresar y perfección al acabar.<span class="amen">Amén.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- TOC visible / Contenido del taller -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Contenido del taller</h2>
+    <ol>
+      <li>Fundamentos del prompting</li>
+      <li>Prompting nivel intermedio</li>
+      <li>Agentes de IA</li>
+      <li>Lenguaje estructurado</li>
+      <li>Ejercicios prácticos</li>
+    </ol>
+  </div>
+</section>
+
+<!-- MÓDULO 1 -->
+<section id="m1">
+  <div class="wrap">
+    <span class="module-tag">01 · Módulo</span>
+    <h2>Fundamentos del prompting</h2>
+    <p class="lede">Aprender a hablarle a la IA.</p>
+
+    <h3>Prompt Engineering = aprender a hablarle a la IA</h3>
+
+    <div class="pair-grid">
+      <div class="card">
+        <div class="role">Una pregunta vaga</div>
+        <p class="what">"Escríbeme algo sobre cómo educar a mi hijo"</p>
+        <p class="how"><strong>Lo que obtienes:</strong> un texto genérico, sin enfoque, que podría aplicar a cualquier familia o edad. Pasas 20 minutos reescribiéndolo. La IA no tenía idea de lo que realmente necesitabas.</p>
+      </div>
+      <div class="card">
+        <div class="role" style="color:var(--amber)">Una pregunta mejor estructurada</div>
+        <p class="what">"Soy madre de un niño de 10 años que se prepara para su Primera Comunión. Escríbeme una explicación de 200 palabras sobre qué es la Eucaristía, en lenguaje sencillo, con un ejemplo cotidiano y una pregunta que pueda hacerle a mi hijo después de leerla."</p>
+      </div>
+    </div>
+    <p class="small"><strong>Mientras más específica sea tu pregunta, menos correcciones harás después.</strong></p>
+
+    <h3>El marco C.R.A.F.T.S</h3>
+    <p>Como toda buena conversación, la técnica importa. Seis bloques para construir un buen prompt:</p>
+
+    <div class="cards">
+      <div class="card">
+        <h4><span class="badge">C</span> CONTEXTO</h4>
+        <p class="what"><strong>Pone la escena.</strong> Le da a la IA el trasfondo, la situación y la audiencia para que adapte su respuesta.</p>
+        <p class="how">¿Para quién es esto? ¿Cuál es la situación? ¿Qué ya sabe quien lo va a leer?</p>
+      </div>
+      <div class="card">
+        <h4><span class="badge">R</span> ROL</h4>
+        <p class="what"><strong>Dile a la IA quién debe ser.</strong> Un personaje específico moldea su experiencia, vocabulario y perspectiva.</p>
+        <p class="how">Asigna oficio y personalidad. Define el estilo de comunicación y el nivel de experiencia.</p>
+      </div>
+      <div class="card">
+        <h4><span class="badge">A</span> ACCIÓN</h4>
+        <p class="what"><strong>Define qué hacer y cómo.</strong> Da pasos numerados para que la IA siga un proceso, no una instrucción vaga.</p>
+        <p class="how">Lista las tareas específicas en orden. Incluye decisiones y condiciones.</p>
+      </div>
+      <div class="card">
+        <h4><span class="badge">F</span> FORMATO</h4>
+        <p class="what"><strong>Especifica la forma del resultado.</strong> Estructura, extensión y diseño visual para que obtengas exactamente lo que necesitas.</p>
+        <p class="how">Indica tipo de documento, número de palabras, secciones. Uso de viñetas, tablas o encabezados.</p>
+      </div>
+      <div class="card">
+        <h4><span class="badge">T</span> TONO</h4>
+        <p class="what"><strong>Establece el registro emocional.</strong> El mismo contenido suena distinto cuando cambia el tono.</p>
+        <p class="how">Describe el sentimiento y el nivel de formalidad. Define palabras o frases a usar o evitar.</p>
+      </div>
+      <div class="card">
+        <h4><span class="badge amber">S</span> AUTO-CHEQUEO</h4>
+        <p class="what"><strong>Construye un control de calidad.</strong> La IA revisa su propio resultado contra tus criterios antes de entregarlo.</p>
+        <p class="how">Da una lista de chequeo que la IA debe verificar internamente. Si algo falla, lo corrige antes de responder.</p>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>5 reglas de oro:</strong>
+      <ol>
+        <li>Siempre verifica, la IA puede alucinar.</li>
+        <li>Sé específico, no vago.</li>
+        <li>Itera, no aceptes la primera respuesta.</li>
+        <li>Da ejemplos de lo que quieres.</li>
+        <li>Pon límites y restricciones.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULO 2 -->
+<section id="m2" class="alt">
+  <div class="wrap">
+    <span class="module-tag">02 · Módulo</span>
+    <h2>Prompting nivel intermedio</h2>
+    <p class="lede">Cómo lograr que la IA piense mejor.</p>
+
+    <div class="pair-grid">
+      <div class="card">
+        <div class="role">Cadena de pensamiento (CoT)</div>
+        <p class="what"><strong>Qué hace:</strong> pídele a la IA que razone <strong>paso a paso</strong> antes de darte la respuesta final. Obliga a una descomposición lógica.</p>
+        <p class="how"><strong>Cuándo:</strong> cálculos, problemas de lógica, análisis con varios pasos, verificación de criterios.</p>
+        <p class="how"><strong>Cómo:</strong></p>
+        <ol style="font-size:14px;color:#444">
+          <li>Plantea el problema con claridad</li>
+          <li>Añade: "Piensa paso a paso"</li>
+          <li>Opcional: da un ejemplo resuelto</li>
+          <li>Pide la respuesta final después del razonamiento</li>
+        </ol>
+        <blockquote>"Piensa esto paso a paso antes de darme tu respuesta."<br>"Llévame por tu razonamiento, luego dame tu conclusión."</blockquote>
+        <p class="how"><strong>Tip:</strong> funciona mejor con modelos sin razonamiento interno (ChatGPT clásico, Copilot básico). En modelos que ya razonan solos (o1, Claude con thinking), la ganancia es menor. Empieza aquí.</p>
+      </div>
+      <div class="card">
+        <div class="role">Árbol de pensamiento (ToT)</div>
+        <p class="what"><strong>Qué hace:</strong> explora <strong>varios caminos de razonamiento en paralelo</strong>, evalúa cada uno y elige el más fuerte.</p>
+        <p class="how"><strong>Cuándo:</strong> decisiones estratégicas, comparar enfoques, planificación compleja, elegir entre alternativas.</p>
+        <p class="how"><strong>Cómo:</strong></p>
+        <ol style="font-size:14px;color:#444">
+          <li>Define la decisión o el problema</li>
+          <li>Pide 3 o más enfoques distintos</li>
+          <li>Pide pros/contras por camino</li>
+          <li>Pídele que recomiende la mejor opción</li>
+        </ol>
+        <blockquote>"Considera 3 enfoques distintos. Evalúa pros/contras de cada uno, y recomienda el mejor."<br>"Explora 3 soluciones. Ordénalas por viabilidad y riesgo."</blockquote>
+        <p class="how"><strong>Tip:</strong> produce mejor análisis que un solo camino. Esencial para recomendaciones que vas a sustentar.</p>
+      </div>
+    </div>
+
+    <h3>O que revise su propio trabajo…</h3>
+    <div class="pair-grid">
+      <div class="card">
+        <div class="role">Cadena de verificación (CoV)</div>
+        <p class="what"><strong>Qué hace:</strong> genera una respuesta, luego sistemáticamente <strong>verifica cada afirmación</strong>. Dos pasadas: crear, luego verificar.</p>
+        <p class="how"><strong>Cuándo:</strong> investigación, reportes para liderazgo, contenido regulatorio, cualquier cosa donde la precisión sea crítica.</p>
+        <ol style="font-size:14px;color:#444">
+          <li>Genera la respuesta inicial</li>
+          <li>Lista cada afirmación factual hecha</li>
+          <li>Verifica cada una contra fuentes</li>
+          <li>Marca lo dudoso, corrige si hace falta</li>
+        </ol>
+        <blockquote>"Ahora revisa cada afirmación de tu respuesta. Marca lo que no esté seguro y verifica los datos clave."</blockquote>
+        <p class="how"><strong>Tip:</strong> esencial para detectar alucinaciones. Úsala en cualquier documento que vayas a compartir o presentar.</p>
+      </div>
+      <div class="card">
+        <div class="role">Análisis adversarial</div>
+        <p class="what"><strong>Qué hace:</strong> pídele a la IA que <strong>argumente CONTRA su propia respuesta</strong> para encontrar debilidades y contraargumentos.</p>
+        <p class="how"><strong>Cuándo:</strong> evaluación de riesgos, propuestas, decisiones importantes, cartas formales.</p>
+        <ol style="font-size:14px;color:#444">
+          <li>Genera la recomendación</li>
+          <li>Pregunta: "Hazme de abogado del diablo"</li>
+          <li>Pide los 3 contraargumentos más fuertes</li>
+          <li>Decide si revisas o defiendes</li>
+        </ol>
+        <blockquote>"Ahora hazme de abogado del diablo. ¿Cuáles son los 3 argumentos más fuertes contra esta recomendación?"</blockquote>
+        <p class="how"><strong>Tip:</strong> evita análisis sesgados. Excelente para preparar conversaciones difíciles: anticipa objeciones antes de tenerlas en frente.</p>
+      </div>
+    </div>
+
+    <h3>O que valide sus resultados, o hable consigo misma</h3>
+    <div class="pair-grid">
+      <div class="card">
+        <div class="role">Auto-consistencia</div>
+        <p class="what"><strong>Qué hace:</strong> corre la misma pregunta varias veces y compara las respuestas. <strong>Revela la incertidumbre de la IA.</strong></p>
+        <p class="how"><strong>Cuándo:</strong> decisiones de alto impacto, temas regulatorios, estimaciones numéricas.</p>
+        <ol style="font-size:14px;color:#444">
+          <li>Haz la misma pregunta 3 veces</li>
+          <li>Compara las respuestas lado a lado</li>
+          <li>Donde converjan: alta confianza</li>
+          <li>Marca las divergencias para revisión humana</li>
+        </ol>
+        <blockquote>"Responde esta pregunta 3 veces de forma independiente, luego compara y explica las diferencias."</blockquote>
+      </div>
+      <div class="card">
+        <div class="role">Meta-prompting</div>
+        <p class="what"><strong>Qué hace:</strong> pídele a la IA que <strong>escriba su propio prompt óptimo</strong>, luego usa ese prompt para el resultado final.</p>
+        <p class="how"><strong>Cuándo:</strong> tareas nuevas o ambiguas, cuando no sabes cómo estructurar el pedido, optimización de prompts.</p>
+        <ol style="font-size:14px;color:#444">
+          <li>Describe lo que quieres lograr</li>
+          <li>Pregunta: "¿Cuál sería el mejor prompt?"</li>
+          <li>Revisa el prompt que la IA te genera</li>
+          <li>Ejecuta el prompt optimizado</li>
+        </ol>
+        <blockquote>"Créame un prompt maestro para obtener el resultado ideal para esta tarea. NO INFIERAS, hazme hasta 3 preguntas críticas para que te dé el input correcto."</blockquote>
+        <p class="how"><strong>Tip:</strong> sorprendentemente efectivo. La IA a menudo se instruye mejor a sí misma que nosotros. Ideal para empezar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULO 3 -->
+<section id="m3">
+  <div class="wrap">
+    <span class="module-tag">03 · Módulo</span>
+    <h2>Agentes de IA</h2>
+    <p class="lede">Cuando la IA no responde: actúa.</p>
+
+    <h3>El marco A.G.E.N.T.S</h3>
+    <p>Seis bloques para construir un agente que actúa por ti.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h4><span class="badge">A</span> ASIGNAR ROL</h4>
+        <p class="what"><strong>¿Quién es este agente, siempre?</strong> Define experiencia, perspectiva y tono para TODAS las conversaciones, no solo una.</p>
+        <p class="how"><em>Ejemplo:</em> "Eres un asistente bilingüe que ayuda a familias latinas en Londres con cartas del cole, NHS y trámites en inglés."</p>
+      </div>
+      <div class="card">
+        <h4><span class="badge">G</span> META</h4>
+        <p class="what"><strong>¿Para qué existe?</strong> Un propósito claro previene que se desvíe del trabajo que le pediste.</p>
+        <p class="how"><em>Ejemplo:</em> "Tu único propósito es traducir cartas del inglés al español, resumir lo importante, y sugerir el siguiente paso a tomar."</p>
+      </div>
+      <div class="card">
+        <h4><span class="badge">E</span> EQUIPAR CONTEXTO</h4>
+        <p class="what"><strong>Dale lo que necesita saber.</strong> Sube archivos, ejemplos o datos. El agente los referencia en cada respuesta.</p>
+        <p class="how"><em>Sube:</em> cartas previas del cole, ejemplo de un buen resumen, lista de términos en inglés que no entiendes.</p>
+      </div>
+      <div class="card">
+        <h4><span class="badge">N</span> RESTRICCIONES</h4>
+        <p class="what"><strong>Reglas duras: SIEMPRE / NUNCA.</strong> Previene errores comunes. Si no las pones, las inventará.</p>
+        <p class="how"><em>Ejemplo:</em> "Siempre responde en español. Nunca inventes datos médicos. Si no estás seguro, di 'no sé, consulta con la persona'."</p>
+      </div>
+      <div class="card">
+        <h4><span class="badge">T</span> FLUJO DE TAREAS</h4>
+        <p class="what"><strong>Pasos numerados que sigue cada vez.</strong> Fuerza una salida lógica y consistente, no improvisada.</p>
+        <p class="how"><em>Ejemplo:</em> "Cuando te dé una carta: 1. Identifica el remitente. 2. Resume en 3 puntos. 3. Marca fechas o acciones. 4. Sugiere respuesta si aplica."</p>
+      </div>
+      <div class="card">
+        <h4><span class="badge amber">S</span> AUTO-CHEQUEO</h4>
+        <p class="what"><strong>Control de calidad antes de entregar.</strong> El agente verifica su propio resultado contra tus criterios.</p>
+        <p class="how"><em>Ejemplo:</em> "Antes de entregar verifica: ¿está en español? ¿hay fechas claras? ¿hay un siguiente paso? Si algo falla, corrígelo y dímelo."</p>
+      </div>
+    </div>
+
+    <h3>Cuando los agentes salen mal</h3>
+    <div class="note">
+      <strong>Respuesta desproporcionada.</strong> Un agente sin restricciones puede hacer mucho más de lo que querías.<br>
+      Demo: <a href="https://agentsofchaos.baulab.info/" target="_blank" rel="noopener">Agents of Chaos · agentsofchaos.baulab.info</a>
+    </div>
+    <div class="note">
+      <strong>Eliminación autónoma y fallo de rendición de cuentas entre sesiones.</strong> Sin trazabilidad, no hay quién responda por lo que hizo el agente.
+    </div>
+
+    <h3>3 reglas no negociables al usar IA con tu familia</h3>
+    <div class="rules">
+      <div class="rule">
+        <strong>Datos personales del niño: NUNCA.</strong> Nombre completo, colegio, dirección, foto. La IA no es un confesor, es un buzón.
+      </div>
+      <div class="rule">
+        <strong>Doctrina o sacramentos: SIEMPRE verifica con el fraile.</strong> La IA puede inventar teología con confianza.
+      </div>
+      <div class="rule">
+        <strong>Para menores de 13 años: la IA es para ti como padre.</strong> Tú la usas, tú curas la respuesta, tú se la entregas al niño.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULO 4 -->
+<section id="m4" class="alt">
+  <div class="wrap">
+    <span class="module-tag">04 · Módulo</span>
+    <h2>Lenguaje estructurado</h2>
+    <p class="lede">Markdown, XML, JSON, Python.</p>
+
+    <h3>¿Por qué darle estructura a lo que escribes?</h3>
+    <p>Hablar con la IA es como mandar un WhatsApp largo: si va todo seguido, se pierde el sentido. Si separas qué es la pregunta, qué es el contexto, y qué formato quieres, la IA no se confunde.</p>
+    <p>Markdown, XML y JSON son tres formas de marcar las partes, como abrir comillas, hacer una lista, o poner un título.</p>
+    <div class="note"><strong>Cuándo usar cada uno:</strong> Markdown para escribir prompts. XML cuando trabajas con Claude. JSON cuando quieres que la IA te devuelva datos para usar después.</div>
+
+    <h3>Markdown: guía de símbolos</h3>
+    <p class="small">Como toda buena conversación, también necesitamos algo de gramática.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Símbolo</th><th>Sintaxis</th><th>Para qué sirve</th><th>Cómo usarlo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="sym">#</td><td><code># Title</code></td><td>Encabezado principal</td><td><code># Reporte de evaluación de riesgos</code></td></tr>
+          <tr><td class="sym">##</td><td><code>## Section</code></td><td>Encabezado de sección</td><td><code>## Resumen ejecutivo</code></td></tr>
+          <tr><td class="sym">###</td><td><code>### Subsection</code></td><td>Sub-encabezado</td><td><code>### Hallazgos clave</code></td></tr>
+          <tr><td class="sym">**</td><td><code>**texto**</code></td><td>Negrita / énfasis</td><td>Resalta <strong>riesgos críticos</strong></td></tr>
+          <tr><td class="sym">*</td><td><code>*texto*</code></td><td>Itálica / énfasis suave</td><td>Añade <em>notas de contexto</em></td></tr>
+          <tr><td class="sym">-</td><td><code>- elemento</code></td><td>Lista con viñetas</td><td>- Riesgo 1<br>- Riesgo 2</td></tr>
+          <tr><td class="sym">1.</td><td><code>1. primero</code></td><td>Lista numerada</td><td>1. Identificar<br>2. Evaluar<br>3. Mitigar</td></tr>
+          <tr><td class="sym">`</td><td><code>`código`</code></td><td>Código en línea / término</td><td>Usa el marco <code>CRAFTS</code></td></tr>
+          <tr><td class="sym">&gt;</td><td><code>&gt; cita</code></td><td>Cita o llamado</td><td>&gt; Insight clave: la calidad de los datos…</td></tr>
+          <tr><td class="sym">|</td><td><code>| col | col |</code></td><td>Estructura de tabla</td><td>| Riesgo | Impacto | Probabilidad |</td></tr>
+          <tr><td class="sym">---</td><td><code>---</code></td><td>Divisor horizontal</td><td>Separa secciones con <code>---</code></td></tr>
+          <tr><td class="sym">```</td><td><code>```lenguaje</code></td><td>Bloque de código / datos</td><td>```json {...} ```</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Variables con corchetes: plantillas reutilizables</h3>
+    <p>Usa <code>[CORCHETES]</code> como marcadores para crear plantillas. Define las variables una vez, intercambia valores fácilmente.</p>
+    <pre><code>[ROL]        Madre acompañando catequesis
+[AUDIENCIA]  Mi hija de 9 años
+[TAREA]      Explicar en lenguaje sencillo
+[TEMA]       Qué es la Eucaristía
+[FORMATO]    200 palabras, 1 ejemplo cotidiano
+[TONO]       Cálido, maternal
+[EXTENSIÓN]  200 palabras, 1 pregunta final
+[LÍMITES]    Solo doctrina católica básica</code></pre>
+
+    <h4>Plantilla de ejemplo</h4>
+    <pre><code>Eres una [ROL] en [INSTITUCIÓN].
+
+## Task
+[TAREA] sobre [TEMA] para [AUDIENCIA].
+
+## Restricciones
+- **Tono:** [TONO]
+- **Extensión:** [EXTENSIÓN]
+- **Alcance:** [LÍMITES]
+- **Formato:** [FORMATO]</code></pre>
+
+    <h3>El lenguaje natural es cómo hablamos con la IA. Estas estructuras son cómo la instruimos.</h3>
+
+    <div class="lang-grid">
+      <div class="lang">
+        <div class="label">Etiquetas XML · Instrucciones obligatorias</div>
+        <h4>XML</h4>
+        <ul style="font-size:13px;list-style:none;margin-left:0">
+          <li><code>&lt;role&gt;</code> · Define quién debe ser</li>
+          <li><code>&lt;context&gt;</code> · Información de fondo</li>
+          <li><code>&lt;task&gt;</code> · Qué debe hacer</li>
+          <li><code>&lt;constraints&gt;</code> · Límites</li>
+          <li><code>&lt;example&gt;</code> · Cómo se ve un buen resultado</li>
+          <li><code>&lt;input&gt;</code> · Datos a procesar</li>
+          <li><code>&lt;output_format&gt;</code> · Estructura deseada</li>
+          <li><code>&lt;instructions&gt;</code> · Guía paso a paso</li>
+        </ul>
+        <pre><code>&lt;role&gt;Tutor de catequesis bilingüe&lt;/role&gt;
+&lt;context&gt;
+  Mi hija de 9 años va a hacer
+  la Primera Comunión.
+&lt;/context&gt;
+&lt;task&gt;
+  Explícale en 200 palabras,
+  lenguaje sencillo
+&lt;/task&gt;
+&lt;constraints&gt;
+  &lt;tono&gt;cálido, maternal&lt;/tono&gt;
+  &lt;incluye&gt;1 ejemplo cotidiano&lt;/incluye&gt;
+&lt;/constraints&gt;</code></pre>
+      </div>
+
+      <div class="lang">
+        <div class="label">Esquemas JSON · Estructurar resultados</div>
+        <h4>JSON</h4>
+        <ul style="font-size:13px;list-style:none;margin-left:0">
+          <li><code>{ }</code> · Objeto: agrupa datos relacionados</li>
+          <li><code>[ ]</code> · Arreglo: lista de elementos</li>
+          <li><code>"key": "value"</code> · Texto</li>
+          <li><code>"key": 42</code> · Número</li>
+          <li><code>"key": true</code> · Booleano</li>
+          <li><code>"key": null</code> · Vacío</li>
+          <li><code>"key": [...]</code> · Arreglo</li>
+          <li><code>"key": {...}</code> · Objeto anidado</li>
+        </ul>
+        <pre><code>{
+  "tarea": "agenda_semana_familia",
+  "schema": {
+    "actividad": "texto",
+    "prioridad": "baja|media|alta",
+    "tiempo_estimado": "minutos",
+    "responsable": "texto",
+    "ayuda_necesaria": "texto"
+  },
+  "max_items": 10
+}</code></pre>
+      </div>
+
+      <div class="lang">
+        <div class="label">Lógica Python · Procesar</div>
+        <h4>Python</h4>
+        <ul style="font-size:13px;list-style:none;margin-left:0">
+          <li><code>for x in lista:</code> · Recorre elementos</li>
+          <li><code>if condition:</code> · Lógica condicional</li>
+          <li><code>elif / else:</code> · Ramas alternativas</li>
+          <li><code>def func():</code> · Define un paso</li>
+          <li><code>return value</code> · Salida de función</li>
+          <li><code>variable = x</code> · Guarda valor</li>
+          <li><code>list = [a, b]</code> · Colección</li>
+          <li><code>dict = {k: v}</code> · Mapeo clave-valor</li>
+        </ul>
+        <pre><code>for tarea in agenda_familia:
+  resumen = explicar(tarea,
+    max_palabras=100)
+  preguntas = extraer_preguntas(resumen)
+  for pregunta in preguntas:
+    if pregunta.dificultad == "alta":
+      consultar_con_fraile(pregunta)
+      avisar(pareja)
+    elif pregunta.dificultad == "media":
+      explicar_directamente(pregunta)</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULO 5 -->
+<section id="m5">
+  <div class="wrap">
+    <span class="module-tag">05 · Módulo</span>
+    <h2>Ejercicios prácticos</h2>
+    <p class="lede"><strong>20 minutos.</strong> Elige UNA opción y trabaja con tu propio caso real.</p>
+
+    <div class="options">
+      <div class="option">
+        <span class="letter">OPCIÓN A</span>
+        <h4>Carta del cole o NHS</h4>
+        <p class="small"><strong>Usa el marco CRAFTS</strong></p>
+        <ol>
+          <li>Saca una carta real del cole o del NHS (en inglés).</li>
+          <li>Pídele a la IA que la traduzca al español, te dé un resumen en 3 puntos, y te diga si requiere acción.</li>
+          <li>Aplica los 6 bloques de CRAFTS: Contexto, Rol, Acción, Formato, Tono, Auto-chequeo.</li>
+        </ol>
+      </div>
+      <div class="option">
+        <span class="letter">OPCIÓN B</span>
+        <h4>Asistente Familiar</h4>
+        <p class="small"><strong>Construye un agente con A.G.E.N.T.S</strong></p>
+        <ol>
+          <li>Abre ChatGPT (gratis) o Copilot. Crea un agente nuevo.</li>
+          <li>Llena los 6 bloques: Asignar rol, Meta, Equipar contexto, Restricciones, Tareas, Auto-chequeo.</li>
+          <li>Pruébalo con UN caso real (carta, CV, pregunta de Confirmación).</li>
+        </ol>
+      </div>
+      <div class="option">
+        <span class="letter">OPCIÓN C</span>
+        <h4>Tarea con tu hijo</h4>
+        <p class="small"><strong>Aplica discernimiento + CRAFTS</strong></p>
+        <ol>
+          <li>Piensa una pregunta que tu hijo te puede hacer sobre Confirmación o tarea del cole.</li>
+          <li>Pídele a la IA una explicación en lenguaje sencillo + un ejemplo + una pregunta de seguimiento.</li>
+          <li>Verifica: ¿es teológicamente correcta? ¿la IA inventó algo? Marca dudas para preguntar al fraile.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORACIÓN CIERRE -->
+<section id="oracion-cierre" class="alt">
+  <div class="wrap">
+    <h2>Oración de cierre</h2>
+    <div class="prayer">
+      <p>Te damos gracias, Espíritu Santo, por lo aprendido hoy.</p>
+      <p>Concédenos <strong>discernimiento</strong> para usar estas herramientas con criterio, <strong>vocación</strong> para ponerlas al servicio de nuestras familias y de nuestro trabajo, y <strong>misión</strong> para acompañar a nuestros hijos en el mundo que viene.<span class="amen">Amén.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <h3>Capellanía Latinoamericana de Londres</h3>
+  <p><a href="mailto:clalondres@gmail.com">clalondres@gmail.com</a> · 020 7820 1697</p>
+  <p>St. Anne's Church, 363 Kennington Lane</p>
+  <p>Vauxhall, London SE11 5QY</p>
+  <p class="oar"><span class="accent">Afiliación:</span> Orden de Agustinos Recoletos (OAR)</p>
+  <p class="author">Material preparado por Liz Magaly Herrera, exclusivamente para la Capellanía Latinoamericana de Londres.</p>
+</footer>
+
+</body>
+</html>
